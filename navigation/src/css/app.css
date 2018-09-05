@@ -1,0 +1,314 @@
+/*
+ ***********************
+ *    IMPORT FONTS     *
+ ***********************
+*/
+@import url("https://use.typekit.net/qrx4nlm.css");
+
+/*
+ ***********************
+ * RESET AND NORMALIZE *
+ ***********************
+*/
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+address,
+big,
+code,
+del,
+dfn,
+em,
+img,
+q,
+s,
+samp,
+small,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+main,
+nav,
+output,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+  margin: 0;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  text-align: center;
+  line-height: 1.15;
+  font-family: "runda", sans-serif;
+}
+
+img {
+  border-style: none;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+[clear] {
+  clear: both;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/* Box Model */
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/*
+ *****************
+ * CSS VARIABLES *
+ *****************
+*/
+:root {
+  --main-bg-color: #fff;
+  /* For using: var(--main-bg-color); */
+  --blue-gray: #2B3D4F;
+}
+
+/*
+ *******************
+ * PAGE MAIN STYLE *
+ *******************
+*/
+nav {
+  position: relative;
+  background-color: #2B3D4F;
+  width: 215px;
+  height: 100vh;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+ul.navigation {
+  padding-top: 62px;
+}
+
+ul.navigation li a {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+  transition: .2s background ease-in;
+  height: 65px;
+  opacity: 0.6;
+  font-weight: bold;
+  font-size: 14px;
+  color: #FFFFFF;
+  letter-spacing: 1px;
+  line-height: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-left: 5px solid transparent;
+}
+
+ul.navigation li img {
+  margin: 0 1rem;
+  width: 33px;
+}
+
+ul.navigation li a:hover {
+  opacity: 1;
+  background-color: #1C2D40;
+  border-left: 5px solid #9B7536;
+}
+
+.block--account-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.block--account-info hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #202E3C;
+}
+
+.block--account-info__inner {
+  padding: 21px 25px;
+  display: flex;
+  justify-content: space-between;
+}
+
+p.user-name {
+  color: #fff;
+  font-size: 14px;
+}
+
+p.org-name {
+  color: #fff;
+  opacity: .75;
+  font-size: 12px;
+}
+
+/*
+ *******************
+ *  MEDIA QUERIES  *
+ *******************
+*/
+/* EXTRA LARGE DISPLAY */
+@media only screen and (max-width: 2400px) and (min-width: 1500px) {}
+
+/* MEDIA FOR NOTEBOOK DISPLAY */
+@media only screen and (max-width: 1200px) and (min-width: 300px) {}
+
+/* MEDIA FOR TABLET DISPLAY */
+@media only screen and (max-width: 992px) and (min-width: 300px) {}
+
+/* MEDIA FOR MEDIUM MOBILE DISPLAY */
+@media only screen and (max-width: 768px) and (min-width: 300px) {}
+
+/* MEDIA FOR LITTLE MOBILE DISPLAY */
+@media only screen and (max-width: 480px) and (min-width: 300px) {}
+
+/*
+ *******************
+ *  PRINT STYLES  *
+ *  DONT TOUCH!!  *
+ *******************
+*/
+@media print {
+
+  *,
+  *:before,
+  *:after,
+  *:first-letter,
+  *:first-line {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]:after {
+    content: " ("attr(href) ")";
+  }
+
+  abbr[title]:after {
+    content: " ("attr(title) ")";
+  }
+
+  a[href^="#"]:after,
+  a[href^="javascript:"]:after {
+    content: "";
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
