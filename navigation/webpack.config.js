@@ -19,8 +19,8 @@ const CONFIG = {
         template: './src/index.html',
         filename: './index.html',
         minify: {
-          "collapseWhitespace": true,
-          "minifyCSS": true,
+          "collapseWhitespace": false,
+          "minifyCSS": false,
           "removeComments": true
         }
       }),
