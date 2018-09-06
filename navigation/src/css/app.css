@@ -271,6 +271,10 @@ ul.navigation a.active-item img {
   opacity: 1;
 }
 
+ul.navigation a.active-item .nav-item {
+  opacity: 1;
+}
+
 .block--account-info {
   position: absolute;
   bottom: 0;
