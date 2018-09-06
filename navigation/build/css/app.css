@@ -1,9 +1,8 @@
-/*
+@import url(https://use.typekit.net/qrx4nlm.css);/*
  ***********************
  *    IMPORT FONTS     *
  ***********************
 */
-@import url("https://use.typekit.net/qrx4nlm.css");
 
 /*
  ***********************
@@ -352,3 +351,4 @@ nav.active p.org-name {
   left: -99999px;
   opacity: 0;
 }
+/*# sourceMappingURL=app.css.map*/
