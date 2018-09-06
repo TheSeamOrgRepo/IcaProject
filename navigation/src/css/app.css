@@ -213,7 +213,7 @@ ul.navigation li a {
   display: flex;
   align-items: center;
   padding: 1rem 5px 1rem 0;
-  transition: .2s background ease-in;
+  transition: background .25s cubic-bezier(0.165, 0.84, 0.44, 1);
   height: 65px;
   font-weight: bold;
   font-size: 14px;
@@ -228,10 +228,11 @@ ul.navigation li a {
 nav ul.navigation li a .nav-item {
   opacity: 0.6;
   transform: scale(1);
-  transition: transform .75s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity .75s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 nav.active ul.navigation li a .nav-item {
+  opacity: 0;
   position: absolute;
   left: -999999px;
 }
@@ -239,11 +240,15 @@ nav.active ul.navigation li a .nav-item {
 ul.navigation li img {
   margin: 0 16px;
   opacity: .25;
-  transition: opacity .2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity .75s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 ul.navigation li:first-of-type img {
-  margin: 0 10px 0 20px;
+  margin: 0 13px 0 20px;
+}
+
+ul.navigation li:nth-of-type(3) img {
+  margin: 0 13px 0 16px;
 }
 
 nav.active ul.navigation li a {
@@ -286,10 +291,11 @@ ul.navigation a.active-item .nav-item {
   height: 1px;
   border: 0;
   border-top: 1px solid #202E3C;
+  margin: 0;
 }
 
 .block--account-info__inner {
-  padding: 21px 25px;
+  padding: 23px 25px;
   display: flex;
   justify-content: space-between;
 }
@@ -307,7 +313,7 @@ nav.active .block--account-info__inner img {
   text-align: left;
   display: block;
   width: 117px;
-  left: 50px;
+  left: 42px;
   height: 30px;
   overflow: hidden;
   position: relative;
@@ -322,6 +328,7 @@ p.user-name {
   bottom: 12px;
   left: 0;
   width: 117px;
+  transition: opacity .75s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 p.org-name {
@@ -332,4 +339,16 @@ p.org-name {
   bottom: 0;
   left: 0;
   width: 117px;
+  transition: opacity .75s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+nav.active p.user-name {
+  left: -99999px;
+  opacity: 0;
+}
+
+
+nav.active p.org-name {
+  left: -99999px;
+  opacity: 0;
 }
