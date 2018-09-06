@@ -13,7 +13,7 @@ $(document).ready(function () {
 
     var timer;
     var delay = 100;
-    $('ul.navigation').hover(
+    $('nav').hover(
         function () {
             timer = setTimeout(function () {
                 if ($('nav').hasClass('active')) {
