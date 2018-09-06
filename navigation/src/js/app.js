@@ -1,8 +1,9 @@
 require('../css/app.css');
 
 $(document).ready(function () {
-    $('.nav-toggle').on('click', function () {
-        $('nav').addClass('active');
+    $('.logo-wrapper').on('click', function () {
+        $("ul.navigation li a.active-item").removeClass("active-item");
+        $('nav').removeClass('active');
     });
     $('ul.navigation li a').on('click', function () {
         $('nav').addClass('active');
