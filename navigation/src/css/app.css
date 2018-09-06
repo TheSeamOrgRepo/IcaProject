@@ -240,7 +240,7 @@ nav.active ul.navigation li a .nav-item {
 ul.navigation li img {
   margin: 0 16px;
   opacity: .25;
-  transition: opacity .75s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity .25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 ul.navigation li:first-of-type img {
