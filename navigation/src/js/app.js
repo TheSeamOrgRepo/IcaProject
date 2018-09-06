@@ -1,9 +1,11 @@
+require('../css/app.css');
+
 document.addEventListener('DOMContentLoaded', function () {
-    var logoWrapper = document.getElementsByClassName('logo-wrapper')[0];
+    var logoWrapper = document.querySelector('.logo-wrapper');
     var navLink = document.getElementsByClassName('nav-link');
     var navMenu = document.getElementsByClassName('navigation');
     var activeNavItem = document.getElementsByClassName('active-item');
-    var sideBar = document.querySelectorAll('nav')[0];
+    var sideBar = document.querySelector('#sidebar');
     var timer;
     var delay = 100;
 
@@ -15,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
         sideBar.classList.remove('active');
     });
 
-    //Add active-item class to current link and collapse sidebar
+    //Remove active-item from old link and add active-item class to current link and collapse sidebar
     [].forEach.call(navLink, function (el) {
         el.addEventListener('click', function () {
             sideBar.classList.add('active')
