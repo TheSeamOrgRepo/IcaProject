@@ -182,14 +182,22 @@ nav.active {
 nav .logo-wrapper {
   display: block;
   width: 100%;
-  left: 0;
+  height: 48px;
+  overflow: hidden;
+  position: relative;
 }
 
 nav.active .logo-wrapper {
-  overflow: hidden;
-  width: 30px;
-  position: relative;
-  left: 22.5px;
+  width: 55px;
+}
+
+.logo-wrapper img {
+  position: absolute;
+  left: 22px;
+}
+
+nav.active .logo-wrapper img {
+  left: 22px;
 }
 
 nav.active {
@@ -207,7 +215,6 @@ ul.navigation li a {
   padding: 1rem 5px 1rem 0;
   transition: .2s background ease-in;
   height: 65px;
-  opacity: 0.6;
   font-weight: bold;
   font-size: 14px;
   color: #FFFFFF;
@@ -219,28 +226,24 @@ ul.navigation li a {
 }
 
 nav ul.navigation li a .nav-item {
-  /* opacity: 1;
-  visibility: visible; */
-  /* transform-origin: 100% 50%; */
+  opacity: 0.6;
   transform: scale(1);
   transition: transform .75s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 nav.active ul.navigation li a .nav-item {
-  /* transform-origin: 50% 100%; */
-  /* transition: transform .000005s cubic-bezier(0.165, 0.84, 0.44, 1); */
-  /* transform: scale(0); */
   position: absolute;
   left: -999999px;
 }
 
 ul.navigation li img {
   margin: 0 16px;
-  min-width: 35px;
+  opacity: .25;
+  transition: opacity .2s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 ul.navigation li:first-of-type img {
-  margin: 0 10px 0 21px;
+  margin: 0 10px 0 20px;
 }
 
 nav.active ul.navigation li a {
@@ -253,10 +256,19 @@ ul.navigation li a:hover {
   border-left: 5px solid #9B7536;
 }
 
-a.active-item {
-  opacity: 1 !important;
+ul.navigation li a:hover .nav-item,
+ul.navigation li a:hover img {
+  opacity: 1;
+}
+
+ul.navigation li a.active-item {
+  opacity: 1;
   background-color: #1C2D40;
-  border-left: 5px solid #9B7536 !important;
+  border-left: 5px solid #9B7536;
+}
+
+ul.navigation a.active-item img {
+  opacity: 1;
 }
 
 .block--account-info {
@@ -278,8 +290,9 @@ a.active-item {
   justify-content: space-between;
 }
 
-nav.active .block--account-info__inner {
-  padding: 15px 19px;
+nav .block--account-info__inner img {
+  width: 26.7px;
+  position: absolute;
 }
 
 nav.active .block--account-info__inner img {
@@ -287,24 +300,32 @@ nav.active .block--account-info__inner img {
 }
 
 .block--profile-info {
-  opacity: 1;
-  visibility: visible;
-  height: 100%;
-}
-
-nav.active .block--profile-info {
-  opacity: 0;
-  visibility: collapse;
-  height: 0;
+  text-align: left;
+  display: block;
+  width: 117px;
+  left: 50px;
+  height: 30px;
+  overflow: hidden;
+  position: relative;
 }
 
 p.user-name {
   color: #fff;
   font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  width: 117px;
 }
 
 p.org-name {
   color: #fff;
   opacity: .75;
   font-size: 12px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 117px;
 }
