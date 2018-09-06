@@ -1,1 +1,5 @@
 navigation/src
+navigation/webpack.config.js
+navigation/package.json
+navigation/package-lock.json
+navigation/.babelrc
