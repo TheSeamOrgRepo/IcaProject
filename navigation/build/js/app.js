@@ -1,5 +1,3 @@
-require('../css/app.css');
-
 document.addEventListener('DOMContentLoaded', function () {
     var logoWrapper = document.getElementsByClassName('logo-wrapper')[0];
     var navLink = document.getElementsByClassName('nav-link');
