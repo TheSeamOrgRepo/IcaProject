@@ -35,9 +35,9 @@ const CONFIG = {
         }
       ]),
       new ExtractTextPlugin('css/app.css'),
-      new OptimizeCssAssetsPlugin({
-        cssProcessorOptions: { discardComments: { removeAll: true } }
-      }),
+      // new OptimizeCssAssetsPlugin({
+      //   cssProcessorOptions: { discardComments: { removeAll: true } }
+      // }),
       new CopyWebpackPlugin([{
         from: 'src/images/',
         to: 'images/'
