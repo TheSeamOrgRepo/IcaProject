@@ -152,9 +152,10 @@ img {
  *****************
 */
 :root {
-  --main-bg-color: #fff;
-  /* For using: var(--main-bg-color); */
   --blue-gray: #2B3D4F;
+  --blue-gray-darker: #1C2D40;
+  --mustard: #9B7536;
+  --hr-gray: #202E3C;
 }
 
 /*
@@ -164,17 +165,13 @@ img {
 */
 nav {
   position: relative;
-  background-color: #2B3D4F;
+  background-color: var(--blue-gray);
   width: 215px;
   height: 100vh;
   padding: 1rem 0;
   float: left;
   display: flex;
   flex-direction: column;
-  transition: width .75s cubic-bezier(.25, .75, .05, 1);
-}
-
-nav.active {
   transition: width .75s cubic-bezier(.25, .75, .05, 1);
 }
 
@@ -256,8 +253,8 @@ nav.active ul.navigation li a {
 
 ul.navigation li a:hover {
   opacity: 1;
-  background-color: #1C2D40;
-  border-left: 5px solid #9B7536;
+  background-color: var(--blue-gray-darker);
+  border-left: 5px solid var(--mustard);
 }
 
 ul.navigation li a:hover .nav-item,
@@ -267,8 +264,8 @@ ul.navigation li a:hover img {
 
 ul.navigation li a.active-item {
   opacity: 1;
-  background-color: #1C2D40;
-  border-left: 5px solid #9B7536;
+  background-color: var(--blue-gray-darker);
+  border-left: 5px solid var(--mustard);
 }
 
 ul.navigation a.active-item img {
@@ -289,7 +286,7 @@ ul.navigation a.active-item .nav-item {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid #202E3C;
+  border-top: 1px solid var(--hr-gray);
   margin: 0;
 }
 
