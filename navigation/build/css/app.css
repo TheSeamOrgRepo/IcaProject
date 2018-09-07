@@ -109,6 +109,10 @@ ul {
   list-style: none;
 }
 
+html {
+  background-color: #f4f5f6;
+}
+
 body {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -328,19 +332,20 @@ ul.navigation li a:hover:not(:active) .nav-item {
   color: #fff;
 }
 
-ul.navigation li a:hover:not(.active-item) .nav-item {
+ul.navigation li a:hover .nav-item {
   opacity: 1;
   color: #fff;
 }
 
-ul.navigation li a:hover:not(:active) img,
-ul.navigation li a:hover:not(.active-item) img {
+ul.navigation li a:hover img,
+ul.navigation li a:hover img {
   opacity: 1;
 }
 
 ul.navigation li a.active-item {
   background-color: var(--blue-gray-darker);
   border-left: 5px solid var(--mustard);
+  color: #fff;
 }
 
 ul.navigation li a:active {
@@ -362,7 +367,7 @@ ul.navigation li a:active {
 }
 
 .block--account-info__drawer.hover {
-  max-height: 200px;
+  max-height: 225px;
   pointer-events: auto;
 }
 
@@ -373,24 +378,33 @@ ul.account-drawer {
 ul.account-drawer li a {
   display: flex;
   align-items: center;
-  padding: .25rem 0;
+  padding: .5rem 0;
   transition: color .25s cubic-bezier(0.165, 0.84, 0.44, 1);
   font-size: 14px;
-  color: var(--passive-gray);
+  
   text-decoration: none;
 }
 
 ul.account-drawer li a img {
   opacity: .25;
   margin-right: 15px;
-  transition: opacity .25s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity .75s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 nav ul.account-drawer li a .nav-item {
   opacity: 1;
   min-width: 120px;
   text-align: left;
+  color: var(--passive-gray);
   transition: all .75s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+nav ul.account-drawer li a:hover img {
+  opacity: 1;
+}
+
+nav ul.account-drawer li a .nav-item:hover {
+  color: #fff;
 }
 
 nav.active ul.account-drawer li a .nav-item {
