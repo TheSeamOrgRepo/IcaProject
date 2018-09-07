@@ -325,13 +325,13 @@ p.user-name {
   color: var(--profile-gray);
   font-size: 14px;
   margin-bottom: 5px;
-  transition: color .75s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: color .25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 p.org-name {
   color: var(--profile-gray);
   font-size: 12px;
-  transition: color .75s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: color .25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .block--account-info__inner:hover img {
