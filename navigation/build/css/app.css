@@ -227,12 +227,12 @@ ul.navigation li:nth-of-type(3) img {
   margin: 0 13px 0 16px;
 }
 
-ul.navigation li a:hover {
+ul.navigation li a:hover:not(:active) {
   opacity: 1;
 }
 
-ul.navigation li a:hover .nav-item,
-ul.navigation li a:hover img {
+ul.navigation li a:hover:not(:active) .nav-item,
+ul.navigation li a:hover:not(:active) img {
   opacity: 1;
 }
 
@@ -242,6 +242,7 @@ ul.navigation li a.active-item {
 }
 
 ul.navigation li a:active {
+  color: var(--gray);
   background-color: var(--blue-gray-darker);
   border-left: 5px solid var(--mustard);
 }
