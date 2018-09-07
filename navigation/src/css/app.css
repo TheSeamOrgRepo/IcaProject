@@ -196,7 +196,56 @@ nav {
   transition: transform .75s cubic-bezier(.25, .75, .05, 1);
 }
 
-#nav-toggle.active img {
+#nav-toggle svg {
+  margin-top: 25px;
+}
+
+#nav-toggle:hover svg {
+  transform: scaleY(-.5);
+}
+
+.hamburger {
+  margin-top: 23px;
+}
+
+.hamburger .line {
+  width: 28px;
+  height: 2px;
+  background-color: #CACED3;
+  display: block;
+  margin: 5px 0;
+  transition: all 0.3s ease-in-out;
+}
+
+#hamburger .line:nth-child(2) {
+  width: 20px;
+}
+
+#hamburger .line:nth-child(3) {
+  width: 12px;
+}
+
+#hamburger:hover .line {
+  width: 32px;
+}
+
+#hamburger:hover .line:nth-child(2) {
+  width: 24px;
+}
+
+#hamburger:hover .line:nth-child(3) {
+  width: 16px;
+}
+
+#nav-toggle.active #hamburger .line:nth-child(1) {
+  transform: translateY(15px) scaleY(-1);
+}
+
+#nav-toggle.active #hamburger .line:nth-child(3) {
+  transform: translateY(-15px) scaleY(-1);
+}
+
+#nav-toggle.active svg {
   transform: scaleY(-1);
 }
 
@@ -284,6 +333,7 @@ ul.navigation li a:hover:not(:active) .nav-item {
   opacity: 1;
   color: #fff;
 }
+
 ul.navigation li a:hover:not(.active-item) .nav-item {
   opacity: 1;
   color: #fff;
