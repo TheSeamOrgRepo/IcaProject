@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var accountDrawer = document.querySelector('#account-drawer');
     var accountInfo = document.querySelector('#account-info');
     var timer;
-    var delay = 100;
+    var delay = 250;
 
     //Retun to open state when returning to main dashboard
     logoWrapper.addEventListener('click', function () {
@@ -30,10 +30,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Reveals sidebar on hover
     function toggleAccountDrawer() {
-        if (!accountDrawer.classList.contains('active')) {
+        if (!sideBar.classList.contains('active')) {
             var that = this;
             timer = setTimeout(function () {
-                accountDrawer.classList.toggle('active');
+                sideBar.classList.toggle('active');
             }, delay);
         }
     }
@@ -42,13 +42,13 @@ document.addEventListener('DOMContentLoaded', function () {
     //collapsed position if there is an active-item link
     function toggleAccountDrawerReset() {
         clearTimeout(timer)
-        if (accountDrawer.classList.contains('active')) {
-            accountDrawer.classList.remove('active')
+        if (sideBar.classList.contains('active')) {
+            sideBar.classList.remove('active')
         }
     };
 
     //Add eventlisteners to sidebar for hover-on and hover-off events
-    accountInfo.addEventListener('mouseenter', toggleAccountDrawer)
-    accountInfo.addEventListener('mouseleave', toggleAccountDrawerReset)
+    sideBar.addEventListener('mouseenter', toggleAccountDrawer)
+    sideBar.addEventListener('mouseleave', toggleAccountDrawerReset)
 
 });

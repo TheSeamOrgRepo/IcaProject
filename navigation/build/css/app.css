@@ -231,7 +231,8 @@ ul.navigation li a:hover:not(:active) {
 }
 
 ul.navigation li a:hover:not(:active) .nav-item,
-ul.navigation li a:hover:not(:active, .active-item) img, {
+ul.navigation li a:hover:not(:active, .active-item) img,
+  {
   opacity: 1;
 }
 
@@ -246,7 +247,6 @@ ul.navigation li a:active {
   border-left: 5px solid var(--mustard);
 }
 
-
 ul.navigation a.active-item .nav-item {
   color: var(--active-gray);
 }
@@ -254,17 +254,17 @@ ul.navigation a.active-item .nav-item {
 .block--account-info__drawer {
   background-color: var(--blue-gray-darker);
   padding: 0;
-  opacity: 0;
   width: 100%;
   transition: max-height .75s cubic-bezier(0.165, 0.84, 0.44, 1);
   max-height: 0;
   overflow: hidden;
   pointer-events: none;
+  position: absolute;
+  bottom: 83px;
 }
 
 .block--account-info:hover .block--account-info__drawer {
   max-height: 200px;
-  opacity: 1;
   pointer-events: auto;
 }
 
