@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var navMenu = document.getElementsByClassName('navigation');
     var activeNavItem = document.getElementsByClassName('active-item');
     var sideBar = document.querySelector('#sidebar');
+    var sideBarToggle = document.querySelector('#nav-toggle');
     var accountDrawer = document.querySelector('#account-drawer');
     var accountInfo = document.querySelector('#account-info');
     var timer;
@@ -27,15 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
             el.classList.add('active-item')
         })
     })
-
-    //Reveals sidebar on hover
-    function toggleAccountDrawer() {
-        if (!sideBar.classList.contains('active')) {
-            var that = this;
-            timer = setTimeout(function () {
-                sideBar.classList.toggle('active');
-            }, delay);
-        }
+    function toggleNav() {
+            sideBar.classList.toggle('active');
     }
 
     //Resets the settimeout from the mouseenter event and will return the menu to the
@@ -46,9 +40,6 @@ document.addEventListener('DOMContentLoaded', function () {
             sideBar.classList.remove('active')
         }
     };
-
-    //Add eventlisteners to sidebar for hover-on and hover-off events
-    sideBar.addEventListener('mouseenter', toggleAccountDrawer)
-    sideBar.addEventListener('mouseleave', toggleAccountDrawerReset)
-
+    
+    sideBarToggle.addEventListener('click', toggleNav);
 });
