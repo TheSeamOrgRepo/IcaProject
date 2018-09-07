@@ -7,8 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var activeNavItem = document.getElementsByClassName('active-item');
     var sideBar = document.querySelector('#sidebar');
     var sideBarToggle = document.querySelector('#nav-toggle');
-    var accountDrawer = document.querySelector('#account-drawer');
-    var accountInfo = document.querySelector('#account-info');
+    var accountDrawer = document.querySelector('.block--account-info');
+    var accountInfo = document.querySelector('.block--account-info__drawer');
     var timer;
     var delay = 250;
 
@@ -17,6 +17,11 @@ document.addEventListener('DOMContentLoaded', function () {
         for (var i = 0; i < activeNavItem.length; i++) {
             activeNavItem[i].classList.remove('active-item');
         }
+    });
+
+    accountDrawer.addEventListener('click', function () {
+        console.log('click')
+        accountInfo.classList.toggle('hover');
     });
 
     //Remove active-item from old link and add active-item class to current link and collapse sidebar
