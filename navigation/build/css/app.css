@@ -375,10 +375,13 @@ ul.account-drawer {
   padding: 1rem 28px;
 }
 
+ul.account-drawer li {
+  padding: .5rem 0;
+}
+
 ul.account-drawer li a {
   display: flex;
   align-items: center;
-  padding: .5rem 0;
   transition: color .25s cubic-bezier(0.165, 0.84, 0.44, 1);
   font-size: 14px;
   
