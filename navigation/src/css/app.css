@@ -253,7 +253,6 @@ ul.navigation li a {
 
 nav ul.navigation li a .nav-item {
   opacity: 1;
-  transition-delay: 5s;
   transition: opacity .75s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
@@ -277,13 +276,21 @@ ul.navigation li:nth-of-type(3) img {
   margin: 0 13px 0 16px;
 }
 
-ul.navigation li a:hover:not(:active) {
+ul.navigation li a:hover {
   opacity: 1;
 }
 
-ul.navigation li a:hover:not(:active) .nav-item,
-ul.navigation li a:hover:not(:active, .active-item) img,
-  {
+ul.navigation li a:hover:not(:active) .nav-item {
+  opacity: 1;
+  color: #fff;
+}
+ul.navigation li a:hover:not(.active-item) .nav-item {
+  opacity: 1;
+  color: #fff;
+}
+
+ul.navigation li a:hover:not(:active) img,
+ul.navigation li a:hover:not(.active-item) img {
   opacity: 1;
 }
 
@@ -299,7 +306,11 @@ ul.navigation li a:active {
 }
 
 ul.navigation a.active-item .nav-item {
-  color: var(--active-gray);
+  color: var(--active-gray) !important;
+}
+
+ul.navigation a.active-item img {
+  opacity: .25 !important;
 }
 
 .block--account-info__drawer {
