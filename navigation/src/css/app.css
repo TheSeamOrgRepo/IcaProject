@@ -384,7 +384,7 @@ ul.account-drawer li a {
 ul.account-drawer li a img {
   opacity: .25;
   margin-right: 15px;
-  transition: color .25s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity .25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 nav ul.account-drawer li a .nav-item {
