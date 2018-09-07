@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var activeNavItem = document.getElementsByClassName('active-item');
     var sideBar = document.querySelector('#sidebar');
     var accountDrawer = document.querySelector('#account-drawer');
+    var accountInfo = document.querySelector('#account-info');
     var timer;
     var delay = 100;
 
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (!accountDrawer.classList.contains('active')) {
             var that = this;
             timer = setTimeout(function () {
-                that.classList.toggle('active');
+                accountDrawer.classList.toggle('active');
             }, delay);
         }
     }
@@ -47,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     //Add eventlisteners to sidebar for hover-on and hover-off events
-    accountDrawer.addEventListener('mouseenter', toggleAccountDrawer)
-    accountDrawer.addEventListener('mouseleave', toggleAccountDrawerReset)
+    accountInfo.addEventListener('mouseenter', toggleAccountDrawer)
+    accountInfo.addEventListener('mouseleave', toggleAccountDrawerReset)
 
 });

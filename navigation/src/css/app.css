@@ -155,8 +155,8 @@ img {
 :root {
   --blue-gray: #2B3D4F;
   --blue-gray-darker: #1C2D40;
-  --gray: #606E7B;
-  --profile-gray: #959EA7;
+  --active-gray: #606E7B;
+  --passive-gray: #959EA7;
   --mustard: #9B7536;
   --hr-gray: #202E3C;
 }
@@ -200,7 +200,7 @@ ul.navigation li a {
   height: 65px;
   font-weight: bold;
   font-size: 14px;
-  color: #FFFFFF;
+  color: var(--passive-gray);
   letter-spacing: 1px;
   line-height: 65px;
   text-transform: uppercase;
@@ -209,7 +209,6 @@ ul.navigation li a {
 }
 
 nav ul.navigation li a .nav-item {
-  opacity: 0.6;
   transform: scale(1);
   transition: opacity .75s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -233,7 +232,7 @@ ul.navigation li a:hover:not(:active) {
 }
 
 ul.navigation li a:hover:not(:active) .nav-item,
-ul.navigation li a:hover:not(:active) img {
+ul.navigation li a:hover:not(:active, .active-item) img, {
   opacity: 1;
 }
 
@@ -243,14 +242,14 @@ ul.navigation li a.active-item {
 }
 
 ul.navigation li a:active {
-  color: var(--gray);
+  color: var(--active-gray);
   background-color: var(--blue-gray-darker);
   border-left: 5px solid var(--mustard);
 }
 
+
 ul.navigation a.active-item .nav-item {
-  opacity: 1;
-  color: var(--gray);
+  color: var(--active-gray);
 }
 
 .block--account-info__drawer {
@@ -258,7 +257,7 @@ ul.navigation a.active-item .nav-item {
   padding: 0;
   opacity: 0;
   width: 100%;
-  transition: max-height .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: max-height .75s cubic-bezier(0.165, 0.84, 0.44, 1);
   max-height: 0;
   overflow: hidden;
   pointer-events: none;
@@ -280,7 +279,7 @@ ul.account-drawer li a {
   padding: .5rem 0;
   transition: color .25s cubic-bezier(0.165, 0.84, 0.44, 1);
   font-size: 14px;
-  color: var(--profile-gray);
+  color: var(--passive-gray);
   text-decoration: none;
 }
 
@@ -322,14 +321,14 @@ nav .block--account-info__inner img {
 }
 
 p.user-name {
-  color: var(--profile-gray);
+  color: var(--passive-gray);
   font-size: 14px;
   margin-bottom: 5px;
   transition: color .25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 p.org-name {
-  color: var(--profile-gray);
+  color: var(--passive-gray);
   font-size: 12px;
   transition: color .25s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
