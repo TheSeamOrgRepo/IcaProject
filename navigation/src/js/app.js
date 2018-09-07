@@ -33,15 +33,6 @@ document.addEventListener('DOMContentLoaded', function () {
         sideBar.classList.toggle('active');
         sideBarToggle.classList.toggle('active');
     }
-
-    //Resets the settimeout from the mouseenter event and will return the menu to the
-    //collapsed position if there is an active-item link
-    // function toggleAccountDrawerReset() {
-    //     clearTimeout(timer)
-    //     if (sideBar.classList.contains('active')) {
-    //         sideBar.classList.remove('active')
-    //     }
-    // };
-
+    
     sideBarToggle.addEventListener('click', toggleNav);
 });
