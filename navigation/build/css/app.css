@@ -254,17 +254,23 @@ ul.navigation a.active-item .nav-item {
 
 .block--account-info__drawer {
   background-color: var(--blue-gray-darker);
-  padding: 1rem;
+  padding: 0;
   opacity: 0;
   width: 100%;
   transition: max-height .5s cubic-bezier(0.165, 0.84, 0.44, 1);
   max-height: 0;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .block--account-info:hover .block--account-info__drawer {
   max-height: 200px;
   opacity: 1;
+  pointer-events: auto;
+}
+
+ul.account-drawer {
+  padding: 1rem;
 }
 
 ul.account-drawer li a {
