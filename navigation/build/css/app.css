@@ -310,7 +310,7 @@ ul.navigation a.active-item .nav-item {
   overflow: hidden;
   pointer-events: none;
   position: absolute;
-  bottom: 83px;
+  bottom: 77px;
 }
 
 .block--account-info:hover .block--account-info__drawer {
@@ -319,21 +319,31 @@ ul.navigation a.active-item .nav-item {
 }
 
 ul.account-drawer {
-  padding: 1rem;
+  padding: 1rem 28px;
 }
 
 ul.account-drawer li a {
   display: flex;
   align-items: center;
-  padding: .5rem 0;
+  padding: .25rem 0;
   transition: color .25s cubic-bezier(0.165, 0.84, 0.44, 1);
   font-size: 14px;
   color: var(--passive-gray);
   text-decoration: none;
 }
 
+ul.account-drawer li a img {
+  opacity: .25;
+  margin-right: 22px;
+  transition: color .25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
 ul.account-drawer li:hover a {
   color: #fff;
+}
+
+ul.account-drawer li:hover img {
+  opacity: 1;
 }
 
 .block--account-info {
@@ -354,6 +364,7 @@ ul.account-drawer li:hover a {
   padding: 23px 25px;
   display: flex;
   cursor: pointer;
+  overflow: hidden;
 }
 
 nav .block--account-info__inner img {
