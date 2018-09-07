@@ -9,7 +9,7 @@
 
   <main role="main">
 
-    <nav>
+    <nav id="sidebar">
       <a href="#" class="logo-wrapper">
         <img src="images/the-seam-logo.svg" alt="The Seam Logo">
       </a>
@@ -20,8 +20,17 @@
         <li><a class="nav-link" routerlink="/documents" href="#/documents"><img width="28.62" style="min-width: 28.62px" src="images/documents.svg" alt="Documents Logo"><span class="nav-item">Documents</span></a></li>
       </ul>
       <div class="block--account-info">
+        <div id="account-drawer" class="block--account-info__drawer">
+            <ul class="account-drawer">
+              <li><a href="#" class="nav-link">Profile</a></li>
+              <li><a href="#" class="nav-link">Notifications</a></li>
+              <li><a href="#" class="nav-link">Switch User</a></li>
+              <li><a href="#" class="nav-link">Logout</a></li>
+              <li><a href="#" class="nav-link">Help</a></li>
+            </ul>
+          </div>
         <hr>
-        <div class="block--account-info__inner">
+        <div id="account-drawer" class="block--account-info__inner">
           <img src="images/avatar-placeholder.svg" alt="Avatar placeholder">
           <span class="block--profile-info">
             <p class="user-name">Jason Sutton</p>
@@ -30,12 +39,6 @@
         </div>
       </div>
     </nav>
-
-    <section class="section section-main">
-      <h1>Invoice Generator</h1>
-    </section>
-
-
   </main>
   
 
