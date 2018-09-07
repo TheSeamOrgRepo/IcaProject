@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var navMenu = document.getElementsByClassName('navigation');
     var activeNavItem = document.getElementsByClassName('active-item');
     var sideBar = document.querySelector('#sidebar');
+    var accountDrawer = document.querySelector('#account-drawer');
     var timer;
     var delay = 100;
 
@@ -14,13 +15,11 @@ document.addEventListener('DOMContentLoaded', function () {
         for (var i = 0; i < activeNavItem.length; i++) {
             activeNavItem[i].classList.remove('active-item');
         }
-        sideBar.classList.remove('active');
     });
 
     //Remove active-item from old link and add active-item class to current link and collapse sidebar
     [].forEach.call(navLink, function (el) {
         el.addEventListener('click', function () {
-            sideBar.classList.add('active')
             for (var i = 0; i < activeNavItem.length; i++) {
                 activeNavItem[i].classList.remove('active-item');
             }
@@ -29,8 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
     })
 
     //Reveals sidebar on hover
-    function toggleNav() {
-        if (sideBar.classList.contains('active')) {
+    function toggleAccountDrawer() {
+        if (!accountDrawer.classList.contains('active')) {
             var that = this;
             timer = setTimeout(function () {
                 that.classList.toggle('active');
@@ -40,15 +39,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     //Resets the settimeout from the mouseenter event and will return the menu to the
     //collapsed position if there is an active-item link
-    function toggleNavReset() {
+    function toggleAccountDrawerReset() {
         clearTimeout(timer)
-        if (!sideBar.classList.contains('active') && activeNavItem.length > 0) {
-            sideBar.classList.add('active')
+        if (accountDrawer.classList.contains('active')) {
+            accountDrawer.classList.remove('active')
         }
     };
 
     //Add eventlisteners to sidebar for hover-on and hover-off events
-    sideBar.addEventListener('mouseenter', toggleNav)
-    sideBar.addEventListener('mouseleave', toggleNavReset)
+    accountDrawer.addEventListener('mouseenter', toggleAccountDrawer)
+    accountDrawer.addEventListener('mouseleave', toggleAccountDrawerReset)
 
 });

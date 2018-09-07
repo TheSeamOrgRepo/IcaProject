@@ -155,6 +155,8 @@ img {
 :root {
   --blue-gray: #2B3D4F;
   --blue-gray-darker: #1C2D40;
+  --gray: #606E7B;
+  --profile-gray: #959EA7;
   --mustard: #9B7536;
   --hr-gray: #202E3C;
 }
@@ -165,12 +167,11 @@ img {
  *******************
 */
 nav {
-  position: relative;
   background-color: var(--blue-gray);
   width: 215px;
   height: 100vh;
   padding: 1rem 0;
-  float: left;
+  position: relative;
   display: flex;
   flex-direction: column;
   transition: width .75s cubic-bezier(.25, .75, .05, 1);
@@ -179,27 +180,12 @@ nav {
 nav .logo-wrapper {
   display: block;
   width: 100%;
-  height: 48px;
-  overflow: hidden;
-  position: relative;
-}
-
-nav.active .logo-wrapper {
-  width: 55px;
+  text-align: left;
+  padding-left: 23px;
 }
 
 .logo-wrapper img {
-  position: absolute;
   left: 22px;
-}
-
-nav.active .logo-wrapper img {
-  left: 22px;
-}
-
-nav.active {
-  width: 75px;
-  display: block;
 }
 
 ul.navigation {
@@ -228,12 +214,6 @@ nav ul.navigation li a .nav-item {
   transition: opacity .75s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-nav.active ul.navigation li a .nav-item {
-  opacity: 0;
-  position: absolute;
-  left: -999999px;
-}
-
 ul.navigation li img {
   margin: 0 16px;
   opacity: .25;
@@ -248,14 +228,8 @@ ul.navigation li:nth-of-type(3) img {
   margin: 0 13px 0 16px;
 }
 
-nav.active ul.navigation li a {
-  padding: 0;
-}
-
 ul.navigation li a:hover {
   opacity: 1;
-  background-color: var(--blue-gray-darker);
-  border-left: 5px solid var(--mustard);
 }
 
 ul.navigation li a:hover .nav-item,
@@ -264,17 +238,47 @@ ul.navigation li a:hover img {
 }
 
 ul.navigation li a.active-item {
-  opacity: 1;
   background-color: var(--blue-gray-darker);
   border-left: 5px solid var(--mustard);
 }
 
-ul.navigation a.active-item img {
-  opacity: 1;
+ul.navigation li a:active {
+  background-color: var(--blue-gray-darker);
+  border-left: 5px solid var(--mustard);
 }
 
 ul.navigation a.active-item .nav-item {
   opacity: 1;
+  color: var(--gray);
+}
+
+.block--account-info__drawer {
+  background-color: var(--blue-gray-darker);
+  padding: 1rem;
+  opacity: 0;
+  width: 100%;
+  transition: max-height .5s cubic-bezier(0.165, 0.84, 0.44, 1);
+  max-height: 0;
+  overflow: hidden;
+}
+
+.block--account-info:hover .block--account-info__drawer {
+  max-height: 200px;
+  opacity: 1;
+}
+
+ul.account-drawer li a {
+  display: flex;
+  align-items: center;
+  padding: .5rem 0;
+  transition: color .25s cubic-bezier(0.165, 0.84, 0.44, 1);
+  font-size: 14px;
+  color: var(--profile-gray);
+  text-decoration: none;
+}
+
+ul.account-drawer li:hover a {
+  color: #fff;
 }
 
 .block--account-info {
@@ -294,58 +298,40 @@ ul.navigation a.active-item .nav-item {
 .block--account-info__inner {
   padding: 23px 25px;
   display: flex;
-  justify-content: space-between;
+  cursor: pointer;
 }
 
 nav .block--account-info__inner img {
   width: 26.7px;
-  position: absolute;
-}
-
-nav.active .block--account-info__inner img {
-  margin: 0 auto;
+  margin-right: 15px;
+  opacity: .25;
+  transition: opacity .75s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .block--profile-info {
   text-align: left;
   display: block;
-  width: 117px;
-  left: 42px;
-  height: 30px;
-  overflow: hidden;
   position: relative;
 }
 
 p.user-name {
-  color: #fff;
+  color: var(--profile-gray);
   font-size: 14px;
-  font-weight: bold;
   margin-bottom: 5px;
-  position: absolute;
-  bottom: 12px;
-  left: 0;
-  width: 117px;
-  transition: opacity .75s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: color .75s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 p.org-name {
-  color: #fff;
-  opacity: .75;
+  color: var(--profile-gray);
   font-size: 12px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 117px;
-  transition: opacity .75s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: color .75s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
-nav.active p.user-name {
-  left: -99999px;
-  opacity: 0;
+.block--account-info__inner:hover img {
+  opacity: 1;
 }
 
-
-nav.active p.org-name {
-  left: -99999px;
-  opacity: 0;
+.block--account-info__inner:hover p.user-name,
+.block--account-info__inner:hover p.org-name {
+  color: #fff;
 }
