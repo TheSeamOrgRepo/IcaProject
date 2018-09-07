@@ -372,7 +372,7 @@ ul.navigation li a:active {
 }
 
 ul.account-drawer {
-  padding: 1rem 28px;
+  padding: 1rem 22px;
 }
 
 ul.account-drawer li {
@@ -390,7 +390,7 @@ ul.account-drawer li a {
 
 ul.account-drawer li a img {
   opacity: .25;
-  margin-right: 15px;
+  margin-right: 18px;
   transition: opacity .75s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
@@ -518,5 +518,6 @@ nav.active p.org-name {
 .section--top-bar {
   height: 75px;
   border: 1px solid #CACED3;
+  background-color: white;
 }
 /*# sourceMappingURL=app.css.map*/
