@@ -267,6 +267,7 @@ nav .logo-wrapper {
   height: 48px;
   overflow: hidden;
   position: relative;
+  transition: width .75s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 nav.active .logo-wrapper {
