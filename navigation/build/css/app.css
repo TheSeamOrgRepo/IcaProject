@@ -266,19 +266,22 @@ nav .logo-wrapper {
   height: 48px;
   overflow: hidden;
   position: relative;
+  transition: width .75s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 nav.active .logo-wrapper {
   width: 55px;
+  transition: width .75s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 nav .logo-wrapper .text {
   opacity: 1;
-  transition: all .75s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: opacity .75s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 nav.active .logo-wrapper .text {
   opacity: 0;
+  transition: opacity .75s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .logo-wrapper svg {
