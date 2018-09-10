@@ -254,6 +254,12 @@ nav.active .navigation--wrapper {
   width: 75px;
 }
 
+@keyframes fade-in-out {
+  0%   { opacity: 1; }
+  50%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+
 nav .logo-wrapper {
   display: block;
   width: 100%;
@@ -266,12 +272,21 @@ nav.active .logo-wrapper {
   width: 55px;
 }
 
-.logo-wrapper img {
+nav .logo-wrapper .text {
+  opacity: 1;
+  transition: all .75s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+nav.active .logo-wrapper .text {
+  opacity: 0;
+}
+
+.logo-wrapper svg {
   position: absolute;
   left: 22px;
 }
 
-nav.active .logo-wrapper img {
+nav.active .logo-wrapper svg {
   left: 22px;
 }
 
