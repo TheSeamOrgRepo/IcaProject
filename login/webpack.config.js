@@ -9,93 +9,89 @@ const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 
 const CONFIG = {
-    entry: './src/js/app.js',
-    output: {
-      path: path.resolve(__dirname, './build'),
-      filename: 'app.js'
-    },
-    plugins: [
-      new HtmlWebpackPlugin({
-        template: './src/index.html',
-        filename: './index.html',
-        minify: {
-          "collapseWhitespace": true,
-          "minifyCSS": true,
-          "removeComments": true
+  entry: './src/js/app.js',
+  output: {
+    path: path.resolve(__dirname, './build'),
+    filename: 'app.js'
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
+      filename: './index.html',
+      minify: {
+        "collapseWhitespace": true,
+        "minifyCSS": true,
+        "removeComments": true
+      }
+    }),
+    new HtmlReplaceWebpackPlugin([{
+        pattern: '<script type="text/javascript" src="../build/app.js"></script>',
+        replacement: ''
+      },
+      {
+        pattern: '<link rel="stylesheet" href="./css/app.css">',
+        replacement: ''
+      }
+    ]),
+    new ExtractTextPlugin({filename:'css/app.css'}),
+    new OptimizeCssAssetsPlugin({
+      cssProcessorOptions: {
+        discardComments: {
+          removeAll: true
         }
-      }),
-      new HtmlReplaceWebpackPlugin([
-        {
-          pattern: '<script type="text/javascript" src="../build/app.js"></script>',
-          replacement: ''
-        },
-        {
-          pattern: '<link rel="stylesheet" href="./css/app.css">',
-          replacement: ''
-        }
-      ]),
-      new ExtractTextPlugin('css/app.css'),
-      new OptimizeCssAssetsPlugin({
-        cssProcessorOptions: { discardComments: { removeAll: true } }
-      }),
-      new CopyWebpackPlugin([{
-        from: 'src/images/',
-        to: 'images/'
-      }, {
-        from: 'src/*.txt',
-        to: './[name].[ext]',
-        toType: 'template'
-      }]),
-      new ImageminPlugin({
-        test: /\.(jpe?g|png|gif|svg)$/i,
-        optipng: { optimizationLevel: 3 },
-        jpegtran: { progressive: true },
-        gifsicle: { optimizationLevel: 1 },
-        svgo: {},
-      })
+      }
+    }),
+    new CopyWebpackPlugin([{
+      from: 'src/images/',
+      to: 'images/'
+    }, {
+      from: 'src/*.txt',
+      to: './[name].[ext]',
+      toType: 'template'
+    }]),
+    new ImageminPlugin({
+      test: /\.(jpe?g|png|gif|svg)$/i,
+      optipng: {
+        optimizationLevel: 3
+      },
+      jpegtran: {
+        progressive: true
+      },
+      gifsicle: {
+        optimizationLevel: 1
+      },
+      svgo: {},
+    })
+  ],
+  module: {
+    rules: [{
+        test: /\.(s*)css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: ['css-loader', 'sass-loader'],
+        })
+      },
+      {
+        test: /\.(png|jpg|gif)$/,
+        use: [{
+          loader: 'file-loader',
+          options: {}
+        }]
+      }
     ],
-    module: {
-      rules: [
-        {
-          test: /\.(sass|scss)$/,
-          use: [{
-              loader: "style-loader" // creates style nodes from JS strings
-          }, {
-              loader: "css-loader" // translates CSS into CommonJS
-          }, {
-              loader: "sass-loader" // compiles Sass to CSS
-          }]
-        },
-        {
-          test: /\.css$/,
-          use: ExtractTextPlugin.extract({
-            fallback: "style-loader",
-            use: "css-loader"
-          })
-        },
-        {
-          test: /\.(png|jpg|gif)$/,
-          use: [
-            {
-              loader: 'file-loader',
-              options: {}
-            }
-          ]
-        }
-      ],
-    },
-    devServer: {
-      contentBase: path.join(__dirname, "src"),
-      compress: true,
-      port: 3001,
-      hot: false,
-      watchContentBase: true,
-      noInfo: true
-    },
-    devtool: '#source-map'
+  },
+  devServer: {
+    contentBase: path.join(__dirname, "src"),
+    compress: true,
+    port: 3001,
+    hot: false,
+    watchContentBase: true,
+    noInfo: true
+  },
+  devtool: '#source-map'
 }
 
-if(process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production') {
 
   CONFIG.output.publicPath = './';
   CONFIG.output.filename = 'js/app.js';
@@ -104,7 +100,9 @@ if(process.env.NODE_ENV === 'production') {
     test: [/\.js$/],
     exclude: [/node_modules/],
     loader: 'babel-loader',
-    options: { presets: ['env'] }
+    options: {
+      presets: ['env']
+    }
   });
 
 }
