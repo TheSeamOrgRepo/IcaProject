@@ -16,6 +16,7 @@
     "babel-loader": "^8.0.0-beta.2",
     "babel-minify-webpack-plugin": "^0.2.0",
     "babel-preset-env": "^2.0.0-beta.2",
+    "barba.js": "^1.0.0",
     "browserify": "^14.4.0",
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^3.1.4",
@@ -31,5 +32,7 @@
     "webpack": "^2.7.0",
     "webpack-dev-server": "^2.3.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "swup": "^1.1.1"
+  }
 }

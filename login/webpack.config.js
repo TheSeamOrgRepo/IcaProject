@@ -14,6 +14,7 @@ const CONFIG = {
     path: path.resolve(__dirname, './build'),
     filename: 'app.js'
   },
+
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
@@ -33,7 +34,9 @@ const CONFIG = {
         replacement: ''
       }
     ]),
-    new ExtractTextPlugin({filename:'css/app.css'}),
+    new ExtractTextPlugin({
+      filename: 'css/app.css'
+    }),
     new OptimizeCssAssetsPlugin({
       cssProcessorOptions: {
         discardComments: {
@@ -46,6 +49,10 @@ const CONFIG = {
       to: 'images/'
     }, {
       from: 'src/*.txt',
+      to: './[name].[ext]',
+      toType: 'template'
+    }, {
+      from: 'src/*.html',
       to: './[name].[ext]',
       toType: 'template'
     }]),
@@ -92,7 +99,6 @@ const CONFIG = {
 }
 
 if (process.env.NODE_ENV === 'production') {
-
   CONFIG.output.publicPath = './';
   CONFIG.output.filename = 'js/app.js';
   CONFIG.plugins.push(new MinifyPlugin());
