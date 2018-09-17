@@ -121,11 +121,15 @@ section {
     overflow: hidden;
 
     .section__intro {
+      margin: auto;
       position: absolute;
-      top: 40%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
       background: #E9EBED;
       z-index: 5;
-      height: 25vh;
+      height: 35%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -133,24 +137,24 @@ section {
       flex-direction: column;
 
       &:before {
-        background-image: linear-gradient(-180deg, rgba(255, 255, 255, 0.00) 0%, #E9EBED 50%);
+        background-image: linear-gradient(-180deg, rgba(255, 255, 255, 0.00) 0%, #E9EBED 90%);
         content: "";
         display: block;
         width: 100%;
-        height: 35vh;
+        height: 100%;
         position: absolute;
-        top: -35vh;
+        top: -100%;
         z-index: 6;
       }
 
       &:after {
-        background-image: linear-gradient(-180deg, #E9EBED 0%, rgba(255, 255, 255, 0.00) 75%);
+        background-image: linear-gradient(-180deg, #E9EBED 0%, rgba(255, 255, 255, 0.00) 90%);
         content: "";
         display: block;
         width: 100%;
-        height: 40vh;
+        height: 100%;
         position: absolute;
-        top: 25vh;
+        top: 100%;
         z-index: 6;
       }
 
@@ -195,6 +199,8 @@ section {
       text-align: center;
       margin: 0 -0.75rem;
       height: 100vh;
+      display: flex;
+      flex-wrap: wrap;
 
       @include bp(m) {
         overflow: hidden;
@@ -230,11 +236,11 @@ section {
       }
 
       @include bp(m) {
-        animation: slide-left 15s infinite linear;
+        animation: slide-left 20s infinite linear;
         z-index: 0;
 
         &:first-of-type {
-          animation: slide-right 15s infinite linear;
+          animation: slide-right 20s infinite linear;
         }
 
         &:last-of-type {
@@ -253,6 +259,7 @@ section {
         justify-content: space-between;
         align-items: center;
         padding: 1rem 0;
+        width: 45vw;
 
         &:last-of-type {
           justify-content: space-around;
@@ -272,9 +279,10 @@ section {
       }
 
       @include bp(m) {
-        // max-width: 20%;
+        max-width: unset;
         padding: 0;
         min-width: 132px;
+        margin: 0 2rem;
       }
 
       img {
