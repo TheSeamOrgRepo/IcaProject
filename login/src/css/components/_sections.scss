@@ -3,7 +3,8 @@ $mint-green: #3EC9A0;
 $passive-gray: #959EA7;
 
 body {
-  background-image: radial-gradient(50% 120%, #415365 50%, #1E2A36 100%);
+  // background-image: radial-gradient(50% 120%, #415365 50%, #1E2A36 100%);
+  background-color: #1E2A36;
 }
 
 main {
@@ -24,15 +25,21 @@ section {
 
   &.home {
     width: 100%;
-    transform: scaleX(1);
-    left: 0;
-    transform-origin: left center;
-    transition: transform .75s cubic-bezier(.25, .75, .05, 1);
+    right: 0;
+    transition: width .75s cubic-bezier(.25, .75, .05, 1);
 
     &.active {
-      left: -100%;
-      transform-origin: right center;
-      transform: scaleX(0);
+      right: -100%;
+      width: 0;
+
+      .section--login__main-wrapper {
+        // width: 67%;
+        // transition: width 1s cubic-bezier(.25, .75, .05, 1);
+      }
+      .section--partners {
+        // width: 0;
+        // transition: width 1s cubic-bezier(.25, .75, .05, 1);
+      }
     }
   }
 
@@ -334,15 +341,13 @@ section {
 .section--email,
 .section--uport {
   left: -100%;
-  width: 100%;
-  transform-origin: right center;
-  transform: scaleX(0);
-  transition: transform .75s cubic-bezier(.25, .75, .05, 1);
+  width: 67%;
+  transition: width 1s cubic-bezier(.25, .75, .05, 1);
 
   &.active {
     left: 0;
-    transform-origin: right center;
-    transform: scaleX(1);
+    width: 100%;
+    transition: width 1s cubic-bezier(.25, .75, .05, 1);
   }
 
   .section--login__main-wrapper {
