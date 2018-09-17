@@ -2,9 +2,14 @@ $button-gray: #CACED3;
 $mint-green: #3EC9A0;
 $passive-gray: #959EA7;
 
+body {
+  background-image: radial-gradient(50% 120%, #415365 50%, #1E2A36 100%);
+}
+
 main {
   width: 100vw;
   height: 100vh;
+  position: relative;
 }
 
 section {
@@ -14,6 +19,22 @@ section {
 .section--login__main {
   height: 100%;
   display: flex;
+  position: absolute;
+
+
+  &.home {
+    width: 100%;
+    transform: scaleX(1);
+    left: 0;
+    transform-origin: left center;
+    transition: transform .75s cubic-bezier(.25, .75, .05, 1);
+
+    &.active {
+      left: -100%;
+      transform-origin: right center;
+      transform: scaleX(0);
+    }
+  }
 
   &-content {
     width: 100%;
@@ -312,6 +333,18 @@ section {
 
 .section--email,
 .section--uport {
+  left: -100%;
+  width: 100%;
+  transform-origin: right center;
+  transform: scaleX(0);
+  transition: transform .75s cubic-bezier(.25, .75, .05, 1);
+
+  &.active {
+    left: 0;
+    transform-origin: right center;
+    transform: scaleX(1);
+  }
+
   .section--login__main-wrapper {
     width: 100%;
   }
