@@ -16,6 +16,7 @@ function toggleMainuPort(e) {
 function toggleMainEmail(e) {
     mainWrapper.classList.toggle('active');
     emailWrapper.classList.toggle('active');
+    document.forms[0].elements[0].focus();
 }
 
 function backToggleEmail(e) {

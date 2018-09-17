@@ -15,6 +15,7 @@ main {
 
 section {
   background: #fff;
+  height: 100vh;
 }
 
 .section--login__main {
@@ -36,9 +37,13 @@ section {
         // width: 67%;
         // transition: width 1s cubic-bezier(.25, .75, .05, 1);
       }
+
       .section--partners {
         // width: 0;
         // transition: width 1s cubic-bezier(.25, .75, .05, 1);
+
+        transition: opacity 2s cubic-bezier(.25, .75, .05, 1);
+        opacity: 0;
       }
     }
   }
@@ -92,10 +97,12 @@ section {
         &.uport {
           background-color: $button-gray;
 
-          svg {
+          img {
             display: inline-block;
             vertical-align: middle;
             margin-right: 5px;
+            width: 18.12px;
+            height: 17.24px;
           }
 
           &:hover {
@@ -164,6 +171,7 @@ section {
     display: flex;
     position: relative;
     overflow: hidden;
+    opacity: 1;
 
     .section__intro {
       margin: auto;
@@ -348,10 +356,29 @@ section {
     left: 0;
     width: 100%;
     transition: width 1s cubic-bezier(.25, .75, .05, 1);
+
+    .section--login__main-wrapper {
+      .animate {
+        transform: translateY(0);
+        transition: transform 1s cubic-bezier(.25, .75, .05, 1);
+      }
+    }
   }
 
   .section--login__main-wrapper {
     width: 100%;
+
+    .animate {
+      transform: translateY(100%);
+    }
+
+    @for $i from 1 through 10 {
+      .animate {
+        &:nth-child(#{$i}) {
+          transition-delay: $i * (1s / 10);
+        }
+      }
+    }
   }
 
   .section--login__main-content__button-wrapper {
@@ -438,13 +465,22 @@ section {
       }
     }
 
+
     .wrapper__middle {
+      div.animate {
+        margin-top: 2rem;
+      }
+
       p {
         display: inline-block;
         text-align: left;
 
         &:first-of-type {
-          margin-top: 2rem;
+          margin-right: 8px;
+        }
+
+        &:last-of-type {
+          margin-left: 8px;
         }
 
         a {
