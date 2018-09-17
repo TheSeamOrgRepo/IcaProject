@@ -117,11 +117,84 @@ section {
     width: 33.3333%;
     height: 100%;
     display: flex;
+    position: relative;
+    overflow: hidden;
+
+    .section__intro {
+      position: absolute;
+      top: 40%;
+      background: #E9EBED;
+      z-index: 5;
+      height: 25vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+
+      &:before {
+        background-image: linear-gradient(-180deg, rgba(255, 255, 255, 0.00) 0%, #E9EBED 50%);
+        content: "";
+        display: block;
+        width: 100%;
+        height: 35vh;
+        position: absolute;
+        top: -35vh;
+        z-index: 6;
+      }
+
+      &:after {
+        background-image: linear-gradient(-180deg, #E9EBED 0%, rgba(255, 255, 255, 0.00) 75%);
+        content: "";
+        display: block;
+        width: 100%;
+        height: 40vh;
+        position: absolute;
+        top: 25vh;
+        z-index: 6;
+      }
+
+      p {
+        padding: 0 2rem;
+        margin-bottom: 2rem;
+      }
+    }
+
+    .container,
+    .col {
+      padding: 0;
+    }
+
+    .row {
+      margin: 0;
+    }
+
+    .text-link {
+      text-decoration: none;
+      font-size: 14px;
+      color: $mint-green;
+      letter-spacing: 0;
+      text-align: right;
+      line-height: 22px;
+      transition: color .25s ease-in-out;
+
+      &:first-of-type {
+        margin-right: 8px;
+      }
+
+      &:last-of-type {
+        margin-left: 8px;
+      }
+
+      &:hover {
+        color: darken($color: $mint-green, $amount: 10%)
+      }
+    }
 
     .partner--logos {
       text-align: center;
       margin: 0 -0.75rem;
-      max-height: 95vh;
+      height: 100vh;
 
       @include bp(m) {
         overflow: hidden;
@@ -157,8 +230,12 @@ section {
       }
 
       @include bp(m) {
-        animation: slide-up 20s infinite linear;
+        animation: slide-left 15s infinite linear;
         z-index: 0;
+
+        &:first-of-type {
+          animation: slide-right 15s infinite linear;
+        }
 
         &:last-of-type {
           display: block;
@@ -195,9 +272,9 @@ section {
       }
 
       @include bp(m) {
-        max-width: 20%;
+        // max-width: 20%;
         padding: 0;
-        min-width: 131px;
+        min-width: 132px;
       }
 
       img {

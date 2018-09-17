@@ -57,6 +57,16 @@
     100% { transform: translateY(-100%); }
 }
 
+@keyframes slide-right {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes slide-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
 @keyframes slide-fade-down {
     0% {
         opacity: 0;
