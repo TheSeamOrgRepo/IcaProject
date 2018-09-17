@@ -394,9 +394,33 @@ section {
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
+      width: 100%;
 
       &:hover {
         background-color: darken($color: $mint-green, $amount: 10%)
+      }
+    }
+
+    .wrapper__middle {
+      p {
+
+        display: inline-block;
+        text-align: left;
+
+        &:first-of-type {
+          margin-top: 2rem;
+        }
+
+        a {
+          font-size: 11px;
+          color: $passive-gray;
+          letter-spacing: 0;
+          text-decoration: none;
+          transition: color .33s ease-in;
+          &:hover {
+            color: darken($passive-gray, 10%)
+          }
+        }
       }
     }
   }
