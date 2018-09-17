@@ -15,7 +15,6 @@ main {
 
 section {
   background: #fff;
-  height: 100vh;
 }
 
 .section--login__main {
@@ -27,21 +26,15 @@ section {
   &.home {
     width: 100%;
     right: 0;
-    transition: width .75s cubic-bezier(.25, .75, .05, 1);
+    transition: right .75s cubic-bezier(.25, .75, .05, 1);
 
     &.active {
       right: -100%;
       width: 0;
 
-      .section--login__main-wrapper {
-        // width: 67%;
-        // transition: width 1s cubic-bezier(.25, .75, .05, 1);
-      }
+      .section--login__main-wrapper {}
 
       .section--partners {
-        // width: 0;
-        // transition: width 1s cubic-bezier(.25, .75, .05, 1);
-
         transition: opacity 2s cubic-bezier(.25, .75, .05, 1);
         opacity: 0;
       }
@@ -349,18 +342,18 @@ section {
 .section--email,
 .section--uport {
   left: -100%;
-  width: 67%;
-  transition: width 1s cubic-bezier(.25, .75, .05, 1);
+  width: 66.666%;
+  transition: width 1.5s cubic-bezier(.25, .75, .05, 1);
 
   &.active {
     left: 0;
     width: 100%;
-    transition: width 1s cubic-bezier(.25, .75, .05, 1);
+    transition: width 1.5s cubic-bezier(.25, .75, .05, 1);
 
     .section--login__main-wrapper {
       .animate {
         transform: translateY(0);
-        transition: transform 1s cubic-bezier(.25, .75, .05, 1);
+        transition: transform 1.25s cubic-bezier(.25, .75, .05, 1);
       }
     }
   }
@@ -372,7 +365,7 @@ section {
       transform: translateY(100%);
     }
 
-    @for $i from 1 through 10 {
+    @for $i from 1 through 6 {
       .animate {
         &:nth-child(#{$i}) {
           transition-delay: $i * (1s / 10);
@@ -470,7 +463,23 @@ section {
       div.animate {
         margin-top: 2rem;
       }
-
+      div.animate.or {
+        p {
+          font-size: 14px;
+          margin: 0 auto;
+          a {
+            margin-left: 8px;
+            font-size: 14px;
+            color: $passive-gray;
+            letter-spacing: 0;
+            transition: color .33s ease-in;
+            text-decoration: underline;
+            &:hover {
+              color: darken($passive-gray, 10%)
+            }
+          }
+        }
+      }
       p {
         display: inline-block;
         text-align: left;
