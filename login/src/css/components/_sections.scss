@@ -98,6 +98,23 @@ section {
     background-image: radial-gradient(50% 120%, #415365 50%, #1E2A36 100%);
     position: relative;
 
+    .back--button {
+      align-self: flex-start;
+      position: absolute;
+      top: 0;
+      left: 1rem;
+      padding: 3rem;
+      transition: all .33s ease-in;
+
+      &:hover {
+        left: 0;
+      }
+
+      &:hover * {
+        stroke: lighten($passive-gray, 10%);
+      }
+
+    }
 
     .copyright p {
       font-size: 11px;
@@ -289,12 +306,97 @@ section {
         width: 100%;
         pointer-events: none;
         user-select: none;
+      }
+    }
+  }
+}
 
-        // min-width: 101px;
+.section--email,
+.section--uport {
+  .section--login__main-wrapper {
+    width: 100%;
+  }
 
-        // @include bp(l) {
-        //   min-width: 227px;
-        // }
+  .section--login__main-content__button-wrapper {
+    justify-content: center;
+
+    form {
+      width: 276px;
+
+      .svg--backdrop {
+        background: white;
+        height: 30px;
+        width: 30px;
+        display: block;
+      }
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      margin-bottom: 1rem;
+      background: transparent;
+      border: 1px solid $passive-gray;
+      background-repeat: no-repeat;
+      background-position: -1px -1px;
+      padding-left: 50px;
+      font-size: 16px;
+      color: $passive-gray;
+      letter-spacing: 0;
+      position: relative;
+      height: 46px;
+
+      filter: brightness(0.8);
+
+      &::placeholder {
+        transition: opacity .25s ease-in;
+        opacity: 1;
+        color: $passive-gray;
+      }
+
+      &:active,
+      &:focus {
+        border: 1px solid #fff;
+        color: #fff;
+        filter: brightness(1);
+
+        &::placeholder {
+          opacity: 0;
+        }
+      }
+
+      &.email {
+        background-image: url('/images/account.svg');
+
+      }
+
+      &.password {
+        background-image: url('/images/password.svg');
+
+      }
+    }
+
+    input[type="submit"] {
+      display: inline-block;
+      color: $white;
+      line-height: 1;
+      font-size: rem-calc(15);
+      font-weight: $font-weight-bold;
+      padding: 1rem 3rem;
+      text-align: center;
+      font-family: $font;
+      cursor: pointer;
+      text-decoration: none;
+      text-transform: uppercase;
+      background-color: $mint-green;
+      border: 3px solid transparent;
+      border-radius: 3px;
+      transition: 0.3s ease-in-out;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+
+      &:hover {
+        background-color: darken($color: $mint-green, $amount: 10%)
       }
     }
   }
