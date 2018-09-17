@@ -20,9 +20,9 @@ const CONFIG = {
       template: './src/index.html',
       filename: './index.html',
       minify: {
-        "collapseWhitespace": true,
-        "minifyCSS": true,
-        "removeComments": true
+        "collapseWhitespace": false,
+        "minifyCSS": false,
+        "removeComments": false
       }
     }),
     new HtmlReplaceWebpackPlugin([{
