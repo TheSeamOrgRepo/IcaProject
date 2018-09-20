@@ -1,10 +1,5 @@
 // Tables
 // ------------------------
-.table {
-    width: 100%;
-    max-width: 100%;
-}
-
 table {
     margin-bottom: 1rem;
 
@@ -20,23 +15,16 @@ table {
     }
 
     th {
-        font-weight: $font-weight-bold;
+        font-weight: bold;
     }
 
-    tfoot {
-        border-top: 1px solid $gray;
-
-        td {
-            text-align: left;
-        }
-    }
 }
 
 // Hover table
 .table--hover {
     tbody {
         tr:hover {
-            background-color: rgba($secondary-ultralight, 0.5);
+            background-color: $gray-ultralight;
         }
     }
 }
@@ -56,7 +44,7 @@ table {
     &.table--hover {
         tbody {
             tr:hover {
-                background-color: rgba($secondary-ultralight, 0.5);
+                background-color: $gray-light;
             }
         }
     }
@@ -65,32 +53,4 @@ table {
 // Full width table
 .table--full {
     width: 100%;
-}
-
-// Paged table
-.table--paged {
-    tfoot {
-        td {
-            &:last-of-type {
-                text-align: right;
-            }
-        }
-    }
-
-    .summary {
-        td:first-of-type {
-            text-align: right;
-        }
-    }
-}
-
-.tradeStatistics {
-    transition: opacity .5s ease;
-
-    .quote {
-        background-color: $white !important;
-        border-bottom: none;
-        border-top: 2px solid rgb(207, 207, 207);
-        margin-top: 1rem;
-    }
 }

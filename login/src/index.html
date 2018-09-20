@@ -2,240 +2,206 @@
 <html lang="en">
 
 <head>
-
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <meta name="msapplication-tap-highlight" content="no">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>The Seam | ICA Login</title>
-
-  <meta itemprop="name" content="ICA Login">
-  <meta itemprop="description" content="Content description less than 200 characters">
-
-  <link rel="stylesheet" href="./css/app.css">
-
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Seam | ICA Login</title>
+    <meta itemprop="name" content="ICA Login">
+    <meta itemprop="description" content="Content description less than 200 characters">
+    <link rel="stylesheet" href="./css/app.css">
+    <script>
+        (function(d) {
+            var config = {
+                kitId: 'qrx4nlm',
+                scriptTimeout: 3000,
+                async: true
+            },
+            h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+    </script>
 </head>
 
 <body>
-  <header>
-  </header>
-  <main role="main">
-    <section class="section section--login__main home">
-      <div class="section--login__main-wrapper">
-        <div class="section--login__main-content">
-          <img src="images/cotton-ledger-logo.svg">
-          <div class="section--login__main-content__button-wrapper">
-            <div class="wrapper__left">
-              <a href="#" class="button uport">
-                <img src="images/uport-logo.svg">
-                Login with Uport</a>
-              <p>uPort allows users to register their own identity on Ethereum, send and request credentials, sign
-                transactions, and securely manage keys & data.</p>
-            </div>
-            <div class="wrapper__middle">
-              <svg width="1px" height="41px" viewBox="0 0 1 41" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink">
-                <g id="Page-4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                  <g id="Login-Split" transform="translate(-480.000000, -460.000000)" fill="#606E7B" fill-rule="nonzero">
-                    <rect id="Rectangle-7" x="480" y="460.058594" width="1" height="40"></rect>
-                  </g>
-                </g>
-              </svg>
-              <p>or</p>
-              <svg width="1px" height="41px" viewBox="0 0 1 41" version="1.1" xmlns="http://www.w3.org/2000/svg"
-                xmlns:xlink="http://www.w3.org/1999/xlink">
-                <g id="Page-4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                  <g id="Login-Split" transform="translate(-480.000000, -460.000000)" fill="#606E7B" fill-rule="nonzero">
-                    <rect id="Rectangle-7" x="480" y="460.058594" width="1" height="40"></rect>
-                  </g>
-                </g>
-              </svg>
-            </div>
-            <div class="wrapper__right">
-              <a href="#" class="button email">Login with Email</a>
-              <p>Forgot password?</p>
-            </div>
-          </div>
-        </div>
-        <div class="copyright">
-          <p>©2018 The Seam, LLC. All Rights Reserved.</p>
-        </div>
-      </div>
-      <section class="section section--partners">
-        <div class="container">
-          <div class="row">
-            <div class="col col-m-12 section__intro">
-              <div class="section__intro--wrapper">
-                <h1>Join the Consortium</h1>
-                <p>
-                  Cotton’s leading brands are joining the consortium to marketing language, benefits and fear of
-                  missing
-                  out on something spectacular. Share with your business partners.
-                </p>
-                <a href="#" class="text-link">Apply Now
-                  <img src="images/arrow.svg">
-                </a>
-                <a href="#" class="text-link">Invite a Partner
-                  <img src="images/arrow.svg">
-                </a>
-              </div>
-            </div>
-          </div>
+    <main role="main" class="login">
+        <section class="login__left">
+            <a class="login__back" data-trigger="main">
+                <img src="/images/icon-arrow-back.svg" alt="Back">
+            </a>
 
-          <div class="row section__blocks">
-            <div class="col">
-              <div class="partner--logos">
-                <div class="partner--logos__sheet">
-                  <div class="partner--logos__row">
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-1.svg" alt="Partner Logo"></div>
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-3.svg" alt="Partner Logo"></div>
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-8.svg" alt="Partner Logo"></div>
-                  </div>
+            <div class="login__centerer">
+                <div class="login__content">
+                    <div class="container">
+                        <img src="images/cotton-ledger-logo.svg" class="login__logo">
 
-                  <div class="partner--logos__row">
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-4.svg" alt="Partner Logo"></div>
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-13.svg" alt="Partner Logo"></div>
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-7.svg" alt="Partner Logo"></div>
-                  </div>
+                        <!-- Main actions -->
+                        <div class="login__actions login__actions--main is-active">
+                            <div class="action__column">
+                                <div class="action__heading">Sign In with Email</div>
 
-                  <div class="partner--logos__row">
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-5.svg" alt="Partner Logo"></div>
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-6.svg" alt="Partner Logo"></div>
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-14.svg" alt="Partner Logo"></div>
-                  </div>
+                                <div class="form-field form-field--icon form-field--button">
+                                    <input type="text" placeholder="email@example.com" class="form-field__input">
 
-                  <div class="partner--logos__row">
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-10.svg" alt="Partner Logo"></div>
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-2.svg" alt="Partner Logo"></div>
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-11.svg" alt="Partner Logo"></div>
-                  </div>
+                                    <div class="form-field__icon">
+                                        <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M5.431 17.172A8.463 8.463 0 0 0 10 18.502c1.682 0 3.25-.487 4.569-1.33l-.89-4.605H6.32l-.889 4.605zM4.108 16.13l.977-5.06H7.03c-.816-.856-1.321-2.06-1.321-3.387 0-2.572 1.902-4.689 4.29-4.689s4.29 2.117 4.29 4.69c0 1.325-.505 2.53-1.321 3.386h1.946l.977 5.06a8.503 8.503 0 1 0-11.785 0zM10 20C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10zm0-9.125c1.524 0 2.793-1.412 2.793-3.192 0-1.78-1.27-3.191-2.793-3.191-1.524 0-2.793 1.412-2.793 3.191 0 1.78 1.27 3.192 2.793 3.192z" fill="none" fill-rule="nonzero"/></svg>
+                                    </div>
 
-                  <div class="partner--logos__row">
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-9.svg" alt="Partner Logo"></div>
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-12.svg" alt="Partner Logo"></div>
-                  </div>
-                </div>
+                                    <a href="#" class="form-field__button" data-trigger="email">
+                                        <svg width="13" height="10" xmlns="http://www.w3.org/2000/svg"><path d="M7.92 0L6.626 1.285l2.808 2.808H0v1.814h9.434L6.626 8.715 7.92 10l4.99-5z" fill="none" fill-rule="nonzero"/></svg>
+                                    </a>
+                                </div>
 
-                <div class="partner--logos__sheet">
-                  <div class="partner--logos__row">
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-1.svg" alt="Partner Logo"></div>
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-3.svg" alt="Partner Logo"></div>
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-8.svg" alt="Partner Logo"></div>
-                  </div>
+                                <p class="action__helper">
+                                    <a href="#">Forgot email?</a>
+                                </p>
+                            </div>
 
-                  <div class="partner--logos__row">
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-4.svg" alt="Partner Logo"></div>
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-13.svg" alt="Partner Logo"></div>
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-7.svg" alt="Partner Logo"></div>
-                  </div>
+                            <div class="action__column">
+                                <p class="divider">or</p>
+                            </div>
 
-                  <div class="partner--logos__row">
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-5.svg" alt="Partner Logo"></div>
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-6.svg" alt="Partner Logo"></div>
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-14.svg" alt="Partner Logo"></div>
-                  </div>
+                            <div class="action__column">
+                                <div class="action__heading">Sign In with Sovereign Identity</div>
 
-                  <div class="partner--logos__row">
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-10.svg" alt="Partner Logo"></div>
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-2.svg" alt="Partner Logo"></div>
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-11.svg" alt="Partner Logo"></div>
-                  </div>
+                                <a href="#" class="btn btn--full btn--white btn--icon uport" data-trigger="uport">
+                                    <span>
+                                        <img src="images/icon-uport.svg">
+                                        Login with Uport
+                                    </span>
+                                </a>
 
-                  <div class="partner--logos__row">
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-9.svg" alt="Partner Logo"></div>
-                    <div class="partner--logos__logo"><img src="/images/partner-logo-12.svg" alt="Partner Logo"></div>
-                  </div>
-                </div>
+                                <p class="action__helper">
+                                    uPort allows users to register their own identity on Ethereum, send and request credentials, sign transactions, and securely manage keys & data.
+                                </p>
+                            </div>
+                        </div>
 
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </section>
-    <section class="section section--login__main section--uport">
-      <div class="section--login__main-wrapper">
-        <a href="#">
-          <svg id="uport--back" class="back--button" width="28px" height="21px" viewBox="0 0 28 21" version="1.1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink">
-            <g id="Page-4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-              <g id="Login-Split-Copy-2" transform="translate(-48.000000, -49.000000)" fill-rule="nonzero" stroke="#959EA7"
-                stroke-width="2">
-                <g id="Group-10" transform="translate(50.000000, 50.000000)">
-                  <path d="M25.3823008,9.78248978 L0.272927965,9.78248978" id="Line"></path>
-                  <polyline id="Path-12" points="9.50343705 0.279052734 0 9.78248978 9.50343705 19.2859268"></polyline>
-                </g>
-              </g>
-            </g>
-          </svg>
-        </a>
-        <div class="section--login__main-content">
-          <img src="images/cotton-ledger-logo.svg">
-          <div class="section--login__main-content__button-wrapper">
-            <div class="wrapper__middle">
-              <img class="animate" src="/images/uport_placeholder.svg">
-              <div class="animate or">
-                <p>or<a href="#" class="email">login with email</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="copyright">
-          <p>©2018 The Seam, LLC. All Rights Reserved.</p>
-        </div>
-      </div>
-    </section>
-    <section class="section section--login__main section--email">
-      <div class="section--login__main-wrapper">
-        <a href="#">
-          <svg id="email--back" class="back--button" width="28px" height="21px" viewBox="0 0 28 21" version="1.1" xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink">
-            <g id="Page-4" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-              <g id="Login-Split-Copy-2" transform="translate(-48.000000, -49.000000)" fill-rule="nonzero" stroke="#959EA7"
-                stroke-width="2">
-                <g id="Group-10" transform="translate(50.000000, 50.000000)">
-                  <path d="M25.3823008,9.78248978 L0.272927965,9.78248978" id="Line"></path>
-                  <polyline id="Path-12" points="9.50343705 0.279052734 0 9.78248978 9.50343705 19.2859268"></polyline>
-                </g>
-              </g>
-            </g>
-          </svg>
-        </a>
-        <div class="section--login__main-content">
-          <img src="images/cotton-ledger-logo.svg">
-          <div class="section--login__main-content__button-wrapper">
-            <div class="wrapper__middle">
-              <form>
-                <div class="input--wrapper animate">
-                  <input class="email" placeholder="email" type="email" />
-                </div>
-                <div class="input--wrapper animate">
-                  <input class="password" placeholder="password" type="password" />
-                </div>
-                <div class="input--wrapper animate">
-                  <input type="submit" value="Login" />
-                </div>
-              </form>
-              <div class="animate">
-                <p><a href="#/forgot">Forgot password?</a></p>
-                <p><a href="#/signup">No account? Sign up.</a></p>
-              </div>
-              <div class="animate or">
-                  <p>or<a href="#" class="email">login with uPort</a></p>
+                        <!-- Email actions -->
+                        <div class="login__actions login__actions--email">
+                            <div class="action__column">
+                                <div class="action__heading">Enter your password</div>
+
+                                <div class="form-field">
+                                    <input type="text" placeholder="email@example.com" class="form-field__input" value="email@example.com">
+                                </div>
+
+                                <div class="form-field form-field--icon form-field--button">
+                                    <input type="password" placeholder="password" class="form-field__input">
+
+                                    <div class="form-field__icon">
+                                        <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M5.431 17.172A8.463 8.463 0 0 0 10 18.502c1.682 0 3.25-.487 4.569-1.33l-.89-4.605H6.32l-.889 4.605zM4.108 16.13l.977-5.06H7.03c-.816-.856-1.321-2.06-1.321-3.387 0-2.572 1.902-4.689 4.29-4.689s4.29 2.117 4.29 4.69c0 1.325-.505 2.53-1.321 3.386h1.946l.977 5.06a8.503 8.503 0 1 0-11.785 0zM10 20C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10zm0-9.125c1.524 0 2.793-1.412 2.793-3.192 0-1.78-1.27-3.191-2.793-3.191-1.524 0-2.793 1.412-2.793 3.191 0 1.78 1.27 3.192 2.793 3.192z" fill="none" fill-rule="nonzero"/></svg>
+                                    </div>
+                                </div>
+
+                                <a href="#" class="btn btn--green next">Next</a>
+
+                                <p class="action__helper">
+                                    <a href="#">Forgot password?</a>
+                                </p>
+
+                                <p class="action__other">
+                                    or <a href="#" data-trigger="uport">login with uPort</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- uPort actions -->
+                        <div class="login__actions login__actions--uport">
+                            <div class="action__column">
+                                <div class="action__heading">Scan QR code with uPort Mobile App</div>
+
+                                <img src="/images/uport-qr.svg" alt="uPort QR Code">
+
+                                <p class="action__other">
+                                    or <a href="#" data-trigger="email">login with email</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-          </div>
-        </div>
-        <div class="copyright">
-          <p>©2018 The Seam, LLC. All Rights Reserved.</p>
-        </div>
-      </div>
-    </section>
-  </main>
 
-  <script type="text/javascript" src="../build/app.js"></script>
+            <div class="login__copyright">
+                <p>&copy;2018 The Seam, LLC. All Rights Reserved.</p>
+            </div>
+        </section>
 
+        <section class="login__right">
+            <div class="login__centerer">
+                <div class="login__logos login__logos--top" aria-hidden="true">
+                    <div class="login__logos-row">
+                        <div class="login__logos-logo"><img src="/images/partner-logo-1.svg" alt="Partner Logo"></div>
+                        <div class="login__logos-logo"><img src="/images/partner-logo-2.svg" alt="Partner Logo"></div>
+                        <div class="login__logos-logo"><img src="/images/partner-logo-3.svg" alt="Partner Logo"></div>
+                        <div class="login__logos-logo"><img src="/images/partner-logo-4.svg" alt="Partner Logo"></div>
+
+                        <div class="login__logos-logo"><img src="/images/partner-logo-1.svg" alt="Partner Logo"></div>
+                        <div class="login__logos-logo"><img src="/images/partner-logo-2.svg" alt="Partner Logo"></div>
+                        <div class="login__logos-logo"><img src="/images/partner-logo-3.svg" alt="Partner Logo"></div>
+                        <div class="login__logos-logo"><img src="/images/partner-logo-4.svg" alt="Partner Logo"></div>
+                    </div>
+
+                    <div class="login__logos-row">
+                        <div class="login__logos-logo"><img src="/images/partner-logo-5.svg" alt="Partner Logo"></div>
+                        <div class="login__logos-logo"><img src="/images/partner-logo-6.svg" alt="Partner Logo"></div>
+                        <div class="login__logos-logo"><img src="/images/partner-logo-7.svg" alt="Partner Logo"></div>
+
+                        <div class="login__logos-logo"><img src="/images/partner-logo-5.svg" alt="Partner Logo"></div>
+                        <div class="login__logos-logo"><img src="/images/partner-logo-6.svg" alt="Partner Logo"></div>
+                        <div class="login__logos-logo"><img src="/images/partner-logo-7.svg" alt="Partner Logo"></div>
+                    </div>
+                </div>
+
+                <div class="login__intro">
+                    <div class="container">
+                        <h1>Join the Consortium</h1>
+
+                        <p>
+                            Cotton’s leading brands are joining the consortium to marketing language, benefits and fear of missing out on something spectacular. Share with your business partners.
+                        </p>
+
+                        <p>
+                            <a href="#" class="login__intro-link">
+                                Apply Now
+                                <svg width="13" height="10" xmlns="http://www.w3.org/2000/svg"><path d="M7.92 0L6.626 1.285l2.808 2.808H0v1.814h9.434L6.626 8.715 7.92 10l4.99-5z" fill="none" fill-rule="nonzero"/></svg>
+                            </a>
+
+                            <a href="#" class="login__intro-link">
+                                Invite a Partner
+                                <svg width="13" height="10" xmlns="http://www.w3.org/2000/svg"><path d="M7.92 0L6.626 1.285l2.808 2.808H0v1.814h9.434L6.626 8.715 7.92 10l4.99-5z" fill="none" fill-rule="nonzero"/></svg>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="login__logos login__logos--bottom" aria-hidden="true">
+                    <div class="login__logos-row">
+                        <div class="login__logos-logo"><img src="/images/partner-logo-8.svg" alt="Partner Logo"></div>
+                        <div class="login__logos-logo"><img src="/images/partner-logo-9.svg" alt="Partner Logo"></div>
+                        <div class="login__logos-logo"><img src="/images/partner-logo-10.svg" alt="Partner Logo"></div>
+                        <div class="login__logos-logo"><img src="/images/partner-logo-11.svg" alt="Partner Logo"></div>
+
+                        <div class="login__logos-logo"><img src="/images/partner-logo-8.svg" alt="Partner Logo"></div>
+                        <div class="login__logos-logo"><img src="/images/partner-logo-9.svg" alt="Partner Logo"></div>
+                        <div class="login__logos-logo"><img src="/images/partner-logo-10.svg" alt="Partner Logo"></div>
+                        <div class="login__logos-logo"><img src="/images/partner-logo-11.svg" alt="Partner Logo"></div>
+                    </div>
+
+                    <div class="login__logos-row">
+                        <div class="login__logos-logo"><img src="/images/partner-logo-12.svg" alt="Partner Logo"></div>
+                        <div class="login__logos-logo"><img src="/images/partner-logo-13.svg" alt="Partner Logo"></div>
+                        <div class="login__logos-logo"><img src="/images/partner-logo-14.svg" alt="Partner Logo"></div>
+
+                        <div class="login__logos-logo"><img src="/images/partner-logo-12.svg" alt="Partner Logo"></div>
+                        <div class="login__logos-logo"><img src="/images/partner-logo-13.svg" alt="Partner Logo"></div>
+                        <div class="login__logos-logo"><img src="/images/partner-logo-14.svg" alt="Partner Logo"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script type="text/javascript" src="../build/app.js"></script>
 </body>
 
 </html>

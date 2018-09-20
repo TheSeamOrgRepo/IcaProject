@@ -1,323 +1,116 @@
-// // Buttons
-// // ------------------------
-// $btn-skewX: -20deg;
-// $btn-height: 47px;
+// Buttons
+// ------------------------
+.btn,
+button,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+	display: inline-block;
+	color: $white;
+	line-height: 1;
+    font-size: rem-calc(14);
+	font-weight: $font-weight-bold;
+	padding: 1rem 1.5rem 0.9rem;
+	text-align: center;
+    font-family: $font;
+    cursor: pointer;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	background-color: $primary;
+	border: 1px solid $primary;
+    border-radius: 3px;
+    transition: 0.3s ease-in-out;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+	appearance: none;
 
-// .btn,
-// button,
-// input[type="submit"],
-// input[type="reset"],
-// input[type="button"] {
-// 	display: inline-block;
-// 	color: $white;
-// 	line-height: 1;
-//     font-size: rem-calc(15);
-// 	font-weight: $font-weight-bold;
-// 	// margin-bottom: 0.5rem;
-// 	// padding: 1rem 1.5rem 0.9rem;
-// 	padding: 1rem 1.5rem;
-// 	text-align: center;
-// 	font-family: $font;
-// 	// letter-spacing: 1px;
-// 	cursor: pointer;
-// 	// text-transform: uppercase;
-//     text-decoration: none;
-// 	background-color: $mint-green;
-// 	border: 3px solid transparent;
-//     border-radius: $border-radius;
-//     transition: 0.3s ease-in-out;
-// 	-webkit-appearance: none;
-//     -moz-appearance: none;
-// 	appearance: none;
+	&:hover {
+		color: $white;
+		text-decoration: none;
+		box-shadow: 0 10px 10px 0 rgba(0,0,0,0.22),
+					0 11px 33px 0 rgba(0,0,0,0.14);
+	}
 
-// 	@include bp(m) {
-// 		padding: 1rem 2.5rem;
-// 	}
+	&:active,
+	&:focus {
+		background-color: $primary-light;
+		border-color: $primary-light;
+		box-shadow: none;
+	}
 
-// 	&:hover,
-// 	&:focus {
-//     	text-decoration: none;
-// 		color: $white;
-// 		background-color: $primary-light;
-// 	}
+	// Secondary button
+	&.btn--secondary {
+		background-color: $secondary;
+		border-color: $secondary;
 
-// 	[class*='fa-'] {
-// 		margin-right: 0.5rem;
-// 	}
+		&:active,
+		&:focus {
+			background-color: $secondary-dark;
+			border-color: $secondary-dark;
+		}
+	}
 
-// 	// Outlined button
-// 	&.btn--outline {
-// 		color: $primary;
-// 		background-color: transparent;
-// 		border-color: $primary;
+	// White button
+	&.btn--white {
+		background-color: $white;
+		border-color: $white;
+		color: $primary;
 
-// 		&:hover,
-// 		&:focus {
-// 			color: $white;
-// 			background-color: $primary;
-// 		}
-// 	}
+		&:hover {
+			color: $primary;
+		}
 
-// 	// Swipe button
-// 	&.btn--swipe {
-// 		overflow: hidden;
-// 		position: relative;
-// 		z-index: 1;
+		&:active,
+		&:focus {
+			background-color: $gray-ultralight;
+			border-color: $gray-ultralight;
+		}
+	}
 
-// 		&.btn--outline {
-// 			background-color: transparent;
-// 		}
+	// Green button
+	&.btn--green {
+		background-color: $green;
+		border-color: $green;
 
-// 		&:before {
-// 			content: '';
-// 			position: absolute;
-// 			top: 0;
-// 			left: 50%;
-// 			width: 0;
-// 			height: 100%;
-// 			background-color: $primary;
-// 			transition: 0.3s $ease-in-out-cubic;
-// 			transform: translateX(-50%)
-// 					   skewX($btn-skewX);
-// 			pointer-events: none;
-// 			z-index: -1;
-// 		}
+		&:active,
+		&:focus {
+			background-color: $green-dark;
+			border-color: $green-dark;
+		}
+	}
+}
 
-// 		&:hover,
-// 		&:focus {
-// 			&:before {
-// 				$offset: $btn-height * ((abs(strip-units($btn-skewX)) * 2) / 100);
-// 				width: calc(100% + #{$offset});
-// 			}
-// 		}
-// 	}
+// Small button
+.btn--icon {
+	$icon-size: 20px;
 
-// 	// Secondary color button
-// 	&.btn--secondary {
-// 		color: $white;
-// 		background-color: $secondary;
-// 		border: none;
+	span {
+		position: relative;
+		padding-left: $icon-size + 10px;
+	}
 
-// 		&:hover,
-// 		&:focus {
-// 			// color: $white;
-// 			background-color: $secondary-light;
-// 		}
+	img {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		max-width: $icon-size;
+		max-height: $icon-size;
+		transform: translateY(-50%);
+	}
+}
 
-// 		&.btn--swipe {
-// 			position: relative;
-// 			overflow: hidden;
+// Full width button
+.btn--full {
+	display: block;
+	width: 100%;
+}
 
-// 			&:hover,
-// 			&:focus {
-// 				background-color: $secondary;
-// 			}
-
-// 			&:before,
-// 			&:after {
-// 				background-color: $secondary-light;
-// 			}
-// 		}
-// 	}
-
-// 	// White color button
-// 	&.btn--white {
-// 		padding: 1.1875rem 1.6875rem;
-// 		color: $secondary;
-// 		background-color: $white;
-// 		border: none;
-
-// 		&:hover,
-// 		&:focus {
-// 			// color: $secondary;
-// 			background-color: $gray-ultralight;
-// 		}
-
-// 		&.btn--swipe {
-// 			position: relative;
-// 			overflow: hidden;
-
-// 			&:hover,
-// 			&:focus {
-// 				background-color: $white;
-// 			}
-
-// 			&:before,
-// 			&:after {
-// 				background-color: $gray-ultralight;
-// 			}
-// 		}
-
-// 		// &.btn--outline {
-// 		// 	border-color: $white;
-// 		// 	background-color: transparent;
-
-// 		// 	&:hover,
-// 		// 	&:focus {
-// 		// 		background-color: $gray-ultralight;
-// 		// 		border-color: $gray-ultralight;
-// 		// 	}
-// 		// }
-// 	}
-
-// 	// Contact button
-// 	&.btn--contact {
-// 		$btn-height: 116px;
-// 		display: block;
-//         padding: 2rem;
-//         color: $white;
-//         font-weight: $font-weight-bold;
-//         text-transform: none;
-//         letter-spacing: 0;
-//         @include r-font-size(rem-calc(28), rem-calc(52));
-// 		border-radius: 0;
-//         background-color: $secondary;
-
-// 		@include bp(m) {
-// 			display: inline-block;
-// 			padding: 2rem 6rem;
-// 			border-radius: $border-radius-large;
-// 			box-shadow: 0 14px 28px rgba(black, 0.2);
-//         }
-
-// 		&:hover,
-// 		&:focus {
-// 			color: $white;
-
-// 			&:before {
-// 				$offset: $btn-height * ((abs(strip-units($btn-skewX)) * 2) / 100);
-// 				width: calc(100% + #{$offset});
-// 			}
-//         }
-// 	}
-
-// 	// Small button
-// 	&.btn--small {
-// 		padding: 0.5rem 1.75rem;
-// 		font-size: 0.8rem;
-
-// 		&.btn--white {
-// 			padding: 0.6875rem 1.1875rem;
-// 		}
-// 	}
-
-// 	// Large button
-// 	// &.btn--large {
-// 	// 	padding: 1.5rem 2rem;
-// 	// 	font-size: 1.4rem;
-// 	// }
-
-// 	// Full width button
-// 	&.btn--full {
-// 		display: block;
-// 		width: 100%;
-// 	}
-
-// 	// Disabled button
-// 	&.btn:disabled,
-// 	&.btn--disabled {
-// 		&,
-// 		&:hover {
-// 			color: $gray-ultradark !important;
-// 			background-color: $gray !important;
-// 			border-color: $gray !important;
-// 			// pointer-events: none !important;
-// 			cursor: not-allowed !important;
-// 			opacity: 0.5 !important;
-// 		}
-
-// 		&:before {
-// 			content: none !important;
-// 		}
-
-// 		&.btn--outline {
-// 			background-color: transparent !important;
-// 			border-color: #dddddd !important;
-// 		}
-// 	}
-
-// 	@keyframes loader {
-// 		0% { transform: translateY(0); }
-// 		100% { transform: translateY(-5px); }
-// 	}
-
-//     .loader {
-//         $size: 6px;
-//         display: inline-block;
-//         margin-left: $size*2;
-
-//         .dot {
-//             content: '';
-//             display: inline-block;
-//             width: $size;
-//             height: $size;
-//             margin: 0 $size/2;
-//             background: currentColor;
-//             border-radius: 100%;
-//             animation: loader 0.3s infinite alternate;
-
-//             &:nth-of-type(2) { animation-delay: 0.1s; }
-//             &:nth-of-type(3) { animation-delay: 0.2s; }
-//         }
-//     }
-// }
-
-// .btn--basic {
-// 	display: inline-block;
-// 	// position: relative;
-// 	// top: 0.5rem;
-// 	padding: 0.25rem 0.5rem;
-// 	border: 1px solid #d0d0d0;
-// 	border-radius: 3px;
-// 	font-size: 0.88rem;
-// 	font-weight: $font-weight-bold;
-// 	color: $secondary;
-// 	background: #feffff;
-// 	background: linear-gradient(to bottom, #feffff 0%,#ededed 100%);
-
-// 	&:hover,
-// 	&:active {
-// 		background: linear-gradient(to top, #feffff 0%,#ededed 100%);
-// 	}
-
-// 	&:before,
-// 	&:after {
-// 		display: none;
-// 	}
-
-// 	&.btn--arrow-right {
-// 		&:after {
-// 			font-family: 'Font Awesome 5 Solid';
-// 			font-weight: 900;
-// 			content: '\f105';
-// 		}
-
-// 		&.btn--arrow-double {
-// 			&:after {
-// 				content: '\f101';
-// 			}
-// 		}
-
-// 		svg {
-// 			margin-left: 0.25rem;
-// 		}
-// 	}
-
-// 	&.btn--arrow-left {
-// 		&:before {
-// 			font-family: 'Font Awesome 5 Solid';
-// 			font-weight: 900;
-// 			content: '\f104';
-// 		}
-
-// 		&.btn--arrow-double {
-// 			&:before {
-// 				content: '\f100';
-// 			}
-// 		}
-
-// 		svg {
-// 			margin-right: 0.25rem;
-// 		}
-// 	}
-// }
+// Disabled button
+.btn:disabled,
+.btn--disabled {
+	color: $gray !important;
+	background-color: $gray-dark !important;
+	border-color: $gray-dark !important;
+	pointer-events: none !important;
+}

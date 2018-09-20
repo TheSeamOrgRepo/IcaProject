@@ -290,7 +290,7 @@
                             }
 
                             @if list-contains($enable-grid-features, block-grid) {
-                                // Add block grids for up to $num-columns items
+                                // Add block grids for fifths items
                                 &.#{$grid-container-prefix}-#{$breakpoint}-#{$i}-5 {
                                     > .#{$grid-item-prefix} {
                                         flex-basis: $bp-fifth-width;

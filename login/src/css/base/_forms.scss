@@ -1,3 +1,5 @@
+$form-height: 46px;
+
 // Forms
 // ------------------------
 input[type='text'],
@@ -9,44 +11,31 @@ input[type='url'],
 input[type='password'],
 textarea,
 select {
-    display: block;
     width: 100%;
-    height: 50px;
+    height: $form-height;
     // margin-bottom: 1rem;
-    padding: 0 0.75rem;
+    padding: 0.5rem 0.75rem;
     font-family: $font;
-    font-size: 1rem;
-    font-weight: $font-weight-regular;
-    background-color: $white;
-    border: 1px solid $gray-light;
-    border-radius: 5px;
-    box-shadow: inset 0 1px 5px rgba(black, 0.1);
-    transition: 0.3s ease-in-out,
-                height 0s;
-    outline: none;
+    font-size: rem-calc(14);
+    color: $white;
+    background-color: transparent;
+    border: 1px solid $primary-light;
+    border-radius: 3px;
+    box-shadow: inset 0 0 6px 2px transparent,
+                      0 0 6px 2px transparent;
+    transition: 0.3s ease-in-out;
 
     &:hover {
-        border-color: $secondary-light;
+        border-color: $white;
     }
 
     &:active,
     &:focus {
-        border-color: $secondary-ultralight;
-        background-color: $gray-ultralight;
-        box-shadow: none;
-        // box-shadow: 0 0 0 2px rgba($secondary, 0.1);
+        outline: none;
+        border-color: $white;
+        box-shadow: inset 0 0 6px 2px #4A90E2,
+                          0 0 6px 2px #4A90E2;
     }
-}
-
-input[type='text'],
-input[type='email'],
-input[type='tel'],
-input[type='number'],
-input[type='search'],
-input[type='url'],
-input[type='password'],
-select {
-    line-height: 50px;
 }
 
 input[type='text'],
@@ -60,24 +49,24 @@ textarea {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+
+    @include placeholder {
+        color: $primary-light;
+    }
 }
 
 textarea {
     width: 100%;
-    min-height: 200px; // 4x the height of an input (50px)
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    min-height: $form-height * 4; // 4x the height of an input ($form-height)
     resize: vertical;
 }
 
 label,
 legend {
     display: block;
-    margin-bottom: 0.5rem;
-    font-family: $font;
-    font-size: rem-calc(14);
-    color: $secondary;
-    font-weight: $font-weight-bold;
+    margin-bottom: 0.25rem;
+    font-family: $font-secondary;
+    font-weight: 700;
 }
 
 fieldset {
@@ -90,35 +79,194 @@ fieldset {
     }
 }
 
-.field {
-    &.error {
-        position: relative;
+// Form Fields
+.form-field {
+    + .form-field {
+        margin-top: 1rem;
+    }
 
-        input[type='text'],
-        input[type='email'],
-        input[type='tel'],
-        input[type='number'],
-        input[type='search'],
-        input[type='url'],
-        input[type='password'],
-        textarea,
-        select {
-            border-color: $primary;
-            // box-shadow: 0 0 0 2px rgba($primary, 0.25);
+    &:hover {
+        .form-field__input {
+            border-color: $white;
         }
-        .message--error {
-            position: absolute;
-            top: 105%;
-            text-transform: none;
-            letter-spacing: normal;
-            line-height: 1;
-            color: $primary;
+
+        .form-field__icon {
+            path {
+                fill: $white;
+            }
+        }
+
+        .form-field__message {
+            opacity: 1;
+            visibility: visible;
         }
     }
 }
 
-.form--login {
-    .col:nth-of-type(2) {
-        padding-top: 0;
+.form-field--error {
+    &:hover {
+        .form-field__icon {
+            path {
+                fill: $red;
+            }
+        }
+    }
+
+    .form-field__icon {
+        path {
+            fill: $red;
+        }
+    }
+
+    .form-field__input {
+        border-color: $red;
+
+        &:hover,
+        &:active,
+        &:focus {
+            border-color: $red;
+        }
+
+        &:active,
+        &:focus {
+            box-shadow: inset 0 0 6px 2px $red,
+                              0 0 6px 2px $red;
+        }
+    }
+}
+
+.form-field--icon {
+    position: relative;
+
+    .form-field__input {
+        padding-left: $form-height;
+    }
+}
+
+.form-field__icon,
+.form-field__button {
+    position: absolute;
+    top: 0;
+    width: $form-height;
+    height: $form-height;
+
+    svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        path {
+            transition: 0.3s ease-in-out;
+        }
+    }
+}
+
+.form-field__icon {
+    left: 0;
+
+    path {
+        fill: $primary-light;
+    }
+}
+
+.form-field__input {
+    &:active,
+    &:focus {
+        // border-color: $white;
+
+        ~ .form-field__icon {
+            path {
+                fill: $white;
+            }
+        }
+
+        ~ .form-field__message {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}
+
+.form-field--button {
+    position: relative;
+
+    .form-field__input {
+        padding-right: $form-height;
+        // box-shadow: none !important;
+    }
+}
+
+.form-field__button {
+    right: 0;
+    background-color: $white;
+    border-radius: 0 3px 3px 0;
+
+    path {
+        fill: $green;
+    }
+}
+
+.form-field__message {
+    position: absolute;
+    left: 100%;
+    left: calc(100% + 12px);
+    top: 50%;
+    width: 100%;
+    padding: 0.5rem;
+    font-size: rem-calc(11);
+    font-weight: $font-weight-bold;
+    line-height: 1.25;
+    color: $white;
+    background-color: $primary-light;
+    border-radius: 3px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease-in-out;
+    transform: translateY(-50%);
+
+    a {
+        color: $white !important;
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        right: 100%;
+        top: 50%;
+        border: 8px solid transparent;
+        border-right-color: $primary-light;
+        transform: translateY(-50%);
+    }
+
+    .form-field--error & {
+        $icon-size: 24px;
+        padding-left: 1rem + rem-calc($icon-size);
+        color: $red-dark;
+        background-color: $red-ultralight;
+
+        &:before {
+            border-right-color: $red-ultralight;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0.5rem;
+            top: 50%;
+            width: $icon-size;
+            height: $icon-size;
+            background: {
+                size: cover;
+                position: center center;
+                repeat: no-repeat;
+                image: url('/images/icon-error.svg');
+            }
+            transform: translateY(-50%);
+        }
+
+        a {
+            color: $red-dark !important;
+        }
     }
 }

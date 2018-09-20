@@ -8,18 +8,18 @@
 // Debugging
 $enable-debugging: false;
 
-// Animations (for use with inview.js)
-$enable-animations: false;
+// Scroll Animations (for use with inview.js)
+$enable-scroll-animations: false;
 
 // Enable grid features
 // Options: flexbox | offset | push-pull | block-grid | 5-columns | halfs | first-last | fill-fixed
 $enable-grid-features: (
-    flexbox
-    offset
+    // flexbox
+    // offset
     // push-pull
-    block-grid
-    5-columns
-    halfs
+    // block-grid
+    // 5-columns
+    // halfs
     // first-last
     // fill-fixed
 );
@@ -27,51 +27,79 @@ $enable-grid-features: (
 
 // Colors
 // ------------------------
-$primary: #df3227;
-$secondary: #415365;
+$primary: #2B3D4F;
+$secondary: #9B7536;
 $colors: (
     'primary': (
-        // 'ultralight': tint($primary, 40%),
-        'light': tint($primary, 25%),
+        'ultralight': #959EA7,
+        'light': #606E7B,
         'normal': $primary,
-        'dark': shade($primary, 25%),
-        // 'ultradark': shade($primary, 40%)
+        'dark': #202E3C
     ),
     'secondary': (
-        'ultralight': #ADB5BD,
-        'light': #868e96,
+        'ultralight': #CDBA9A,
+        'light': #B49869,
         'normal': $secondary,
-        'dark': #1e2a36,
-        // 'ultradark': shade($secondary, 25%)
+        'dark': #705426
+    ),
+    'green': (
+        'light': #A0E5D0,
+        'normal': #3EC9A0,
+        'dark': #21906F,
+        'ultradark': #1A7C5F
+    ),
+    'yellow': (
+        'light': #FFE2A3,
+        'normal': #FFC546,
+        'dark': #D29E2A
+    ),
+    'red': (
+        'ultralight': #FFD3D0,
+        'light': #FFA8A2,
+        'normal': #FF5146,
+        'dark': #E9483E,
+        'ultradark': #C1342B
     ),
     'gray': (
-        'ultralight': #f3f3f3,
-        'light': #ecf0f1,
+        'ultralight': #E9EBED,
+        'light': #CACED3,
         'normal': #9b9b9b,
         'dark': #666666,
         'ultradark': #444444
     ),
     'other': (
-        'white': #ffffff,
-        'black': #272727,
-        'green': #92f0a1,
-        'yellow': #f0e591,
-        'red': #ff676b,
-        'purple': #cc00ff
+        'white': #F4F5F6,
+        'black': #222222
     )
 );
 
 // Primary
-// $primary-ultralight: map-get(map-get($colors, 'primary'), 'ultralight');
+$primary-ultralight: map-get(map-get($colors, 'primary'), 'ultralight');
 $primary-light: map-get(map-get($colors, 'primary'), 'light');
 $primary-dark: map-get(map-get($colors, 'primary'), 'dark');
-// $primary-ultradark: map-get(map-get($colors, 'primary'), 'ultradark');
 
 // Secondary
 $secondary-ultralight: map-get(map-get($colors, 'secondary'), 'ultralight');
 $secondary-light: map-get(map-get($colors, 'secondary'), 'light');
 $secondary-dark: map-get(map-get($colors, 'secondary'), 'dark');
-// $secondary-ultradark: map-get(map-get($colors, 'secondary'), 'ultradark');
+
+// Greens
+$green-light: map-get(map-get($colors, 'green'), 'light');
+$green: map-get(map-get($colors, 'green'), 'normal');
+$green-dark: map-get(map-get($colors, 'green'), 'dark');
+$green-ultradark: map-get(map-get($colors, 'green'), 'ultradark');
+
+// Yellows
+$yellow-light: map-get(map-get($colors, 'yellow'), 'light');
+$yellow: map-get(map-get($colors, 'yellow'), 'normal');
+$yellow-dark: map-get(map-get($colors, 'yellow'), 'dark');
+
+// Red
+$red-ultralight: map-get(map-get($colors, 'red'), 'ultralight');
+$red-light: map-get(map-get($colors, 'red'), 'light');
+$red: map-get(map-get($colors, 'red'), 'normal');
+$red-dark: map-get(map-get($colors, 'red'), 'dark');
+$red-ultradark: map-get(map-get($colors, 'red'), 'ultradark');
 
 // Grays
 $gray-ultralight: map-get(map-get($colors, 'gray'), 'ultralight');
@@ -83,9 +111,6 @@ $gray-ultradark: map-get(map-get($colors, 'gray'), 'ultradark');
 // Misc
 $white: map-get(map-get($colors, 'other'), 'white');
 $black: map-get(map-get($colors, 'other'), 'black');
-$green: map-get(map-get($colors, 'other'), 'green');
-$yellow: map-get(map-get($colors, 'other'), 'yellow');
-$red: map-get(map-get($colors, 'other'), 'red');
 
 
 // Fonts
@@ -94,20 +119,19 @@ $red: map-get(map-get($colors, 'other'), 'red');
 
 // Primary font
 $helvetica: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$aktiv-grotesk: 'aktiv-grotesk', $helvetica;
-$font: $aktiv-grotesk;
+$runda: 'runda', $helvetica;
+$font: $runda;
 
 // Secondary font
 $georgia: Georgia, Times, serif;
-// $roboto: 'Roboto Slab', $georgia;
 $font-secondary: $georgia;
 
 // Monospaced
 $consolas: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
 $font-mono: $consolas;
 
-// Weights
-$font-weight-regular: 400;
+// Font Weight
+$font-weight-normal: 400;
 $font-weight-bold: 700;
 
 // Layout/Grid
@@ -234,7 +258,3 @@ $chevron-right: "&#x3009;";
 $close: "&#x2715;";
 $quote-left: "\201c";
 $quote-right: "\201d";
-
-$border-radius: 11px 0;
-$border-radius-large: 25px 0;
-$header-box-shadow: 0 12px 32px rgba(black, 0.06);

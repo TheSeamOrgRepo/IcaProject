@@ -1,37 +1,59 @@
 require('../css/app.scss');
 
-var uportButton = document.querySelector('.uport');
-var emailButton = document.querySelector('.email');
-var backButtonEmail = document.querySelector('#email--back');
-var backButtonuPort = document.querySelector('#uport--back');
-var mainWrapper = document.querySelectorAll('.section--login__main')[0]
-var uportWrapper = document.querySelectorAll('.section--uport')[0]
-var emailWrapper = document.querySelectorAll('.section--email')[0]
-
-function toggleMainuPort(e) {
-    mainWrapper.classList.toggle('active');
-    uportWrapper.classList.toggle('active');
+var activeAction = 'main';
+var DOM = {
+    loginPanel: document.querySelector('.login__left'),
+    actionsMain: document.querySelector('.login__actions--main'),
+    actionsEmail: document.querySelector('.login__actions--email'),
+    actionsUport: document.querySelector('.login__actions--uport'),
+    trigger: document.querySelectorAll('[data-trigger]')
 }
 
-function toggleMainEmail(e) {
-    mainWrapper.classList.toggle('active');
-    emailWrapper.classList.toggle('active');
-    document.forms[0].elements[0].focus();
+function clearActions() {
+    DOM.actionsMain.classList.remove('is-active');
+    DOM.actionsEmail.classList.remove('is-active');
+    DOM.actionsUport.classList.remove('is-active');
 }
 
-function backToggleEmail(e) {
-    console.log('click')
-    mainWrapper.classList.remove('active');
-    emailWrapper.classList.remove('active');
-}
+DOM.trigger.forEach(function(el) {
+    el.addEventListener('click', function(e) {
+        e.preventDefault();
 
-function backToggleuPort(e) {
-    console.log('click')
-    mainWrapper.classList.remove('active');
-    uportWrapper.classList.remove('active');
-}
+        var action = this.getAttribute('data-trigger');
 
-uportButton.addEventListener('click', toggleMainuPort);
-emailButton.addEventListener('click', toggleMainEmail);
-backButtonEmail.addEventListener('click', backToggleEmail);
-backButtonuPort.addEventListener('click', backToggleuPort);
+        if ( activeAction !== action ) {
+            // Enable/Disable full-screen panel
+            DOM.loginPanel.classList.toggle('is-active', (action !== 'main') );
+
+            // Remove the current actions
+            clearActions();
+
+            // Decide what actions to show and how long to wait
+            var $actions;
+            var delay = 0;
+            switch( action ) {
+                case 'email':
+                    $actions = DOM.actionsEmail;
+                    // delay = 1000;
+                    break;
+                case 'uport':
+                    $actions = DOM.actionsUport;
+                    // delay = 500;
+                    break;
+                case 'main':
+                    $actions = DOM.actionsMain;
+                    // delay = 800;
+                    break;
+            }
+
+            // Wait to make email active
+            setTimeout(function() {
+                $actions.classList.add('is-active');
+            }, delay);
+
+            console.log({ action, $actions, delay });
+        }
+
+        activeAction = action;
+    });
+});

@@ -112,12 +112,12 @@
 
         // Text color
         .text-#{$unique-selector} {
-            color: $hex;
+            color: $hex !important;
         }
 
         // Background color
         .bg-#{$unique-selector} {
-            background-color: $hex;
+            background-color: $hex !important;
         }
     }
 }
