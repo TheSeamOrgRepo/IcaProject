@@ -1,3 +1,4 @@
+// Styles
 require('../css/app.scss');
 
 var activeAction = 'main';
@@ -24,12 +25,16 @@ function clearActions() {
 
             DOM.actions[key].classList.remove('is-active', 'out');
         }
-
-        // DOM.actions.forEach(function(el) {
-        //     el.classList.remove('is-active', 'out');
-        // });
     }, 500);
 }
+
+
+// -----
+
+
+// Focus the email input
+var $inputs = document.querySelectorAll('.login__actions--main .form-field__input');
+$inputs[0].focus();
 
 // Handle login section animations
 DOM.trigger.forEach(function(el) {
@@ -55,22 +60,29 @@ DOM.trigger.forEach(function(el) {
                         // Update email field
                         var email = document.querySelector('.login__actions--main .form-field__input').value;
                         var $inputs = document.querySelectorAll('.login__actions--email .form-field__input');
+
+                        // Copy over email
                         $inputs[0].value = email;
 
                         // Focus on the password
-                        $inputs[1].focus();
+                        setTimeout(function() {
+                            $inputs[1].focus();
+                        }, 250);
+                        break;
 
-                        break;
                     case 'uport':
-                        delay = 500;
                         break;
+
                     case 'main':
-                        delay = 500;
+                        var $inputs = document.querySelectorAll('.login__actions--main .form-field__input');
+
+                        // Focus on the email
+                        setTimeout(function() {
+                            $inputs[0].focus();
+                        }, 250);
                         break;
                 }
             }, 500);
-
-            // console.log({ activeAction, action });
 
             activeAction = action;
         }

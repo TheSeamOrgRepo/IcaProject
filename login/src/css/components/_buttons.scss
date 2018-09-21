@@ -20,7 +20,7 @@ input[type="button"] {
 	background-color: $primary;
 	border: 1px solid $primary;
     border-radius: 3px;
-    transition: 0.3s ease-in-out;
+    transition: 0.15s ease-in-out;
 	-webkit-appearance: none;
     -moz-appearance: none;
 	appearance: none;
@@ -63,8 +63,8 @@ input[type="button"] {
 
 		&:active,
 		&:focus {
-			background-color: $gray-ultralight;
-			border-color: $gray-ultralight;
+			background-color: $gray-light;
+			border-color: $gray-light;
 		}
 	}
 

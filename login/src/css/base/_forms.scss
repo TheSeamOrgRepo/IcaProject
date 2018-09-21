@@ -23,7 +23,7 @@ select {
     border: 1px solid $primary-light;
     border-radius: 3px;
     box-shadow: 0 0 10px 0 transparent;
-    transition: 0.3s ease-in-out;
+    transition: 0.15s ease-in-out;
 
     &:hover {
         border-color: $white;
@@ -168,7 +168,7 @@ fieldset {
         transform: translate(-50%, -50%);
 
         path {
-            transition: 0.3s ease-in-out;
+            transition: 0.15s ease-in-out;
         }
     }
 }
@@ -230,7 +230,7 @@ fieldset {
     border-radius: 3px;
     opacity: 0;
     visibility: hidden;
-    transition: 0.3s ease-in-out;
+    transition: 0.15s ease-in-out;
     transform: translateY(-50%);
 
     a {
@@ -252,6 +252,11 @@ fieldset {
         padding-left: 1rem + rem-calc($icon-size);
         color: $red-dark;
         background-color: $red-ultralight;
+
+        .login__actions.is-active & {
+            opacity: 1;
+            visibility: visible;
+        }
 
         &:before {
             border-right-color: $red-ultralight;
