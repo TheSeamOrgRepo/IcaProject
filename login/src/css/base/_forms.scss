@@ -18,6 +18,7 @@ select {
     font-family: $font;
     font-size: rem-calc(14);
     color: $white;
+    line-height: $form-height;
     background-color: transparent;
     border: 1px solid $primary-light;
     border-radius: 3px;
@@ -50,7 +51,14 @@ textarea {
 
     @include placeholder {
         color: $primary-light;
+        font-family: $font;
+        letter-spacing: 0;
     }
+}
+
+input[type='password'] {
+    font-family: caption;
+    letter-spacing: 2px;
 }
 
 textarea {
