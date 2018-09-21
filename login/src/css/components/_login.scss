@@ -15,7 +15,7 @@
     width: 65%;
     background-color: $primary;
     background-image: radial-gradient(50% 120%, #415365 50%, #1E2A36 100%);
-    transition: 0.55s $ease-in-out-cubic;
+    transition: 0.5s $ease-custom-login;
     z-index: 1;
     will-change: width;
 
@@ -49,7 +49,7 @@
     right: 0;
     width: 35%;
     opacity: 1;
-    transition: 0.55s $ease-in-out-cubic;
+    transition: 0.5s $ease-custom-login;
     transform: scale(1);
     z-index: 0;
     will-change: transform;
@@ -65,23 +65,63 @@
     transition: 0.3s ease-in-out;
 }
 
+.login__centerer {
+    width: 100%;
+}
+
 .login__logo {
     display: block;
     margin: 0 auto;
     margin-bottom: 4rem;
 }
 
-.login__actions {
-    display: none;
+.login__actions-container {
+    display: flex;
     justify-content: center;
-    max-width: 650px;
+    position: relative;
+    width: 100%;
+}
+
+.login__actions {
+    display: block;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0);
+    will-change: transform, opacity, visibility;
 
     &.is-active {
-        display: flex;
+        opacity: 1;
+        visibility: visible;
+
+        &.out {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(70px);
+            transition: 0.5s $ease-custom-login;
+        }
+    }
+
+    .action__column {
+        width: 100%;
     }
 }
 
 .login__actions--main {
+    display: flex;
+    max-width: 650px;
+    opacity: 0;
+    transition: 0.25s $ease-custom-login;
+    transform: translateY(70px);
+
+    &.is-active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
     .action__column {
         width: 43%;
 
@@ -117,17 +157,90 @@
     }
 }
 
+.login__actions--main,
 .login__actions--email {
+    position: absolute;
+}
+
+.login__actions--email {
+    .action__heading,
+    .form-field,
+    .btn,
+    .action__helper,
+    .action__other {
+        opacity: 0;
+        transition: 0.5s $ease-custom-login;
+        transform: translateY(70px);
+        will-change: transform, opacity;
+    }
+
+    &.is-active {
+        .action__heading,
+        .form-field,
+        .btn,
+        .action__helper,
+        .action__other {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .form-field {
+        transition-delay: 0.1s;
+    }
+
+    .form-field--password {
+        transition-delay: 0.2s;
+    }
+
+    .btn,
+    .action__helper {
+        transition-delay: 0.3s;
+    }
+
     .btn {
         float: right;
         margin-top: 0.5rem;
     }
+
+    .action__other {
+        transition-duration: 0.75s;
+        transition-delay: 0.8s;
+    }
 }
 
 .login__actions--uport {
+    .action__heading,
+    img,
+    .action__other {
+        opacity: 0;
+        transition: 0.5s $ease-custom-login;
+        transform: translateY(70px);
+        will-change: transform, opacity;
+    }
+
+    &.is-active {
+        .action__heading,
+        img,
+        .action__other {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
     img {
         max-height: 350px;
+        transition-delay: 0.25s;
     }
+
+    .action__other {
+        transition-duration: 0.75s;
+        transition-delay: 0.5s
+    }
+}
+
+.action__column {
+    @include clearfix;
 }
 
 .action__heading {
@@ -138,6 +251,7 @@
 }
 
 .action__helper {
+    float: left;
     margin-top: 0.5rem;
 }
 

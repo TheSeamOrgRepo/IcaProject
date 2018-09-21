@@ -3,16 +3,29 @@ require('../css/app.scss');
 var activeAction = 'main';
 var DOM = {
     loginPanel: document.querySelector('.login__left'),
-    actionsMain: document.querySelector('.login__actions--main'),
-    actionsEmail: document.querySelector('.login__actions--email'),
-    actionsUport: document.querySelector('.login__actions--uport'),
+    actions: {
+        main: document.querySelector('.login__actions--main'),
+        email: document.querySelector('.login__actions--email'),
+        uport: document.querySelector('.login__actions--uport')
+    },
     trigger: document.querySelectorAll('[data-trigger]')
 }
 
 function clearActions() {
-    DOM.actionsMain.classList.remove('is-active');
-    DOM.actionsEmail.classList.remove('is-active');
-    DOM.actionsUport.classList.remove('is-active');
+    DOM.actions[activeAction].classList.add('out');
+
+    setTimeout(function() {
+        for (var key in DOM.actions) {
+            // Skip if from prototype
+            if (!DOM.actions.hasOwnProperty(key)) continue;
+
+            DOM.actions[key].classList.remove('is-active', 'out');
+        }
+
+        // DOM.actions.forEach(function(el) {
+        //     el.classList.remove('is-active', 'out');
+        // });
+    }, 500);
 }
 
 DOM.trigger.forEach(function(el) {
@@ -28,32 +41,28 @@ DOM.trigger.forEach(function(el) {
             // Remove the current actions
             clearActions();
 
-            // Decide what actions to show and how long to wait
-            var $actions;
-            var delay = 0;
-            switch( action ) {
-                case 'email':
-                    $actions = DOM.actionsEmail;
-                    // delay = 1000;
-                    break;
-                case 'uport':
-                    $actions = DOM.actionsUport;
-                    // delay = 500;
-                    break;
-                case 'main':
-                    $actions = DOM.actionsMain;
-                    // delay = 800;
-                    break;
-            }
+            // Decide how long to wait
+            // var delay = 0;
+            // switch( action ) {
+            //     case 'email':
+            //         delay = 500;
+            //         break;
+            //     case 'uport':
+            //         delay = 500;
+            //         break;
+            //     case 'main':
+            //         delay = 500;
+            //         break;
+            // }
 
             // Wait to make email active
             setTimeout(function() {
-                $actions.classList.add('is-active');
-            }, delay);
+                DOM.actions[action].classList.add('is-active');
+            }, 500);
 
-            console.log({ action, $actions, delay });
+            // console.log({ activeAction, action });
+
+            activeAction = action;
         }
-
-        activeAction = action;
     });
 });
