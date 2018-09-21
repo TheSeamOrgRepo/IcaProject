@@ -1,4 +1,27 @@
-.login {}
+.login {
+    &.to-dashboard {
+        .login__left {
+            width: 80px;
+            transition-delay: 0.6s;
+
+            &:before {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        .login__centerer,
+        .login__copyright {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(70px);
+        }
+
+        .login__right {
+            display: none;
+        }
+    }
+}
 
 .login__left,
 .login__right {
@@ -14,10 +37,31 @@
     left: 0;
     width: 65%;
     background-color: $primary;
-    background-image: radial-gradient(50% 120%, #415365 50%, #1E2A36 100%);
     transition: 0.5s $ease-custom-login;
     z-index: 1;
     will-change: width;
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: radial-gradient(50% 120%, #415365 50%, #1E2A36 100%);
+        opacity: 1;
+        visibility: visible;
+        transition: 0.5s $ease-custom-login;
+        z-index: 0;
+    }
+
+    .login__centerer,
+    .login__copyright {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        transition: 0.5s $ease-custom-login;
+    }
 
     &.is-active {
         width: 100%;
@@ -108,8 +152,8 @@
         &.out {
             opacity: 0;
             visibility: hidden;
-            transform: translateY(70px);
             transition: 0.5s $ease-custom-login;
+            transform: translateY(70px);
         }
     }
 

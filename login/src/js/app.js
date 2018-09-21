@@ -2,7 +2,9 @@ require('../css/app.scss');
 
 var activeAction = 'main';
 var DOM = {
-    loginPanel: document.querySelector('.login__left'),
+    login: document.querySelector('.login'),
+    loginLeft: document.querySelector('.login__left'),
+    loginRight: document.querySelector('.login__right'),
     actions: {
         main: document.querySelector('.login__actions--main'),
         email: document.querySelector('.login__actions--email'),
@@ -36,9 +38,9 @@ DOM.trigger.forEach(function(el) {
 
         var action = this.getAttribute('data-trigger');
 
-        if ( activeAction !== action ) {
+        if ( activeAction !== action && action !== 'login' ) {
             // Enable/Disable full-screen panel
-            DOM.loginPanel.classList.toggle('is-active', (action !== 'main') );
+            DOM.loginLeft.classList.toggle('is-active', (action !== 'main') );
 
             // Remove the current actions
             clearActions();
@@ -71,6 +73,11 @@ DOM.trigger.forEach(function(el) {
             // console.log({ activeAction, action });
 
             activeAction = action;
+        }
+
+        if ( action == 'login' ) {
+            DOM.loginLeft.classList.remove('is-active');
+            DOM.login.classList.add('to-dashboard');
         }
     }, false);
 });
