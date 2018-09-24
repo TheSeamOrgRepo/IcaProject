@@ -241,12 +241,34 @@
         }
     }
 
+    .action__heading {
+        margin-bottom: 0;
+
+        img {
+            width: 25px;
+        }
+    }
+
     .form-field {
         transition-delay: 0.1s;
     }
 
     .form-field--password {
         transition-delay: 0.2s;
+    }
+
+    .form-field--email {
+        .form-field__input {
+            border: none;
+            text-align: center;
+            box-shadow: none;
+            cursor: pointer;
+
+            &:active,
+            &:focus {
+                cursor: default;
+            }
+        }
     }
 
     .btn,
@@ -256,7 +278,7 @@
 
     .btn {
         float: right;
-        margin-top: 0.5rem;
+        margin-top: 0.75rem;
     }
 
     .action__other {
@@ -308,7 +330,7 @@
 
 .action__helper {
     float: left;
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
 }
 
 .action__other {

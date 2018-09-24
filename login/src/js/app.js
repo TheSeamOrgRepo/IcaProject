@@ -67,7 +67,7 @@ DOM.trigger.forEach(function(el) {
                         // Focus on the password
                         setTimeout(function() {
                             $inputs[1].focus();
-                        }, 250);
+                        }, 500);
                         break;
 
                     case 'uport':
@@ -79,7 +79,7 @@ DOM.trigger.forEach(function(el) {
                         // Focus on the email
                         setTimeout(function() {
                             $inputs[0].focus();
-                        }, 250);
+                        }, 500);
                         break;
                 }
             }, 500);

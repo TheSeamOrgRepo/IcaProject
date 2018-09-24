@@ -61,29 +61,29 @@ input[type='password'] {
     letter-spacing: 2px;
 }
 
-textarea {
-    width: 100%;
-    min-height: $form-height * 4; // 4x the height of an input ($form-height)
-    resize: vertical;
-}
+// textarea {
+//     width: 100%;
+//     min-height: $form-height * 4; // 4x the height of an input ($form-height)
+//     resize: vertical;
+// }
 
-label,
-legend {
-    display: block;
-    margin-bottom: 0.25rem;
-    font-family: $font-secondary;
-    font-weight: 700;
-}
+// label,
+// legend {
+//     display: block;
+//     margin-bottom: 0.25rem;
+//     font-family: $font-secondary;
+//     font-weight: 700;
+// }
 
-fieldset {
-    padding: 0.75rem 1rem 1rem;
-    border: 1px solid $gray-light;
-    border-radius: 3px;
+// fieldset {
+//     padding: 0.75rem 1rem 1rem;
+//     border: 1px solid $gray-light;
+//     border-radius: 3px;
 
-    legend {
-        padding: 0 0.5rem;
-    }
-}
+//     legend {
+//         padding: 0 0.5rem;
+//     }
+// }
 
 // Form Fields
 .form-field {
