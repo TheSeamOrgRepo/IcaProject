@@ -1,5 +1,3 @@
-$form-height: 46px;
-
 // Forms
 // ------------------------
 input[type='text'],
@@ -8,12 +6,9 @@ input[type='tel'],
 input[type='number'],
 input[type='search'],
 input[type='url'],
-input[type='password'],
-textarea,
-select {
+input[type='password'] {
     width: 100%;
     height: $form-height;
-    // margin-bottom: 1rem;
     padding: 0.5rem 0.75rem;
     font-family: $font;
     font-size: rem-calc(14);
@@ -24,6 +19,15 @@ select {
     border-radius: 3px;
     box-shadow: 0 0 10px 0 transparent;
     transition: 0.15s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    @include placeholder {
+        color: $primary-light;
+        font-family: $font;
+        letter-spacing: 0;
+    }
 
     &:hover {
         border-color: $white;
@@ -37,53 +41,10 @@ select {
     }
 }
 
-input[type='text'],
-input[type='email'],
-input[type='tel'],
-input[type='number'],
-input[type='search'],
-input[type='url'],
-input[type='password'],
-textarea {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-
-    @include placeholder {
-        color: $primary-light;
-        font-family: $font;
-        letter-spacing: 0;
-    }
-}
-
 input[type='password'] {
     font-family: caption;
     letter-spacing: 2px;
 }
-
-// textarea {
-//     width: 100%;
-//     min-height: $form-height * 4; // 4x the height of an input ($form-height)
-//     resize: vertical;
-// }
-
-// label,
-// legend {
-//     display: block;
-//     margin-bottom: 0.25rem;
-//     font-family: $font-secondary;
-//     font-weight: 700;
-// }
-
-// fieldset {
-//     padding: 0.75rem 1rem 1rem;
-//     border: 1px solid $gray-light;
-//     border-radius: 3px;
-
-//     legend {
-//         padding: 0 0.5rem;
-//     }
-// }
 
 // Form Fields
 .form-field {
@@ -220,7 +181,7 @@ input[type='password'] {
     left: 100%;
     left: calc(100% + 12px);
     top: 50%;
-    width: 90%;
+    width: 100%;
     padding: 0.5rem;
     font-size: rem-calc(11);
     font-weight: $font-weight-bold;
