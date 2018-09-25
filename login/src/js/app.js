@@ -47,6 +47,12 @@ DOM.trigger.forEach(function(el) {
             // Enable/Disable full-screen panel
             DOM.loginLeft.classList.toggle('is-active', (action !== 'main') );
 
+            // Enable/Disable email styles
+            DOM.loginLeft.classList.toggle('is-email', (action == 'email') );
+
+            // Enable/Disable uPort styles
+            DOM.loginLeft.classList.toggle('is-uport', (action == 'uport') );
+
             // Remove the current actions
             clearActions();
 

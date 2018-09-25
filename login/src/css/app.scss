@@ -145,6 +145,18 @@ h1, .h1 {
         }
     }
 
+    &.is-email {
+        .login__logo {
+            transform: translateY(100%);
+        }
+    }
+
+    &.is-uport {
+        .login__logo {
+            transform: translateY(0);
+        }
+    }
+
     p {
         color: $primary-ultralight;
         font-size: rem-calc(11);
@@ -188,6 +200,8 @@ h1, .h1 {
     display: block;
     text-align: center;
     margin-bottom: 4rem;
+    transition: 0.5s $ease-custom-login 0.3s;
+    transform: translateY(120%);
 
     a {
         display: inline-block;

@@ -112,6 +112,12 @@ input[type='password'] {
     .form-field__input {
         padding-right: $form-height;
     }
+
+    .form-field__icon {
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
 }
 
 .form-field__icon,
@@ -165,6 +171,11 @@ input[type='password'] {
     background-color: $green;
     border-radius: 0 3px 3px 0;
     border: none;
+
+    &:active,
+    &:focus {
+        background-color: $green-dark;
+    }
 
     path {
         fill: $green-ultradark;
