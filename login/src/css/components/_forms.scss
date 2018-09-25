@@ -164,12 +164,15 @@ input[type='password'] {
     right: 0;
     background-color: $green;
     border-radius: 0 3px 3px 0;
+    border: none;
 
     path {
         fill: $green-ultradark;
     }
 
     &:hover {
+        box-shadow: none;
+
         path {
             fill: $white;
         }
