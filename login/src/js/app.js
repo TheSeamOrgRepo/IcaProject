@@ -36,6 +36,21 @@ function clearActions() {
 var $inputs = document.querySelectorAll('.login__actions--main .form-field__input');
 $inputs[0].focus();
 
+// Handle enter on email input
+var $emailInput = DOM.actions.main.querySelector('.form-field__input');
+$emailInput.addEventListener('keypress', function(e) {
+    if ( e.which == 13 ) {
+        $emailInput.nextElementSibling.click();
+    }
+}, false);
+
+// Handle toggling email field
+var $emailHeading = DOM.actions.email.querySelector('.action__heading');
+$emailHeading.addEventListener('click', function(e) {
+    DOM.actions.email.classList.add('is-editing');
+    DOM.actions.email.querySelector('.form-field__input').focus();
+}, false);
+
 // Handle login section animations
 DOM.trigger.forEach(function(el) {
     el.addEventListener('click', function(e) {
@@ -66,9 +81,16 @@ DOM.trigger.forEach(function(el) {
                         // Update email field
                         var email = document.querySelector('.login__actions--main .form-field__input').value;
                         var $inputs = document.querySelectorAll('.login__actions--email .form-field__input');
+                        var $headingEmail = DOM.actions.email.querySelector('.action__heading .email');
+
+                        // Change email action layout
+                        if ( activeAction == 'main' ) {
+                            DOM.actions.email.classList.remove('is-editing');
+                        }
 
                         // Copy over email
                         $inputs[0].value = email;
+                        $headingEmail.innerHTML = email;
 
                         // Focus on the password
                         setTimeout(function() {
@@ -88,9 +110,10 @@ DOM.trigger.forEach(function(el) {
                         }, 500);
                         break;
                 }
+
+                activeAction = action;
             }, 500);
 
-            activeAction = action;
         }
 
         if ( action == 'login' ) {
