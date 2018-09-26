@@ -86,6 +86,8 @@ DOM.trigger.forEach(function(el) {
                         // Change email action layout
                         if ( activeAction == 'main' ) {
                             DOM.actions.email.classList.remove('is-editing');
+                        } else {
+                            DOM.actions.email.classList.add('is-editing');
                         }
 
                         // Copy over email

@@ -320,7 +320,7 @@ h1, .h1 {
 }
 
 .login__actions--email {
-    .action__heading,
+    .action__email,
     .form-field,
     .btn,
     .action__helper,
@@ -332,7 +332,7 @@ h1, .h1 {
     }
 
     &.is-active {
-        .action__heading,
+        .action__email,
         .form-field,
         .btn,
         .action__helper,
@@ -394,6 +394,7 @@ h1, .h1 {
 
     .form-field--email {
         display: none;
+        margin-bottom: 1rem;
     }
 
     .btn,
@@ -493,7 +494,7 @@ h1, .h1 {
     text-align: center;
 
     @include bp(min-height, rem-calc(700)) {
-        margin-bottom: 4rem;
+        margin-top: 4rem;
     }
 }
 
