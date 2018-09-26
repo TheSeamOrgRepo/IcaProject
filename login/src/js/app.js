@@ -86,18 +86,24 @@ DOM.trigger.forEach(function(el) {
                         // Change email action layout
                         if ( activeAction == 'main' ) {
                             DOM.actions.email.classList.remove('is-editing');
+
+                            // Focus on the password
+                            setTimeout(function() {
+                                $inputs[1].focus();
+                            }, 500);
                         } else {
                             DOM.actions.email.classList.add('is-editing');
+
+                            // Focus on the email
+                            setTimeout(function() {
+                                $inputs[0].focus();
+                            }, 500);
                         }
 
                         // Copy over email
                         $inputs[0].value = email;
                         $headingEmail.innerHTML = email;
 
-                        // Focus on the password
-                        setTimeout(function() {
-                            $inputs[1].focus();
-                        }, 500);
                         break;
 
                     case 'uport':
@@ -110,6 +116,7 @@ DOM.trigger.forEach(function(el) {
                         setTimeout(function() {
                             $inputs[0].focus();
                         }, 500);
+
                         break;
                 }
 
