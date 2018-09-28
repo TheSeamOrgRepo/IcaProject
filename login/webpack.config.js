@@ -25,6 +25,15 @@ const CONFIG = {
         "removeComments": false
       }
     }),
+    new HtmlWebpackPlugin({
+      template: './src/navigation.html',
+      filename: './navigation.html',
+      minify: {
+        "collapseWhitespace": false,
+        "minifyCSS": false,
+        "removeComments": false
+      }
+    }),
     new HtmlReplaceWebpackPlugin([{
         pattern: '<script type="text/javascript" src="../build/app.js"></script>',
         replacement: ''

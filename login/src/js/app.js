@@ -1,15 +1,67 @@
 // Styles
 require('../css/app.scss');
 
-
-// -----
-
-
 (function(global) {
     var theseam = {
         // Initialize everything
         init: function() {
-            this.login.init();
+            var self = this;
+            var main = document.querySelector('main');
+
+            // Login
+            if ( main.classList.contains('login') ) self.login.init();
+
+            // Dashboard
+            if ( main.classList.contains('dashboard') ) self.navigation.init();
+        },
+
+        // Navigation
+        navigation: {
+            $dom: {
+                logoWrapper: document.querySelector('.logo-wrapper'),
+                navLink: document.getElementsByClassName('nav-link'),
+                activeNavItem: document.getElementsByClassName('active-item'),
+                sideBar: document.querySelector('#sidebar'),
+                sideBarToggle: document.querySelector('#nav-toggle'),
+                accountDrawer: document.querySelector('.block--account-info'),
+                accountInfo: document.querySelector('.block--account-info__drawer')
+            },
+
+            init: function() {
+                var self = this;
+                self.events();
+            },
+
+            events: function() {
+                var self = this;
+
+                // Return to open state when returning to main dashboard
+                self.$dom.logoWrapper.addEventListener('click', function() {
+                    for (var i = 0; i < self.$dom.activeNavItem.length; i++) {
+                        self.$dom.activeNavItem[i].classList.remove('active-item');
+                    }
+                });
+
+                self.$dom.accountDrawer.addEventListener('click', function() {
+                    console.log('click')
+                    self.$dom.accountInfo.classList.toggle('hover');
+                });
+
+                //Remove active-item from old link and add active-item class to current link and collapse sidebar
+                [].forEach.call(self.$dom.navLink, function(el) {
+                    el.addEventListener('click', function() {
+                        for (var i = 0; i < self.$dom.activeNavItem.length; i++) {
+                            self.$dom.activeNavItem[i].classList.remove('active-item');
+                        }
+                        el.classList.add('active-item')
+                    })
+                })
+
+                self.$dom.sideBarToggle.addEventListener('click', function() {
+                    self.$dom.sideBar.classList.toggle('active');
+                    self.$dom.sideBarToggle.classList.toggle('active');
+                });
+            }
         },
 
         // Login
@@ -32,8 +84,6 @@ require('../css/app.scss');
             // Animate elements when they are in view
             init: function() {
                 var self = this;
-
-                // Init events
                 self.events();
 
                 // Focus the main email input
