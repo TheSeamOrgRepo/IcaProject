@@ -1,0 +1,11 @@
+// Animation
+// ------------------------
+@keyframes logo-slide-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes logo-slide-right {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(50%); }
+}
