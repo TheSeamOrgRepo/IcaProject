@@ -26,8 +26,8 @@ const CONFIG = {
       }
     }),
     new HtmlWebpackPlugin({
-      template: './src/navigation.html',
-      filename: './navigation.html',
+      template: './src/dashboard.html',
+      filename: './dashboard.html',
       minify: {
         "collapseWhitespace": false,
         "minifyCSS": false,

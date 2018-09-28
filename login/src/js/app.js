@@ -187,6 +187,9 @@ require('../css/app.scss');
                         if ( action == 'login' ) {
                             self.$dom.loginLeft.classList.remove('is-active');
                             self.$dom.login.classList.add('to-dashboard');
+                            setTimeout(function() {
+                                window.location = 'dashboard.html';
+                            }, 1100);
                         }
                     }, false);
                 });
