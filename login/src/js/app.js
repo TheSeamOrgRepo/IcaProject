@@ -19,10 +19,10 @@ require('../css/app.scss');
         navigation: {
             $dom: {
                 logoWrapper: document.querySelector('.logo-wrapper'),
-                navLink: document.getElementsByClassName('nav-link'),
-                activeNavItem: document.getElementsByClassName('active-item'),
-                sideBar: document.querySelector('#sidebar'),
-                sideBarToggle: document.querySelector('#nav-toggle'),
+                navLink: document.querySelectorAll('.nav-link'),
+                activeNavItem: document.querySelectorAll('.nav-link.is-active'),
+                mainNav: document.querySelector('.main-navigation'),
+                mainNavToggle: document.querySelector('.nav-toggle'),
                 accountDrawer: document.querySelector('.block--account-info'),
                 accountInfo: document.querySelector('.block--account-info__drawer')
             },
@@ -37,29 +37,31 @@ require('../css/app.scss');
 
                 // Return to open state when returning to main dashboard
                 self.$dom.logoWrapper.addEventListener('click', function() {
+                    self.$dom.activeNavItem = document.querySelectorAll('.nav-link.is-active');
                     for (var i = 0; i < self.$dom.activeNavItem.length; i++) {
-                        self.$dom.activeNavItem[i].classList.remove('active-item');
+                        self.$dom.activeNavItem[i].classList.remove('is-active');
                     }
                 });
 
+                // Toggle account drawer
                 self.$dom.accountDrawer.addEventListener('click', function() {
-                    console.log('click')
-                    self.$dom.accountInfo.classList.toggle('hover');
+                    self.$dom.accountInfo.classList.toggle('is-active');
                 });
 
-                //Remove active-item from old link and add active-item class to current link and collapse sidebar
+                //Remove is-active from old link and add is-active class to current link and collapse mainNav
                 [].forEach.call(self.$dom.navLink, function(el) {
                     el.addEventListener('click', function() {
+                        self.$dom.activeNavItem = document.querySelectorAll('.nav-link.is-active');
                         for (var i = 0; i < self.$dom.activeNavItem.length; i++) {
-                            self.$dom.activeNavItem[i].classList.remove('active-item');
+                            self.$dom.activeNavItem[i].classList.remove('is-active');
                         }
-                        el.classList.add('active-item')
+                        el.classList.add('is-active')
                     })
                 })
 
-                self.$dom.sideBarToggle.addEventListener('click', function() {
-                    self.$dom.sideBar.classList.toggle('active');
-                    self.$dom.sideBarToggle.classList.toggle('active');
+                self.$dom.mainNavToggle.addEventListener('click', function() {
+                    self.$dom.mainNav.classList.toggle('is-active');
+                    self.$dom.mainNavToggle.classList.toggle('is-active');
                 });
             }
         },
