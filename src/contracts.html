@@ -6,8 +6,8 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="msapplication-tap-highlight" content="no">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Seam | ICA Dashboard</title>
-    <meta itemprop="name" content="ICA Dashboard">
+    <title>The Seam | ICA Contracts</title>
+    <meta itemprop="name" content="ICA Contracts">
     <meta itemprop="description" content="Content description less than 200 characters">
     <link rel="stylesheet" href="./css/app.css">
     <script>
@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <main role="main" class="dashboard">
+    <main role="main" class="dashboard contracts">
         <nav class="sidebar main-navigation">
             <div class="navigation--wrapper">
                 <a href="#" class="logo-wrapper">
@@ -125,7 +125,54 @@
         </nav>
 
         <section class="dashboard__top-bar">
-            Top Bar
+            <div class="contract__header">
+                <div class="contract__header-left">
+                    <h1 class="contract__header-heading">
+                        New Contract
+                        <button>
+                            <img src="/images/icon-edit.svg" alt="">
+                        </button>
+                    </h1>
+                </div>
+
+                <div class="contract__header-right">
+                    <div class="contract__header-steps">
+                        <div class="contract__header-steps-text">
+                            <span class="current">0</span> of <span class="total">0</span> Fields Completed
+                        </div>
+
+                        <div class="contract__header-progress"></div>
+                    </div>
+
+                    <div class="contract__header-actions">
+                        <button class="contract__header-action contract__header-cancel">
+                            <img src="/images/icon-cancel.svg" alt="" aria-hidden="true">
+                            <div>Cancel</div>
+                        </button>
+
+                        <button class="contract__header-action contract__header-save">
+                            <img src="/images/icon-save.svg" alt="" aria-hidden="true">
+                            <div>Save & Exit</div>
+                        </button>
+
+                        <button class="contract__header-action contract__header-templates">
+                            <img src="/images/icon-templates.svg" alt="" aria-hidden="true">
+                            <div>Templates</div>
+                        </button>
+
+                        <button class="contract__header-action contract__header-sign">
+                            <img src="/images/icon-sign.svg" alt="" aria-hidden="true">
+                            <div>Sign</div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard__content">
+            <div class="contract__sidebar">
+
+            </div>
         </section>
     </main>
 

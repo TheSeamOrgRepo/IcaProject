@@ -60,6 +60,7 @@ require('../css/app.scss');
                 })
 
                 self.$dom.mainNavToggle.addEventListener('click', function() {
+                    document.documentElement.classList.toggle('is-small-nav');
                     self.$dom.mainNav.classList.toggle('is-active');
                     self.$dom.mainNavToggle.classList.toggle('is-active');
                 });

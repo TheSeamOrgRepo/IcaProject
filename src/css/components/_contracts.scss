@@ -1,0 +1,42 @@
+.contracts {
+}
+
+.contract__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contract__header-heading {
+    margin: 0;
+    padding: 0 1.5rem;
+}
+
+.contract__header-right {
+    display: flex;
+    align-items: center;
+}
+
+.contract__header-steps,
+.contract__header-action {
+    padding: 1rem;
+    border: 0 solid $gray-ultralight;
+    border-left-width: 1px;
+}
+
+.contract__header-progress {
+    display: block;
+    height: 4px;
+    border-radius: 4px;
+    background-color: $gray-ultralight;
+}
+
+.contract__header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.contract__header-action {
+    background-color: transparent;
+    // border: none;
+}

@@ -34,6 +34,15 @@ const CONFIG = {
         "removeComments": false
       }
     }),
+    new HtmlWebpackPlugin({
+      template: './src/contracts.html',
+      filename: './contracts.html',
+      minify: {
+        "collapseWhitespace": false,
+        "minifyCSS": false,
+        "removeComments": false
+      }
+    }),
     new HtmlReplaceWebpackPlugin([{
         pattern: '<script type="text/javascript" src="../build/app.js"></script>',
         replacement: ''

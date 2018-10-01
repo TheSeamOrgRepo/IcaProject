@@ -1,10 +1,10 @@
 // Buttons
 // ------------------------
-.btn,
-button,
-input[type="submit"],
-input[type="reset"],
-input[type="button"] {
+button {
+    cursor: pointer;
+}
+
+.btn {
     display: inline-block;
     color: $white;
     line-height: 1;

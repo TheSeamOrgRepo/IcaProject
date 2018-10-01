@@ -1,0 +1,30 @@
+.dashboard {}
+
+.dashboard__top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: calc(100vw - #{$nav-size-large} - #{$nav-size-small - 1px});
+    height: 75px;
+    background-color: white;
+    border-bottom: 1px solid $gray-light;
+    transition: 0.75s cubic-bezier(0.25, 0.75, 0.05, 1);
+    transform: translateX($nav-size-large + $nav-size-small - 1px);
+
+    .is-small-nav & {
+        width: calc(100vw - #{$nav-size-small * 2 - 1px});
+        transform: translateX($nav-size-small * 2 - 1px);
+    }
+}
+
+.dashboard__content {
+    width: calc(100vw - #{$nav-size-large - 1px});
+    margin-top: $nav-size-small;
+    transition: 0.75s cubic-bezier(0.25, 0.75, 0.05, 1);
+    transform: translateX($nav-size-large);
+
+    .is-small-nav & {
+        width: calc(100vw - #{$nav-size-small - 1px});
+        transform: translateX($nav-size-small - 1px);
+    }
+}
