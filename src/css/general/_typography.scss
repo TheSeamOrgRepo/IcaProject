@@ -52,10 +52,10 @@ h6, .h6 {
     font-family: $font;
     color: $primary;
     font-weight: $font-weight-bold;
+    line-height: 1.25;
 }
 
 h1, .h1 {
-    line-height: 1.2;
     letter-spacing: -0.5px;
     @include r-font-size(rem-calc(24), rem-calc(30));
 }

@@ -1,3 +1,5 @@
+// Dashboard
+// ------------------------
 .dashboard {}
 
 .dashboard__top-bar {
@@ -9,6 +11,7 @@
     background-color: white;
     border-bottom: 1px solid $gray-light;
     transition: 0.75s cubic-bezier(0.25, 0.75, 0.05, 1);
+    z-index: 1;
 
     .is-small-nav & {
         width: calc(100vw - #{$nav-size-small * 2 - 1px});

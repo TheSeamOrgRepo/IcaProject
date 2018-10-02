@@ -1,5 +1,6 @@
-.contracts {
-}
+// Contracts
+// ------------------------
+.contracts {}
 
 .contract__header {
     display: flex;
@@ -100,8 +101,8 @@
 }
 
 .contract__sidebar {
-    flex-basis: 40%;
-    padding: 4rem 2rem;
+    flex-basis: 30%;
+    padding: 3rem 2rem;
 
     h1,
     h2,
@@ -128,8 +129,8 @@
 
 .contract__preview {
     display: flex;
-    flex-basis: 60%;
-    padding: 5rem 3rem;
+    flex-basis: 70%;
+    padding: 4rem 3rem;
     background-color: $gray-ultralight;
 
     .placeholder {
