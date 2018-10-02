@@ -22,6 +22,10 @@ body {
     overflow-x: hidden;
 }
 
+main {
+    display: block;
+}
+
 [hidden] {
     display: none !important;
 }

@@ -23,6 +23,12 @@ $colors: (
         'normal': $secondary,
         'dark': #705426
     ),
+    'blue': (
+        'light': #8DC9E6,
+        'normal': #1C94CE,
+        'dark': #13668E,
+        'ultradark': #0D445F
+    ),
     'green': (
         'light': #A0E5D0,
         'normal': #3EC9A0,
@@ -63,6 +69,12 @@ $primary-dark: map-get(map-get($colors, 'primary'), 'dark');
 $secondary-ultralight: map-get(map-get($colors, 'secondary'), 'ultralight');
 $secondary-light: map-get(map-get($colors, 'secondary'), 'light');
 $secondary-dark: map-get(map-get($colors, 'secondary'), 'dark');
+
+// Blues
+$blue-light: map-get(map-get($colors, 'blue'), 'light');
+$blue: map-get(map-get($colors, 'blue'), 'normal');
+$blue-dark: map-get(map-get($colors, 'blue'), 'dark');
+$blue-ultradark: map-get(map-get($colors, 'blue'), 'ultradark');
 
 // Greens
 $green-light: map-get(map-get($colors, 'green'), 'light');
@@ -250,3 +262,8 @@ $chevron-right: "&#x3009;";
 $close: "&#x2715;";
 $quote-left: "\201c";
 $quote-right: "\201d";
+
+%small {
+    color: $gray;
+    font-size: rem-calc(12);
+}
