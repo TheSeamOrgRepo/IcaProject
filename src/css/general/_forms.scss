@@ -22,12 +22,11 @@ input[type='password'],
 textarea,
 select {
     width: 100%;
-    height: $form-height;
     padding: 0.5rem 0.75rem;
     font-family: $font;
     font-size: rem-calc(14);
     color: $black;
-    line-height: $form-height;
+    // line-height: $form-height;
     background-color: $white;
     border: 1px solid $gray-light;
     border-radius: 3px;
@@ -44,6 +43,20 @@ select {
         border-color: $blue;
         box-shadow: 0 0 6px 0 rgba($blue, 0.5);
     }
+}
+
+
+input[type='text'],
+input[type='email'],
+input[type='tel'],
+input[type='number'],
+input[type='search'],
+input[type='url'],
+input[type='date'],
+input[type='password'],
+textarea,
+select {
+    height: $form-height;
 }
 
 input[type='text'],
@@ -68,14 +81,16 @@ input[type='password'] {
 textarea {
     width: 100%;
     min-height: $form-height * 4; // 4x the height of an input
+    line-height: 1.25;
     resize: vertical;
 }
 
-select {
-    line-height: 1;
-}
+// select {
+//     line-height: 1;
+// }
 
 label {
+    display: inline-block;
     color: $black;
     font-size: rem-calc(14);
 }
@@ -215,6 +230,131 @@ label {
     top: 5px;
     right: 0;
     text-decoration: none !important;
+}
+
+.form-field__label {
+    margin-bottom: 0.25rem;
+}
+
+.form-field__checkbox,
+.form-field__radio {
+    display: block;
+
+    input {
+        display: none;
+
+        &:checked {
+            + span {
+                &:before {
+                    border-color: $blue;
+                }
+            }
+        }
+
+        &:disabled {
+            + span {
+                pointer-events: none !important;
+
+                &:before {
+                    opacity: 0.5 !important;
+                    border-color: $gray-light !important;
+                    pointer-events: none !important;
+                }
+            }
+        }
+    }
+
+    span {
+        position: relative;
+        padding-left: 1.5rem;
+        font-size: rem-calc(14);
+
+        &:hover {
+            &:before {
+                border-color: $blue;
+            }
+        }
+
+        &:before {
+            $size: 18px;
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: $size;
+            height: $size;
+            background-color: $white;
+            border: 1px solid $gray-light;
+            border-radius: 1px;
+            transform: translateY(-50%);
+            transition: 0.15s ease-in-out;
+        }
+    }
+}
+
+.form-field__checkbox {
+    + .form-field__checkbox {
+        margin-top: 0.5rem;
+    }
+
+    input {
+        &:checked {
+            + span {
+                &:before {
+                    background-color: $blue;
+                }
+            }
+        }
+
+        &:disabled {
+            + span {
+                &:before {
+                    background-color: $white !important;
+                }
+            }
+        }
+    }
+
+    span {
+        &:before {
+            $size: 18px;
+            content: url('data:image/svg+xml; utf8, <svg width="12" height="9" xmlns="http://www.w3.org/2000/svg"><path d="M1 4.412l3.126 3.126L11 .664" fill-rule="nonzero" stroke="#FFF" stroke-width="2" fill="none"/></svg>');
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 1px;
+        }
+    }
+}
+
+.form-field__radio {
+    + .form-field__radio {
+        margin-top: 0.5rem;
+    }
+
+    input {
+        &:checked {
+            + span {
+                &:before {
+                    border-width: 6px;
+                }
+            }
+        }
+
+        // &:disabled {
+        //     + span {
+        //         &:before {
+        //             background-color: $white !important;
+        //         }
+        //     }
+        // }
+    }
+
+    span {
+        &:before {
+            border-radius: 100%;
+        }
+    }
 }
 
 // Login Fields
