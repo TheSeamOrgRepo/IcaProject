@@ -154,7 +154,7 @@
         overflow: hidden;
 
         li {
-            a {
+            .nav-link {
                 display: flex;
                 align-items: center;
                 padding: 1rem 5px 1rem 0;
@@ -247,7 +247,7 @@
 
         li {
             &:hover {
-                a {
+                .nav-link {
                     color: $gray-ultralight-1;
                 }
 
@@ -256,7 +256,7 @@
                 }
             }
 
-            a {
+            .nav-link {
                 display: flex;
                 align-items: center;
                 padding: 0.5rem 0;
