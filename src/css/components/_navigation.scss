@@ -108,7 +108,7 @@
 
         &:hover {
             .line {
-                background-color: $white;
+                background-color: $gray-ultralight-1;
             }
         }
 
@@ -174,12 +174,12 @@
 
                     &:not(:active) .nav-item {
                         opacity: 1;
-                        color: $white;
+                        color: $gray-ultralight-1;
                     }
 
                     .nav-item {
                         opacity: 1;
-                        color: $white;
+                        color: $gray-ultralight-1;
                     }
 
                     img {
@@ -190,7 +190,7 @@
                 &.is-active {
                     background-color: $blue-gray-darker;
                     border-left: 5px solid $secondary;
-                    color: $white;
+                    color: $gray-ultralight-1;
                 }
 
                 &:active {
@@ -248,7 +248,7 @@
         li {
             &:hover {
                 a {
-                    color: $white;
+                    color: $gray-ultralight-1;
                 }
 
                 img {
@@ -270,7 +270,7 @@
                     }
 
                     .nav-item {
-                        color: $white;
+                        color: $gray-ultralight-1;
                     }
                 }
 
@@ -323,7 +323,7 @@
 
             .user-name,
             .org-name {
-                color: $white;
+                color: $gray-ultralight-1;
             }
         }
 

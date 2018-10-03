@@ -6,7 +6,8 @@
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --open --inline",
     "dev": "npm run start",
-    "build": "rm -rf build && cross-env NODE_ENV=production webpack --progress --hide-modules"
+    "build": "rm -rf build && cross-env NODE_ENV=production webpack --progress --hide-modules && npm run deploy",
+    "deploy": "surge ./build theseam-ica.surge.sh"
   },
   "keywords": [],
   "author": "Dugnist Alexey",

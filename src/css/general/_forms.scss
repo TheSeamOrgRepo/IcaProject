@@ -28,7 +28,7 @@ select {
     font-size: rem-calc(14);
     color: $black;
     line-height: $form-height;
-    background-color: white;
+    background-color: $white;
     border: 1px solid $gray-light;
     border-radius: 3px;
     box-shadow: 0 0 6px 0 transparent;
@@ -80,6 +80,30 @@ label {
     font-size: rem-calc(14);
 }
 
+// Form Fieldsets
+.form-fieldset {
+    .form-fieldset__fields {
+        position: relative;
+        padding-left: 1rem;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: $gray-light;
+        }
+    }
+}
+
+.form-fieldset__heading {
+    margin-bottom: -0.5rem;
+    font-weight: $font-weight-bold;
+    font-size: rem-calc(14);
+}
+
 // Form Fields
 .form-field {
     position: relative;
@@ -124,8 +148,44 @@ label {
     }
 }
 
+.form-field--date {
+    .date {
+        position: relative;
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            right: 0.75rem;
+            width: 17px;
+            height: 18px;
+            pointer-events: none;
+            background: {
+                size: cover;
+                repeat: no-repeat;
+                image: url('data:image/svg+xml; utf8, <svg width="17" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M12.92 1.36H17v14.16c0 1.19-.962 2.16-2.153 2.16H2.153A2.157 2.157 0 0 1 0 15.52V1.36h4.08V0h1.36v1.36h6.12V0h1.36v1.36zm0 1.36v1.36h-1.36V2.72H5.44v1.36H4.08V2.72H1.36v12.8c0 .442.355.8.793.8h12.694a.797.797 0 0 0 .793-.8V2.72h-2.72zM3.5 7h2v2h-2V7zm4 0h2v2h-2V7zm4 0h2v2h-2V7zm-8 4h2v2h-2v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z" fill="#CCC" fill-rule="nonzero"/></svg>');
+            }
+            transform: translateY(-50%);
+        }
+
+        input {
+            padding-right: (0.75rem * 2) + rem-calc(10);
+        }
+    }
+}
+
 .form-field--error {
-    .form-field__input {
+    &.form-field--date {
+        .date {
+            &:after {
+                background-image: url('data:image/svg+xml; utf8, <svg width="17" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M12.92 1.36H17v14.16c0 1.19-.962 2.16-2.153 2.16H2.153A2.157 2.157 0 0 1 0 15.52V1.36h4.08V0h1.36v1.36h6.12V0h1.36v1.36zm0 1.36v1.36h-1.36V2.72H5.44v1.36H4.08V2.72H1.36v12.8c0 .442.355.8.793.8h12.694a.797.797 0 0 0 .793-.8V2.72h-2.72zM3.5 7h2v2h-2V7zm4 0h2v2h-2V7zm4 0h2v2h-2V7zm-8 4h2v2h-2v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z" fill="#FF0000" fill-rule="nonzero"/></svg>');
+            }
+        }
+    }
+
+    .form-field__input,
+    .form-field__select,
+    .form-field__textarea {
         border-color: $red !important;
 
         &:active,
@@ -140,14 +200,24 @@ label {
     }
 }
 
+.form-field__action,
 .form-field__help {
+    display: block;
     margin-top: 0.25rem;
     color: $gray-dark;
     font-size: rem-calc(11);
-    letter-spacing: 0.25px;
+    letter-spacing: 0.1px;
     line-height: 1;
 }
 
+.form-field__action {
+    position: absolute;
+    top: 5px;
+    right: 0;
+    text-decoration: none !important;
+}
+
+// Login Fields
 .form-field--login {
     margin: 0;
 
@@ -203,6 +273,43 @@ label {
                 box-shadow: 0 0 10px 0 $red;
             }
         }
+
+        .form-field__message {
+            $icon-size: 24px;
+            padding-left: 1rem + rem-calc($icon-size);
+            color: $red-dark;
+            background-color: $red-ultralight;
+
+            .login__actions.is-active & {
+                opacity: 1;
+                visibility: visible;
+            }
+
+            &:before {
+                border-right-color: $red-ultralight;
+            }
+
+            &:after {
+                content: '';
+                position: absolute;
+                left: 0.5rem;
+                top: 50%;
+                width: $icon-size;
+                height: $icon-size;
+                background: {
+                    size: cover;
+                    position: center center;
+                    repeat: no-repeat;
+                    image: url('/images/icon-error.svg');
+                }
+                transform: translateY(-50%);
+            }
+
+            a {
+                color: $red-dark !important;
+            }
+        }
+
     }
 
     &.form-field--button {
@@ -337,42 +444,6 @@ label {
             border: 8px solid transparent;
             border-right-color: $primary-light;
             transform: translateY(-50%);
-        }
-
-        .form-field--error & {
-            $icon-size: 24px;
-            padding-left: 1rem + rem-calc($icon-size);
-            color: $red-dark;
-            background-color: $red-ultralight;
-
-            .login__actions.is-active & {
-                opacity: 1;
-                visibility: visible;
-            }
-
-            &:before {
-                border-right-color: $red-ultralight;
-            }
-
-            &:after {
-                content: '';
-                position: absolute;
-                left: 0.5rem;
-                top: 50%;
-                width: $icon-size;
-                height: $icon-size;
-                background: {
-                    size: cover;
-                    position: center center;
-                    repeat: no-repeat;
-                    image: url('/images/icon-error.svg');
-                }
-                transform: translateY(-50%);
-            }
-
-            a {
-                color: $red-dark !important;
-            }
         }
     }
 }

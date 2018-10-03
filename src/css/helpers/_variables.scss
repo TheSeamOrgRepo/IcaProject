@@ -49,6 +49,7 @@ $colors: (
         'ultradark': #C1342B
     ),
     'gray': (
+        'ultralight-1': #F4F5F6,
         'ultralight': #E9EBED,
         'light': #CACED3,
         'normal': #9b9b9b,
@@ -56,7 +57,7 @@ $colors: (
         'ultradark': #444444
     ),
     'other': (
-        'white': #F4F5F6,
+        'white': #FFFFFF,
         'black': #222222
     )
 );
@@ -97,6 +98,7 @@ $red-dark: map-get(map-get($colors, 'red'), 'dark');
 $red-ultradark: map-get(map-get($colors, 'red'), 'ultradark');
 
 // Grays
+$gray-ultralight-1: map-get(map-get($colors, 'gray'), 'ultralight-1');
 $gray-ultralight: map-get(map-get($colors, 'gray'), 'ultralight');
 $gray-light: map-get(map-get($colors, 'gray'), 'light');
 $gray: map-get(map-get($colors, 'gray'), 'normal');

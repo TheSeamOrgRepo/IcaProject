@@ -12,7 +12,10 @@ require('../css/app.scss');
             if ( main.classList.contains('login') ) self.login.init();
 
             // Dashboard
-            if ( main.classList.contains('dashboard') ) self.navigation.init();
+            if ( main.classList.contains('dashboard') ) {
+                self.navigation.init();
+                self.dashboard.init();
+            }
         },
 
         // Navigation
@@ -223,6 +226,30 @@ require('../css/app.scss');
                         self.$dom.actions[key].classList.remove('is-active', 'out');
                     }
                 }, 500);
+            }
+        },
+
+        dashboard: {
+            $dom: {
+                dashboard: document.querySelector('.dashboard'),
+                dropdownBtns: document.querySelectorAll('.btn--dropdown')
+            },
+
+            init: function() {
+                var self = this;
+                self.events();
+            },
+
+            events: function() {
+                var self = this;
+
+                self.$dom.dropdownBtns.forEach(function(el) {
+                    el.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        this.classList.toggle('is-active');
+                    });
+                });
+
             }
         }
     }
