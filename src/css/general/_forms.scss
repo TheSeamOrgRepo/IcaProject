@@ -184,7 +184,7 @@ label {
             transform: translateY(-50%);
         }
 
-        input {
+        .form-field__date {
             padding-right: (0.75rem * 2) + rem-calc(10);
         }
     }
@@ -200,6 +200,7 @@ label {
     }
 
     .form-field__input,
+    .form-field__date,
     .form-field__select,
     .form-field__textarea {
         border-color: $red !important;
@@ -208,6 +209,14 @@ label {
         &:focus {
             background-color: $red-ultralight-1;
             box-shadow: 0 0 6px 0 rgba($red, 0.5);
+        }
+    }
+
+    .form-field__input {
+        background: {
+            image: url('/images/icon-error-input.svg');
+            repeat: no-repeat;
+            position: right 0.75rem center;
         }
     }
 
@@ -257,7 +266,8 @@ label {
                 pointer-events: none !important;
 
                 &:before {
-                    opacity: 0.5 !important;
+                    // opacity: 0.5 !important;
+                    background-color: $gray-ultralight !important;
                     border-color: $gray-light !important;
                     pointer-events: none !important;
                 }
@@ -302,15 +312,8 @@ label {
         &:checked {
             + span {
                 &:before {
+                    content: url('data:image/svg+xml; utf8, <svg width="12" height="9" xmlns="http://www.w3.org/2000/svg"><path d="M1 4.412l3.126 3.126L11 .664" fill-rule="nonzero" stroke="#FFF" stroke-width="2" fill="none"/></svg>');
                     background-color: $blue;
-                }
-            }
-        }
-
-        &:disabled {
-            + span {
-                &:before {
-                    background-color: $white !important;
                 }
             }
         }
@@ -318,8 +321,7 @@ label {
 
     span {
         &:before {
-            $size: 18px;
-            content: url('data:image/svg+xml; utf8, <svg width="12" height="9" xmlns="http://www.w3.org/2000/svg"><path d="M1 4.412l3.126 3.126L11 .664" fill-rule="nonzero" stroke="#FFF" stroke-width="2" fill="none"/></svg>');
+            content: '';
             display: flex;
             align-items: center;
             justify-content: center;
@@ -341,14 +343,6 @@ label {
                 }
             }
         }
-
-        // &:disabled {
-        //     + span {
-        //         &:before {
-        //             background-color: $white !important;
-        //         }
-        //     }
-        // }
     }
 
     span {
@@ -408,6 +402,8 @@ label {
 
     &.form-field--error {
         .form-field__input {
+            background-image: none;
+
             &:active,
             &:focus {
                 background-color: transparent;

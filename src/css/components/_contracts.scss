@@ -75,7 +75,6 @@
         position: absolute;
         top: 0;
         left: 0;
-        width: 25%;
         height: 4px;
         border-radius: 4px;
         background-color: $green;
@@ -104,12 +103,6 @@
     flex-basis: 30%;
     padding: 3rem 2rem;
 
-    h1,
-    h2,
-    p {
-        color: $black;
-    }
-
     a {
         text-decoration: underline;
 
@@ -117,6 +110,10 @@
         &:focus,
         &:hover {
             color: $blue;
+        }
+
+        &.btn {
+            text-decoration: none;
         }
     }
 

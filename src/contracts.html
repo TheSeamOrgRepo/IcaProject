@@ -139,11 +139,11 @@
                     <li>
                         <div class="contract__header-steps">
                             <div class="contract__header-steps-text">
-                                <span class="count"><span class="current">1</span> of <span class="total">4</span></span> Fields Completed
+                                <span class="count"><span class="current">0</span> of <span class="total">0</span></span> Fields Completed
                             </div>
 
                             <div class="contract__header-steps-progress">
-                                <div class="bar"></div>
+                                <div class="bar" style="width: 0%;"></div>
                             </div>
                         </div>
                     </li>
@@ -209,6 +209,11 @@
                     </div>
 
                     <p><a href="#" class="small">See all past contracts</a></p>
+
+                    <p><button class="btn">.btn</button></p>
+                    <p><button class="btn btn--green">.btn--green</button></p>
+                    <p><button class="btn btn--disabled">.btn--disabled</button></p>
+                    <p><button class="btn" disabled>.btn[disabled]</button></p>
                 </div>
 
                 <div class="contract__sidebar-panel" data-sidebar-panel="1">
@@ -218,6 +223,7 @@
                     <h2>2. Documents</h2>
                     <p class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
+                    <!-- Text -->
                     <div class="form-field form-field--contract">
                         <a href="#" class="form-field__action">+ Add Clause Item</a>
                         <label for="placeholder-1" class="form-field__label">Label</label>
@@ -239,13 +245,13 @@
                     <div class="form-field form-field--contract form-field--date">
                         <label for="placeholder-date" class="form-field__label">Date<sup class="required">*</sup></label>
                         <div class="date">
-                            <input type="text" id="placeholder-date" placeholder="Select a Date" class="form-field__input">
+                            <input type="text" id="placeholder-date" placeholder="Select a Date" class="form-field__date">
                         </div>
                     </div>
 
                     <div class="form-field form-field--contract form-field--date form-field--error">
                         <div class="date">
-                            <input type="text" placeholder="Select a Date" class="form-field__input">
+                            <input type="text" placeholder="Select a Date" class="form-field__date">
                         </div>
                         <div class="form-field__help">Please select a date.</div>
                     </div>
