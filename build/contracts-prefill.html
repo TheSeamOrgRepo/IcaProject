@@ -183,120 +183,76 @@
                     <h2>1. Parties & Type</h2>
                     <p class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
-                    <h2>2. Documents</h2>
-                    <p class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-                    <!-- Text -->
-                    <div class="form-field form-field--contract">
-                        <a href="#" class="form-field__action">+ Add Clause Item</a>
-                        <label for="placeholder-1" class="form-field__label">Label</label>
-                        <input type="text" id="placeholder-1" placeholder="Placeholder Text" class="form-field__input">
-                        <div class="form-field__help">This is helper text.</div>
+                    <div class="form-field form-field--contract form-field--select">
+                        <label for="placeholder-select" class="form-field__label">Counter Party</label>
+                        <div class="select">
+                            <select id="placeholder-select" class="form-field__select">
+                                <option value="" disabled="disabled" selected="selected"></option>
+                                <option value="option-1">Option One</option>
+                                <option value="option-2">Option Two</option>
+                                <option value="option-3">Option Three</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <div class="form-field form-field--contract form-field--error">
-                        <label for="placeholder-2" class="form-field__label">Label</label>
-                        <input type="text" id="placeholder-2" placeholder="Placeholder Text 2" class="form-field__input">
-                        <div class="form-field__help">This is an error message. It would replace helper text.</div>
+                    <div class="form-field form-field--contract form-field--select">
+                        <label for="placeholder-select" class="form-field__label">Contract Type</label>
+                        <div class="select">
+                            <select id="placeholder-select" class="form-field__select">
+                                <option value="" disabled="disabled" selected="selected"></option>
+                                <option value="option-1">Option One</option>
+                                <option value="option-2">Option Two</option>
+                                <option value="option-3">Option Three</option>
+                            </select>
+                        </div>
                     </div>
 
-                    <div class="form-field form-field--contract">
-                        <input type="text" placeholder="Placeholder Text" class="form-field__input">
-                    </div>
-
-                    <!-- Date -->
                     <div class="form-field form-field--contract form-field--date">
-                        <label for="placeholder-date" class="form-field__label">Date<sup class="required">*</sup></label>
+                        <label for="placeholder-date" class="form-field__label">Date</label>
                         <div class="date">
                             <input type="text" id="placeholder-date" placeholder="Select a Date" class="form-field__date">
                         </div>
                     </div>
+                </div>
 
-                    <div class="form-field form-field--contract form-field--date form-field--error">
-                        <div class="date">
-                            <input type="text" placeholder="Select a Date" class="form-field__date">
-                        </div>
-                        <div class="form-field__help">Please select a date.</div>
+                <div class="contract__sidebar-panel" data-sidebar-panel="2">
+                    <h2>2. Specifications</h2>
+                    <p class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                    <div class="form-field form-field--contract">
+                        <label for="crop-year" class="form-field__label">Crop Year</label>
+                        <input type="number" id="crop-year" class="form-field__input">
                     </div>
 
-                    <!-- Fieldset -->
-                    <div class="form-fieldset form-fieldset--contract">
-                        <div class="form-fieldset__heading">Fieldset Heading</div>
-
-                        <div class="form-fieldset__fields">
-                            <div class="form-field form-field--contract">
-                                <label for="contracted-units" class="form-field__label">Contracted Units<sup class="required">*</sup></label>
-                                <input type="number" id="contracted-units" class="form-field__input">
-                            </div>
-
-                            <div class="form-field form-field--contract">
-                                <label for="quantity-type" class="form-field__label">Quantity Type<sup class="required">*</sup></label>
-                                <input type="text" id="quantity-type" class="form-field__input">
-                            </div>
-
-                            <div class="form-field form-field--contract">
-                                <label for="variation-percent" class="form-field__label">Variation Percent<sup class="required">*</sup></label>
-                                <input type="number" id="variation-percent" class="form-field__input">
-                            </div>
-                        </div>
+                    <div class="form-field form-field--contract">
+                        <label for="growth-origin" class="form-field__label">Growth Origin</label>
+                        <input type="text" id="growth-origin" class="form-field__input">
                     </div>
 
-                    <!-- Select -->
-                    <div class="form-field form-field--contract form-field--select">
-                        <label for="placeholder-select" class="form-field__label">Select</label>
-                        <div class="select">
-                            <select id="placeholder-select" placeholder="Placeholder Text" class="form-field__select">
-                                <option value="option-1">Option One</option>
-                                <option value="option-2">Option Two</option>
-                                <option value="option-3">Option Three</option>
-                            </select>
-                        </div>
-                        <div class="form-field__help">Choose an option from the dropdown.</div>
+                    <div class="form-field form-field--contract">
+                        <label for="grade" class="form-field__label">Grade</label>
+                        <input type="text" id="grade" class="form-field__input">
                     </div>
 
-                    <div class="form-field form-field--contract form-field--select form-field--error">
-                        <div class="select">
-                            <select id="placeholder-select" placeholder="Placeholder Text" class="form-field__select">
-                                <option value="option-1">Option One</option>
-                                <option value="option-2">Option Two</option>
-                                <option value="option-3">Option Three</option>
-                            </select>
-                        </div>
-                        <div class="form-field__help">This is an error message. It would replace helper text.</div>
+                    <div class="form-field form-field--contract">
+                        <label for="staple" class="form-field__label">Staple</label>
+                        <input type="text" id="staple" class="form-field__input">
                     </div>
 
-                    <!-- Textarea -->
-                    <div class="form-field form-field--contract form-field--textarea">
-                        <label for="placeholder-textarea" class="form-field__label">Textarea</label>
-                        <textarea id="placeholder-textarea" placeholder="Placeholder Text" class="form-field__textarea"></textarea>
+                    <div class="form-field form-field--contract">
+                        <label for="micronaire-min" class="form-field__label">Micronaire Min</label>
+                        <input type="number" id="micronaire-min" class="form-field__input">
                     </div>
 
-                    <div class="form-field form-field--contract form-field--textarea form-field--error">
-                        <label for="placeholder-textarea-error" class="form-field__label">Textarea - Error</label>
-                        <textarea id="placeholder-textarea-error" placeholder="Placeholder Text" class="form-field__textarea"></textarea>
-                        <div class="form-field__help">This is an error message. It would replace helper text.</div>
+                    <div class="form-field form-field--contract">
+                        <label for="micronaire-max" class="form-field__label">Micronaire Max</label>
+                        <input type="number" id="micronaire-max" class="form-field__input">
                     </div>
 
-                    <!-- Checkbox -->
-                    <div class="form-field form-field--contract form-field--checkbox">
-                        <label class="form-field__label">Checkboxes</label>
-                        <label class="form-field__checkbox"><input type="checkbox" value="val1"> <span>Normal</span></label>
-                        <label class="form-field__checkbox"><input type="checkbox" value="val2" checked="checked"> <span>Checked</span></label>
-                        <label class="form-field__checkbox"><input type="checkbox" value="val3" disabled="disabled"> <span>Disabled</span></label>
+                    <div class="form-field form-field--contract">
+                        <label for="strength-min" class="form-field__label">Strength Min</label>
+                        <input type="text" id="strength-min" class="form-field__input">
                     </div>
-
-                    <!-- Checkbox -->
-                    <div class="form-field form-field--contract form-field--radio">
-                        <label class="form-field__label">Radio Buttons</label>
-                        <label class="form-field__radio"><input type="radio" name="placeholder-radio" value="val1"> <span>Normal</span></label>
-                        <label class="form-field__radio"><input type="radio" name="placeholder-radio" value="val2" checked="checked"> <span>Checked</span></label>
-                        <label class="form-field__radio"><input type="radio" name="placeholder-radio" value="val3" disabled="disabled"> <span>Disabled</span></label>
-                    </div>
-
-                    <p><button class="btn">.btn</button></p>
-                    <p><button class="btn btn--green">.btn--green</button></p>
-                    <p><button class="btn btn--disabled">.btn--disabled</button></p>
-                    <p><button class="btn" disabled="disabled">.btn[disabled]</button></p>
                 </div>
 
                 <div class="contract__sidebar-nav">
@@ -306,8 +262,22 @@
             </div>
 
             <div class="contract__preview">
-                <div class="placeholder">
-                    <div>Contract Builder</div>
+                <div class="contract__pre-fill">
+                    <div class="form-field form-field--contract form-field--select">
+                        <div class="select">
+                            <select id="placeholder-select" class="form-field__select" onchange="document.querySelector('.contract__pre-fill').remove()">
+                                <option value="" selected="selected" disabled="disabled">Choose Pre-Fill Content</option>
+                                <option value="option-1">21st Century Textiles</option>
+                                <option value="option-2">AXEM Fibers</option>
+                                <option value="option-3">Cargill, Inc.</option>
+                                <option value="option-4">Joe’s Cotton Co.</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contract__pdf">
+                    <img src="/images/placeholder-contract.png" alt="">
                 </div>
             </div>
         </section>

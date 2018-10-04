@@ -179,7 +179,7 @@
 
         <section class="dashboard__content">
             <div class="contract__sidebar">
-                <div class="contract__sidebar-panel contract__sidebar-intro">
+                <div class="contract__sidebar-intro">
                     <img src="/images/logo-placeholder.svg" alt="Logo Placeholder">
                     <h1>New Contract</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -189,7 +189,7 @@
 
                         <div class="dropdown">
                             <ul>
-                                <li><a href="/contracts-new.html">Start from scratch</a></li>
+                                <li><a href="/contracts-scratch.html">Start from scratch</a></li>
                                 <li><a href="/contracts-prefill.html">Load pre-fill content</a></li>
                             </ul>
                         </div>
@@ -198,7 +198,8 @@
                     <div class="form-field form-field--contract form-field--select">
                         <label for="view-in-progress" class="form-field__label">View In Progress</label>
                         <div class="select">
-                            <select id="view-in-progress" placeholder="Choos an unfinished contract" class="form-field__select">
+                            <select id="view-in-progress" class="form-field__select">
+                                <option value="" selected disabled>Choose an unfinished contract</option>
                                 <option value="option-1">Option One</option>
                                 <option value="option-2">Option Two</option>
                                 <option value="option-3">Option Three</option>
@@ -210,7 +211,7 @@
                 </div>
             </div>
 
-            <div class="contract__preview">
+            <div class="contract__preview is-placeholder">
                 <div class="placeholder">
                     <div>Contract Builder</div>
                 </div>

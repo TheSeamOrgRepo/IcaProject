@@ -148,6 +148,14 @@
     }
 }
 
+.contract__sidebar-panel {
+    display: none;
+
+    &.is-active {
+        display: block;
+    }
+}
+
 .contract__sidebar-nav {
     display: flex;
     align-items: stretch;
@@ -208,10 +216,14 @@
 }
 
 .contract__preview {
-    display: flex;
     flex-basis: 70%;
-    padding: 4rem 3rem;
+    padding: 3rem 2rem;
     background-color: $gray-ultralight;
+
+    &.is-placeholder {
+        display: flex;
+        padding: 4rem 3rem;
+    }
 
     .placeholder {
         display: flex;
@@ -224,4 +236,17 @@
         font-size: rem-calc(32);
         border: 2px dashed $gray;
     }
+}
+
+.contract__pre-fill {
+    max-width: 400px;
+    margin: 0 auto;
+
+    .form-field {
+        margin-top: 0;
+    }
+}
+
+.contract__pdf {
+
 }

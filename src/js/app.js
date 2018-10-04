@@ -232,12 +232,21 @@ require('../css/app.scss');
         dashboard: {
             $dom: {
                 dashboard: document.querySelector('.dashboard'),
-                dropdownBtns: document.querySelectorAll('.btn--dropdown')
+                dropdownBtns: document.querySelectorAll('.btn--dropdown'),
+                sidebar: {
+                    currentPanel: 1,
+                    panels: document.querySelectorAll('.contract__sidebar-panel'),
+                    prev: document.querySelector('[data-prev-sidebar-panel]'),
+                    next: document.querySelector('[data-next-sidebar-panel]')
+                }
             },
 
             init: function() {
                 var self = this;
                 self.events();
+
+                // Sidebar Panels
+                if ( self.$dom.sidebar.panels.length ) self.sidebarPanels();
             },
 
             events: function() {
@@ -249,7 +258,61 @@ require('../css/app.scss');
                         this.classList.toggle('is-active');
                     });
                 });
+            },
 
+            sidebarPanels: function() {
+                var self = this;
+
+                var panelCount = self.$dom.sidebar.panels.length;
+
+                // Activate the first panel
+                document.querySelector('[data-sidebar-panel="1"]').classList.add('is-active');
+
+                // Handle navigating the panels
+                self.$dom.sidebar.prev.addEventListener('click', function() {
+                    var current = self.$dom.sidebar.currentPanel;
+
+                    // Return if on first panel
+                    if ( current <= 1 ) return;
+
+                    // Swap active panel
+                    document.querySelector(`[data-sidebar-panel="${current}"]`).classList.remove('is-active');
+                    document.querySelector(`[data-sidebar-panel="${--current}"]`).classList.add('is-active');
+                    self.scrollToTop();
+
+                    // Update current panel
+                    self.$dom.sidebar.currentPanel--;
+                });
+
+                self.$dom.sidebar.next.addEventListener('click', function() {
+                    var current = self.$dom.sidebar.currentPanel;
+
+                    // Return if on last panel
+                    if ( current >= panelCount ) {
+                        return;
+                    }
+
+                    // Swap active panel
+                    document.querySelector(`[data-sidebar-panel="${current}"]`).classList.remove('is-active');
+                    document.querySelector(`[data-sidebar-panel="${++current}"]`).classList.add('is-active');
+                    self.scrollToTop();
+
+                    // Update current panel
+                    self.$dom.sidebar.currentPanel++;
+                });
+            },
+
+            scrollToTop: function() {
+                window.scrollTo(0, 0);
+                // var scroll = new SmoothScroll();
+                // var body = document.getElementsByTagName('body')[0];
+                // scroll.animateScroll(
+                //     body,
+                //     {
+                //         speed: 1000,
+                //         easing: 'easeInOutCubic'
+                //     }
+                // );
             }
         }
     }
