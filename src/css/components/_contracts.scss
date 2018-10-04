@@ -82,26 +82,44 @@
 }
 
 .contract__header-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     background-color: transparent;
     border: none;
 
+    &:active,
+    &:focus,
+    &:hover {
+        color: currentColor;
+    }
+
     div {
         white-space: nowrap;
+        color: $primary-ultralight;
         font-size: rem-calc(10);
     }
 }
 
 .contract__header-action--cancel {
-    color: $red;
+    div {
+        color: $red;
+    }
 }
 
 .contract__header-action--sign {
-    color: $green;
+    div {
+        color: $green;
+    }
 }
 
 .contract__sidebar {
+    position: relative;
     flex-basis: 30%;
-    padding: 3rem 2rem;
+    padding: 3rem 2rem 7rem;
+    padding: 3rem 2rem (3rem + rem-calc($nav-size-small));
+    border-right: 1px solid $gray-light;
 
     a {
         text-decoration: underline;
@@ -114,12 +132,77 @@
 
         &.btn {
             text-decoration: none;
+
+            &:active,
+            &:focus,
+            &:hover {
+                color: $white;
+            }
         }
     }
 
     p {
         &.small {
             @extend %small;
+        }
+    }
+}
+
+.contract__sidebar-nav {
+    display: flex;
+    align-items: stretch;
+    justify-content: stretch;
+    justify-items: stretch;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.10);
+
+    .prev,
+    .next {
+        width: 50%;
+        flex-basis: 50%;
+        height: $nav-size-small;
+        padding: 0.5rem;
+        font-weight: $font-weight-bold;
+        font-size: 14px;
+        text-transform: uppercase;
+        border: none;
+    }
+
+    .prev {
+        color: $gray-light;
+        background-color: $white;
+
+        &:before {
+            content: svg-url('<svg width="7" height="12" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l5 5-5 5" fill-rule="nonzero" stroke="#{$gray-light}" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+            display: inline-block;
+            margin-right: 8px;
+            transform: rotate(180deg);
+        }
+    }
+
+    .next {
+        color: $white;
+        background-color: $green;
+        transition: 0.15s ease-in-out;
+
+        &:hover {
+            background-color: $green-light;
+        }
+
+        &:active,
+        &:focus {
+            background-color: $green-dark;
+        }
+
+        &:after {
+            content: svg-url('<svg width="7" height="12" xmlns="http://www.w3.org/2000/svg"><path d="M1 1l5 5-5 5" fill-rule="nonzero" stroke="#{$white}" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+            display: inline-block;
+            position: relative;
+            top: 1px;
+            margin-left: 8px;
         }
     }
 }

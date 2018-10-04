@@ -245,7 +245,7 @@ require('../css/app.scss');
 
                 self.$dom.dropdownBtns.forEach(function(el) {
                     el.addEventListener('click', function(e) {
-                        e.preventDefault();
+                        // e.preventDefault();
                         this.classList.toggle('is-active');
                     });
                 });

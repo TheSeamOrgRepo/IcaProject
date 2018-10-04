@@ -179,7 +179,7 @@ label {
             background: {
                 size: cover;
                 repeat: no-repeat;
-                image: url('data:image/svg+xml; utf8, <svg width="17" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M12.92 1.36H17v14.16c0 1.19-.962 2.16-2.153 2.16H2.153A2.157 2.157 0 0 1 0 15.52V1.36h4.08V0h1.36v1.36h6.12V0h1.36v1.36zm0 1.36v1.36h-1.36V2.72H5.44v1.36H4.08V2.72H1.36v12.8c0 .442.355.8.793.8h12.694a.797.797 0 0 0 .793-.8V2.72h-2.72zM3.5 7h2v2h-2V7zm4 0h2v2h-2V7zm4 0h2v2h-2V7zm-8 4h2v2h-2v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z" fill="#CCC" fill-rule="nonzero"/></svg>');
+                image: svg-url('<svg width="17" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M12.92 1.36H17v14.16c0 1.19-.962 2.16-2.153 2.16H2.153A2.157 2.157 0 0 1 0 15.52V1.36h4.08V0h1.36v1.36h6.12V0h1.36v1.36zm0 1.36v1.36h-1.36V2.72H5.44v1.36H4.08V2.72H1.36v12.8c0 .442.355.8.793.8h12.694a.797.797 0 0 0 .793-.8V2.72h-2.72zM3.5 7h2v2h-2V7zm4 0h2v2h-2V7zm4 0h2v2h-2V7zm-8 4h2v2h-2v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z" fill="#{$gray-light}" fill-rule="nonzero"/></svg>')
             }
             transform: translateY(-50%);
         }
@@ -194,7 +194,7 @@ label {
     &.form-field--date {
         .date {
             &:after {
-                background-image: url('data:image/svg+xml; utf8, <svg width="17" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M12.92 1.36H17v14.16c0 1.19-.962 2.16-2.153 2.16H2.153A2.157 2.157 0 0 1 0 15.52V1.36h4.08V0h1.36v1.36h6.12V0h1.36v1.36zm0 1.36v1.36h-1.36V2.72H5.44v1.36H4.08V2.72H1.36v12.8c0 .442.355.8.793.8h12.694a.797.797 0 0 0 .793-.8V2.72h-2.72zM3.5 7h2v2h-2V7zm4 0h2v2h-2V7zm4 0h2v2h-2V7zm-8 4h2v2h-2v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z" fill="#FF0000" fill-rule="nonzero"/></svg>');
+                background-image: svg-url('<svg width="17" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M12.92 1.36H17v14.16c0 1.19-.962 2.16-2.153 2.16H2.153A2.157 2.157 0 0 1 0 15.52V1.36h4.08V0h1.36v1.36h6.12V0h1.36v1.36zm0 1.36v1.36h-1.36V2.72H5.44v1.36H4.08V2.72H1.36v12.8c0 .442.355.8.793.8h12.694a.797.797 0 0 0 .793-.8V2.72h-2.72zM3.5 7h2v2h-2V7zm4 0h2v2h-2V7zm4 0h2v2h-2V7zm-8 4h2v2h-2v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2z" fill="#{$red}" fill-rule="nonzero"/></svg>');
             }
         }
     }
@@ -214,7 +214,7 @@ label {
 
     .form-field__input {
         background: {
-            image: url('/images/icon-error-input.svg');
+            image: svg-url('<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M10 20C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10zm-.936-6.083v1.87h1.872v-1.87H9.064zM9.2 4.212v8.238h1.6V4.212H9.2z" fill="#{$red}" fill-rule="nonzero"/></svg>');
             repeat: no-repeat;
             position: right 0.75rem center;
         }
@@ -266,7 +266,6 @@ label {
                 pointer-events: none !important;
 
                 &:before {
-                    // opacity: 0.5 !important;
                     background-color: $gray-ultralight !important;
                     border-color: $gray-light !important;
                     pointer-events: none !important;
@@ -312,7 +311,7 @@ label {
         &:checked {
             + span {
                 &:before {
-                    content: url('data:image/svg+xml; utf8, <svg width="12" height="9" xmlns="http://www.w3.org/2000/svg"><path d="M1 4.412l3.126 3.126L11 .664" fill-rule="nonzero" stroke="#FFF" stroke-width="2" fill="none"/></svg>');
+                    content: svg-url('<svg width="12" height="9" xmlns="http://www.w3.org/2000/svg"><path d="M1 4.412l3.126 3.126L11 .664" fill-rule="nonzero" stroke="#{$white}" stroke-width="2" fill="none"/></svg>');
                     background-color: $blue;
                 }
             }
@@ -437,7 +436,7 @@ label {
                     size: cover;
                     position: center center;
                     repeat: no-repeat;
-                    image: url('/images/icon-error.svg');
+                    image: svg-url('<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg"><g transform="translate(1 1)" stroke="#{$red-dark}" stroke-width="2" fill="none"><circle cx="11.156" cy="11.137" r="10.607"/><path d="M14.612 7.831L7.81 14.633m0-6.802l6.802 6.802" stroke-linecap="square"/></g></svg>');
                 }
                 transform: translateY(-50%);
             }

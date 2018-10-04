@@ -35,8 +35,35 @@ const CONFIG = {
       }
     }),
     new HtmlWebpackPlugin({
+      template: './src/dashboard-styles.html',
+      filename: './dashboard-styles.html',
+      minify: {
+        "collapseWhitespace": false,
+        "minifyCSS": false,
+        "removeComments": false
+      }
+    }),
+    new HtmlWebpackPlugin({
       template: './src/contracts.html',
       filename: './contracts.html',
+      minify: {
+        "collapseWhitespace": false,
+        "minifyCSS": false,
+        "removeComments": false
+      }
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/contracts-new.html',
+      filename: './contracts-new.html',
+      minify: {
+        "collapseWhitespace": false,
+        "minifyCSS": false,
+        "removeComments": false
+      }
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/contracts-prefill.html',
+      filename: './contracts-prefill.html',
       minify: {
         "collapseWhitespace": false,
         "minifyCSS": false,
