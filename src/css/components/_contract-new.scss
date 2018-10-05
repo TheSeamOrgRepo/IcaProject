@@ -129,8 +129,8 @@
 .contract-new__sidebar {
     position: relative;
     flex-basis: 40%;
-    padding: 3rem 2rem 7rem;
-    padding: 3rem 2rem (3rem + rem-calc($nav-size-small));
+    padding: 3rem 2rem;
+    margin-bottom: $nav-size-small;
     border-right: 1px solid $gray-light;
 
     @include bp(min, rem-calc(1150)) {
