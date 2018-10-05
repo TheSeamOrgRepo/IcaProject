@@ -269,32 +269,44 @@ require('../css/app.scss');
                 document.querySelector('[data-sidebar-panel="1"]').classList.add('is-active');
 
                 // Handle navigating the panels
+                // Previous panel
                 self.$dom.sidebar.prev.addEventListener('click', function() {
                     var current = self.$dom.sidebar.currentPanel;
+
+                    self.unfocusAll();
 
                     // Return if on first panel
                     if ( current <= 1 ) return;
 
+                    // Update next text
+                    self.$dom.sidebar.next.innerHTML = ( current - 1 <= panelCount ) ? 'Next' : 'Finish';
+
                     // Swap active panel
                     document.querySelector(`[data-sidebar-panel="${current}"]`).classList.remove('is-active');
                     document.querySelector(`[data-sidebar-panel="${--current}"]`).classList.add('is-active');
+
                     self.scrollToTop();
 
                     // Update current panel
                     self.$dom.sidebar.currentPanel--;
                 });
 
+                // Next panel
                 self.$dom.sidebar.next.addEventListener('click', function() {
                     var current = self.$dom.sidebar.currentPanel;
 
+                    self.unfocusAll();
+
                     // Return if on last panel
-                    if ( current >= panelCount ) {
-                        return;
-                    }
+                    if ( current >= panelCount ) return;
+
+                    // Update next text
+                    self.$dom.sidebar.next.innerHTML = ( current >= panelCount - 1 ) ? 'Finish' : 'Next';
 
                     // Swap active panel
                     document.querySelector(`[data-sidebar-panel="${current}"]`).classList.remove('is-active');
                     document.querySelector(`[data-sidebar-panel="${++current}"]`).classList.add('is-active');
+
                     self.scrollToTop();
 
                     // Update current panel
@@ -302,8 +314,20 @@ require('../css/app.scss');
                 });
             },
 
+            unfocusAll: function() {
+                var body = document.body;
+                var tmp = document.createElement('input');
+                body.appendChild(tmp);
+                tmp.focus();
+                body.removeChild(tmp);
+            },
+
             scrollToTop: function() {
+                // document.body.scrollTop = 0;
+                // document.documentElement.scrollTop = 0;
+
                 window.scrollTo(0, 0);
+
                 // var scroll = new SmoothScroll();
                 // var body = document.getElementsByTagName('body')[0];
                 // scroll.animateScroll(

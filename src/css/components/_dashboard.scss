@@ -2,6 +2,18 @@
 // ------------------------
 .dashboard {}
 
+.dashboard--contracts {}
+
+.dashboard--contracts-new {
+    .dashboard__content {
+        overflow: hidden;
+        display: flex;
+        align-items: stretch;
+        height: calc(100vh - #{$nav-size-small});
+        min-height: none;
+    }
+}
+
 .dashboard__top-bar {
     position: fixed;
     top: 0;
@@ -19,10 +31,7 @@
 }
 
 .dashboard__content {
-    display: flex;
-    align-items: stretch;
     width: calc(100vw - #{$nav-size-large - 1px});
-    min-height: calc(100vh - #{$nav-size-small});
     margin-top: $nav-size-small;
     transition: 0.75s cubic-bezier(0.25, 0.75, 0.05, 1);
     transform: translateX($nav-size-large);
