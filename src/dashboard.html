@@ -124,14 +124,69 @@
 
         <section class="dashboard__top-bar">
             <div class="dashboard__header">
-                <h1 class="dashboard__header-heading">
-                    Dashboard
-                </h1>
+                <div class="dashboard__header-search">
+                    <input type="search" placeholder="Search the app...">
+                </div>
+
+                <ul class="dashboard__header-right">
+                    <li>
+                        <button class="dashboard__header-action dashboard__header-action--notifications">
+                            <img src="/images/icon-notifications-gray.svg" alt="" aria-hidden="true">
+                            <div class="hide-vis">Notifications</div>
+                        </button>
+                    </li>
+
+                    <li>
+                        <button class="dashboard__header-action dashboard__header-action--templates">
+                            <img src="/images/icon-templates.svg" alt="" aria-hidden="true">
+                            <div class="hide-vis">Templates</div>
+                        </button>
+                    </li>
+
+                    <li>
+                        <button class="dashboard__header-action dashboard__header-action--help">
+                            <img src="/images/icon-help-gray.svg" alt="" aria-hidden="true">
+                            <div class="hide-vis">help</div>
+                        </button>
+                    </li>
+                </ul>
             </div>
         </section>
 
         <section class="dashboard__content">
-            <div class="dashboard__content--dashboard">
+            <div class="dashboard__top">
+                <h1>Welcome back, Jason</h1>
+                <h2>Check out your recent activity.</h2>
+            </div>
+
+            <div class="dashboard__bottom">
+                <div class="dashboard__tabs-controls">
+                    <div class="tabs">
+                        <button class="dashboard__tabs-button dashboard__tabs-button--contracts is-active" data-tab-trigger="contracts">Contracts</button>
+                        <button class="dashboard__tabs-button dashboard__tabs-button--shipments" data-tab-trigger="shipments">Shipments</button>
+                        <button class="dashboard__tabs-button dashboard__tabs-button--documents" data-tab-trigger="documents">Documents</button>
+                    </div>
+
+                    <div class="buttons">
+                        <a href="/contracts.html" class="btn btn--gray">See All Contracts</a>
+                        <a href="/contracts.html" class="btn btn--green">New Contract</a>
+                    </div>
+                </div>
+
+                <div class="dashboard__tabs-content">
+                    <div class="dashboard__tabs-item dashboard__tabs-item--contracts is-active" data-tab-item="contracts">
+                        contracts
+                    </div>
+
+                    <div class="dashboard__tabs-item dashboard__tabs-item--shipments" data-tab-item="shipments">
+                        shipments
+                    </div>
+
+                    <div class="dashboard__tabs-item dashboard__tabs-item--documents" data-tab-item="documents">
+                        documents
+                    </div>
+                </div>
+
                 <p><a href="/dashboard-styles.html" class="btn">Styles</a></p>
             </div>
         </section>

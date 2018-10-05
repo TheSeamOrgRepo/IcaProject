@@ -1,10 +1,6 @@
 // Variables
 // ------------------------
 
-$blue-gray-darker: #1C2D40;
-$active-gray: #606E7B;
-$passive-gray: #959EA7;
-$hr-gray: #202E3C;
 
 // Colors
 // ------------------------
@@ -15,7 +11,8 @@ $colors: (
         'ultralight': #959EA7,
         'light': #606E7B,
         'normal': $primary,
-        'dark': #202E3C
+        'dark': #202E3C,
+        'ultradark': #1C2D40
     ),
     'secondary': (
         'ultralight': #CDBA9A,
@@ -66,6 +63,7 @@ $colors: (
 $primary-ultralight: color('primary', 'ultralight');
 $primary-light: color('primary', 'light');
 $primary-dark: color('primary', 'dark');
+$primary-ultradark: color('primary', 'ultradark');
 
 // Secondary
 $secondary-ultralight: color('secondary', 'ultralight');

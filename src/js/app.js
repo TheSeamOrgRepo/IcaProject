@@ -238,24 +238,59 @@ require('../css/app.scss');
                     panels: document.querySelectorAll('.contract-new__sidebar-panel'),
                     prev: document.querySelector('[data-prev-sidebar-panel]'),
                     next: document.querySelector('[data-next-sidebar-panel]')
+                },
+                tabs: {
+                    triggers: document.querySelectorAll('[data-tab-trigger]'),
+                    items: document.querySelectorAll('[data-tab-item]')
                 }
             },
 
             init: function() {
                 var self = this;
-                self.events();
+
+                // Dropdown Buttons
+                if ( self.$dom.dropdownBtns.length ) self.dropdownButtons();
+
+                // Tabs
+                if ( self.$dom.tabs.triggers.length ) self.tabs();
 
                 // Sidebar Panels
                 if ( self.$dom.sidebar.panels.length ) self.sidebarPanels();
             },
 
-            events: function() {
+            dropdownButtons: function() {
                 var self = this;
 
                 self.$dom.dropdownBtns.forEach(function(el) {
                     el.addEventListener('click', function(e) {
                         // e.preventDefault();
                         this.classList.toggle('is-active');
+                    });
+                });
+            },
+
+            tabs: function() {
+                var self = this;
+
+                self.$dom.tabs.triggers.forEach(function(el) {
+                    el.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        // Remove active class from buttons
+                        self.$dom.tabs.triggers.forEach(function(el) {
+                            el.classList.remove('is-active');
+                        });
+
+                        // Add the correct active class
+                        el.classList.add('is-active');
+
+                        // Hide all tab items
+                        self.$dom.tabs.items.forEach(function(el) {
+                            el.classList.remove('is-active');
+                        });
+
+                        // Show the clicked tab
+                        var tab = el.getAttribute('data-tab-trigger');
+                        document.querySelectorAll(`[data-tab-item="${tab}"]`).classList.add('is-active');
                     });
                 });
             },
