@@ -15,6 +15,7 @@
 .contract__header-heading {
     margin: 0;
     padding: 0 1.5rem;
+    @include r-font-size(rem-calc(16), rem-calc(30));
 
     button {
         padding: 0;
@@ -53,6 +54,7 @@
     font-size: rem-calc(11);
     letter-spacing: 1px;
     font-weight: $font-weight-bold;
+    text-align: center;
 
     .count {
         color: $green;
@@ -87,6 +89,12 @@
     background-color: transparent;
     border: none;
 
+    &[disabled],
+    &.is-disabled {
+        cursor: not-allowed !important;
+        opacity: 0.25;
+    }
+
     &:active,
     &:focus,
     &:hover {
@@ -120,10 +128,14 @@
 
 .contract__sidebar {
     position: relative;
-    flex-basis: 30%;
+    flex-basis: 40%;
     padding: 3rem 2rem 7rem;
     padding: 3rem 2rem (3rem + rem-calc($nav-size-small));
     border-right: 1px solid $gray-light;
+
+    @include bp(min, rem-calc(1150)) {
+        flex-basis: 30%;
+    }
 
     a {
         text-decoration: underline;
@@ -169,8 +181,12 @@
     bottom: 0;
     left: 0;
     right: 0;
-    width: 30%;
+    width: 40%;
     box-shadow: 0 -2px 4px 0 rgba(0, 0, 0, 0.10);
+
+    @include bp(min, rem-calc(1150)) {
+        width: 30%;
+    }
 
     .prev,
     .next {
@@ -221,9 +237,13 @@
 }
 
 .contract__preview {
-    flex-basis: 70%;
+    flex-basis: 60%;
     padding: 3rem 2rem;
     background-color: $gray-ultralight;
+
+    @include bp(min, rem-calc(1150)) {
+        flex-basis: 70%;
+    }
 
     &.is-placeholder {
         display: flex;
