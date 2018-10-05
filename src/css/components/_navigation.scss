@@ -102,16 +102,18 @@
                 }
             }
         }
+
+        &:hover {
+            .hamburger {
+                .line {
+                    background-color: $gray-ultralight-1;
+                }
+            }
+        }
     }
 
     .hamburger {
         // margin-top: 23px;
-
-        &:hover {
-            .line {
-                background-color: $gray-ultralight-1;
-            }
-        }
 
         .line {
             width: 28px;
@@ -119,7 +121,8 @@
             background-color: $passive-gray;
             display: block;
             margin: 5px 0;
-            transition: .25s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transition: all 0.15s ease-in-out,
+                        transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
 
             &:nth-child(2) {
                 width: 20px;
@@ -138,16 +141,16 @@
         overflow: hidden;
         position: relative;
         transition: width 0.75s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
 
-    .logo-wrapper .text {
-        opacity: 1;
-        transition: opacity 0.75s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
+        .text {
+            opacity: 1;
+            transition: opacity 0.75s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
 
-    .logo-wrapper svg {
-        position: absolute;
-        left: 22px;
+        svg {
+            position: absolute;
+            left: 22px;
+        }
     }
 
     .navigation {
@@ -159,7 +162,7 @@
                 display: flex;
                 align-items: center;
                 padding: 1rem 5px 1rem 0;
-                transition: background .25s cubic-bezier(0.165, 0.84, 0.44, 1);
+                transition: background 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
                 height: 65px;
                 font-weight: bold;
                 font-size: 14px;
@@ -208,8 +211,8 @@
 
             img {
                 margin: 0 16px;
-                opacity: .25;
-                transition: opacity .25s cubic-bezier(0.165, 0.84, 0.44, 1);
+                opacity: 0.25;
+                transition: opacity 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
             }
 
             &:first-of-type {
@@ -276,7 +279,7 @@
                 }
 
                 img {
-                    opacity: .25;
+                    opacity: 0.25;
                     margin-right: 18px;
                     transition: opacity 0.75s cubic-bezier(0.165, 0.84, 0.44, 1);
                 }
@@ -296,14 +299,6 @@
         position: absolute;
         bottom: 0;
         width: 100%;
-
-        hr {
-            display: block;
-            height: 1px;
-            border: 0;
-            border-top: 1px solid $hr-gray;
-            margin: 0;
-        }
     }
 
     .profile--wrapper {
