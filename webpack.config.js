@@ -53,8 +53,8 @@ const CONFIG = {
       }
     }),
     new HtmlWebpackPlugin({
-      template: './src/contracts-new.html',
-      filename: './contracts-new.html',
+      template: './src/contract-new.html',
+      filename: './contract-new.html',
       minify: {
         "collapseWhitespace": false,
         "minifyCSS": false,
@@ -62,8 +62,8 @@ const CONFIG = {
       }
     }),
     new HtmlWebpackPlugin({
-      template: './src/contracts-prefill.html',
-      filename: './contracts-prefill.html',
+      template: './src/contract-prefill.html',
+      filename: './contract-prefill.html',
       minify: {
         "collapseWhitespace": false,
         "minifyCSS": false,

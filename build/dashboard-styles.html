@@ -23,7 +23,7 @@
 <link href="./css/app.css" rel="stylesheet"></head>
 
 <body>
-    <main role="main" class="dashboard contracts">
+    <main role="main" class="dashboard">
         <nav class="sidebar main-navigation">
             <div class="navigation--wrapper">
                 <a href="/dashboard.html" class="logo-wrapper">
@@ -123,63 +123,16 @@
         </nav>
 
         <section class="dashboard__top-bar">
-            <div class="contract__header">
-                <div class="contract__header-left">
-                    <h1 class="contract__header-heading">
-                        New Contract
-                        <button>
-                            <img src="/images/icon-edit.svg" alt="">
-                        </button>
-                    </h1>
-                </div>
-
-                <ul class="contract__header-right">
-                    <li>
-                        <div class="contract__header-steps">
-                            <div class="contract__header-steps-text">
-                                <span class="count"><span class="current">0</span> of <span class="total">22 </span></span> Fields Completed
-                            </div>
-
-                            <div class="contract__header-steps-progress">
-                                <div class="bar" style="width: 0%"></div>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li>
-                        <a href="/contracts.html" class="contract__header-action contract__header-action--cancel">
-                            <img src="/images/icon-cancel.svg" alt="" aria-hidden="true">
-                            <div>Cancel</div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="/contracts.html" class="contract__header-action contract__header-action--save">
-                            <img src="/images/icon-save.svg" alt="" aria-hidden="true">
-                            <div>Save & Exit</div>
-                        </a>
-                    </li>
-
-                    <li>
-                        <button class="contract__header-action contract__header-action--templates">
-                            <img src="/images/icon-templates.svg" alt="" aria-hidden="true">
-                            <div>Templates</div>
-                        </button>
-                    </li>
-
-                    <li>
-                        <button class="contract__header-action contract__header-action--sign">
-                            <img src="/images/icon-sign.svg" alt="" aria-hidden="true">
-                            <div>Sign</div>
-                        </button>
-                    </li>
-                </ul>
+            <div class="dashboard__header">
+                <h1 class="dashboard__header-heading">
+                    Dashboard
+                </h1>
             </div>
         </section>
 
         <section class="dashboard__content">
-            <div class="contract__sidebar">
-                <div class="contract__sidebar-panel" data-sidebar-panel="1">
+            <div class="contract-new__sidebar">
+                <div class="contract-new__sidebar-panel" data-sidebar-panel="1">
                     <h2>1. Parties & Type</h2>
                     <p class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
@@ -304,7 +257,7 @@
                     <p><button class="btn" disabled="disabled">.btn[disabled]</button></p>
                 </div>
 
-                <div class="contract__sidebar-nav">
+                <div class="contract-new__sidebar-nav">
                     <button class="prev" data-prev-sidebar-panel>Previous</button>
                     <button class="next" data-next-sidebar-panel>Next</button>
                 </div>

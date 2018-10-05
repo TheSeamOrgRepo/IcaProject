@@ -235,7 +235,7 @@ require('../css/app.scss');
                 dropdownBtns: document.querySelectorAll('.btn--dropdown'),
                 sidebar: {
                     currentPanel: 1,
-                    panels: document.querySelectorAll('.contract__sidebar-panel'),
+                    panels: document.querySelectorAll('.contract-new__sidebar-panel'),
                     prev: document.querySelector('[data-prev-sidebar-panel]'),
                     next: document.querySelector('[data-next-sidebar-panel]')
                 }
@@ -298,7 +298,10 @@ require('../css/app.scss');
                     self.unfocusAll();
 
                     // Return if on last panel
-                    if ( current >= panelCount ) return;
+                    if ( current >= panelCount ) {
+                        document.querySelector('.modal--contract-complete').classList.add('is-active');
+                        return;
+                    }
 
                     // Update next text
                     self.$dom.sidebar.next.innerHTML = ( current >= panelCount - 1 ) ? 'Finish' : 'Next';

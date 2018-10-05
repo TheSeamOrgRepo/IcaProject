@@ -1,18 +1,18 @@
 // Contracts
 // ------------------------
-.contract__header {
+.contract-new__header {
     display: flex;
     align-items: stretch;
     justify-content: space-between;
     height: 100%;
 }
 
-.contract__header-left {
+.contract-new__header-left {
     display: flex;
     align-items: center;
 }
 
-.contract__header-heading {
+.contract-new__header-heading {
     margin: 0;
     padding: 0 1.5rem;
     @include r-font-size(rem-calc(16), rem-calc(30));
@@ -24,7 +24,7 @@
     }
 }
 
-.contract__header-right {
+.contract-new__header-right {
     display: flex;
     align-items: stretch;
 
@@ -35,13 +35,13 @@
     }
 }
 
-.contract__header-steps,
-.contract__header-action {
+.contract-new__header-steps,
+.contract-new__header-action {
     padding: 0 1rem;
     color: $primary-ultralight;
 }
 
-.contract__header-steps {
+.contract-new__header-steps {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,7 +49,7 @@
     padding: 0 3rem;
 }
 
-.contract__header-steps-text {
+.contract-new__header-steps-text {
     text-transform: uppercase;
     font-size: rem-calc(11);
     letter-spacing: 1px;
@@ -61,7 +61,7 @@
     }
 }
 
-.contract__header-steps-progress {
+.contract-new__header-steps-progress {
     position: relative;
     display: block;
     width: 100%;
@@ -81,7 +81,7 @@
     }
 }
 
-.contract__header-action {
+.contract-new__header-action {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -108,25 +108,25 @@
     }
 }
 
-.contract__header-action--cancel {
+.contract-new__header-action--cancel {
     div {
         color: $red;
     }
 }
 
-.contract__header-action--sign {
+.contract-new__header-action--sign {
     div {
         color: $green;
     }
 }
 
-.contract__sidebar,
-.contract__preview {
+.contract-new__sidebar,
+.contract-new__preview {
     overflow: scroll;
     overflow: auto;
 }
 
-.contract__sidebar {
+.contract-new__sidebar {
     position: relative;
     flex-basis: 40%;
     padding: 3rem 2rem 7rem;
@@ -164,7 +164,7 @@
     }
 }
 
-.contract__sidebar-panel {
+.contract-new__sidebar-panel {
     display: none;
 
     &.is-active {
@@ -172,7 +172,7 @@
     }
 }
 
-.contract__sidebar-nav {
+.contract-new__sidebar-nav {
     display: flex;
     align-items: stretch;
     justify-content: stretch;
@@ -236,7 +236,7 @@
     }
 }
 
-.contract__preview {
+.contract-new__preview {
     flex-basis: 60%;
     padding: 3rem 2rem;
     background-color: $gray-ultralight;
@@ -263,7 +263,7 @@
     }
 }
 
-.contract__pre-fill {
+.contract-new__pre-fill {
     max-width: 400px;
     margin: 0 auto;
 
@@ -272,6 +272,6 @@
     }
 }
 
-.contract__pdf {
+.contract-new__pdf {
 
 }
