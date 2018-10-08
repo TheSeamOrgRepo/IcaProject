@@ -71,6 +71,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: $nav-size-small;
     padding: 1rem;
     color: $primary-ultralight;
     background-color: transparent;
@@ -147,6 +148,7 @@
 
 .dashboard__middle {
     display: flex;
+    flex-shrink: 0;
     align-items: center;
     justify-content: space-between;
     padding: 0.5rem 4rem;
