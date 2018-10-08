@@ -266,6 +266,10 @@ $quote-right: "\201d";
 $form-height: 35px;
 $form-height-login: 46px;
 
+// Dashboard
+$dashboard-tabs-height: 50px;
+
+// Placeholders
 %small {
     color: $gray;
     font-size: rem-calc(12);

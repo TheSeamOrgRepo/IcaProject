@@ -47,21 +47,21 @@
                     </li>
 
                     <li>
-                        <a class="nav-link" routerlink="/companies" href="#/companies">
+                        <a class="nav-link" routerlink="/companies" href="/companies.html">
                             <img width="30" style="min-width: 30px;" src="/images/icon-companies.svg" alt="" aria-hidden="true">
                             <span class="nav-item">Companies</span>
                         </a>
                     </li>
 
                     <li>
-                        <a class="nav-link" routerlink="/shipments" href="#/shipments">
+                        <a class="nav-link" routerlink="/shipments" href="/shipments.html">
                             <img width="33" style="min-width: 33px;" src="/images/icon-shipments.svg" alt="" aria-hidden="true">
                             <span class="nav-item">Shipments</span>
                         </a>
                     </li>
 
                     <li>
-                        <a class="nav-link" routerlink="/documents" href="#/documents">
+                        <a class="nav-link" routerlink="/documents" href="/documents.html">
                             <img width="28.62" style="min-width: 28.62px;" src="/images/icon-documents.svg" alt="" aria-hidden="true">
                             <span class="nav-item">Documents</span>
                         </a>
@@ -123,19 +123,144 @@
         </nav>
 
         <section class="dashboard__top-bar">
-            <div class="contracts__header">
-                <h1 class="contracts__header-heading">
-                    Contracts
-                </h1>
+            <div class="dashboard__header">
+                <div class="dashboard__header-search">
+                    <input type="search" placeholder="Search the app...">
+                </div>
+
+                <ul class="dashboard__header-right">
+                    <li>
+                        <button class="dashboard__header-action dashboard__header-action--notifications">
+                            <img src="/images/icon-notifications-gray.svg" alt="" aria-hidden="true">
+                            <div class="hide-vis">Notifications</div>
+                        </button>
+                    </li>
+
+                    <li>
+                        <button class="dashboard__header-action dashboard__header-action--templates">
+                            <img src="/images/icon-templates.svg" alt="" aria-hidden="true">
+                            <div class="hide-vis">Templates</div>
+                        </button>
+                    </li>
+
+                    <li>
+                        <button class="dashboard__header-action dashboard__header-action--help">
+                            <img src="/images/icon-help-gray.svg" alt="" aria-hidden="true">
+                            <div class="hide-vis">help</div>
+                        </button>
+                    </li>
+                </ul>
             </div>
         </section>
 
         <section class="dashboard__content">
             <div class="contracts__content">
-                <div class="contracts__sidebar">
-                    <div class="contracts__sidebar-intro">
-                        <p><a href="/contract-new.html" class="btn">New Contract</a></p>
-                    </div>
+                <div class="dashboard__top">
+                    <h1>Contracts</h1>
+                    <h2>You have 21 contracts.</h2>
+                </div>
+
+                <div class="dashboard__middle">
+                    <img src="/images/placeholder-filters.svg" alt="">
+                </div>
+
+                <div class="dashboard__bottom">
+                    <table class="table table--dashboard table--contracts">
+                        <thead>
+                            <tr>
+                                <th><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></th>
+                                <th>Reference Number</th>
+                                <th>Blockchain Status</th>
+                                <th>Counterparty</th>
+                                <th>Type</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Shipment Date</th>
+                                <th>Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                                <td>501135-501132-171119</td>
+                                <td>Syncing</td>
+                                <td>Allenberg Cotton Co</td>
+                                <td>Sale</td>
+                                <td>1000 Metric Tons</td>
+                                <td>87.5 c/lb</td>
+                                <td>06/23/18</td>
+                                <td class="active">Active</td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                                <td>501135-501132-171119</td>
+                                <td>Up to date</td>
+                                <td>Allenberg Cotton Co</td>
+                                <td>Sale</td>
+                                <td>1000 Metric Tons</td>
+                                <td>87.5 c/lb</td>
+                                <td>06/23/18</td>
+                                <td class="closed">Closed</td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                                <td>501135-501132-171119</td>
+                                <td>Up to date</td>
+                                <td>Allenberg Cotton Co</td>
+                                <td>Purchase</td>
+                                <td>1000 Metric Tons</td>
+                                <td>87.5 c/lb</td>
+                                <td>06/23/18</td>
+                                <td class="closed">Closed</td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                                <td>501135-501132-171119</td>
+                                <td>Syncing</td>
+                                <td>Allenberg Cotton Co</td>
+                                <td>Sale</td>
+                                <td>1000 Metric Tons</td>
+                                <td>87.5 c/lb</td>
+                                <td>06/23/18</td>
+                                <td class="pending">Pending</td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                                <td>501135-501132-171119</td>
+                                <td>Syncing</td>
+                                <td>Allenberg Cotton Co</td>
+                                <td>Purchase</td>
+                                <td>1000 Metric Tons</td>
+                                <td>87.5 c/lb</td>
+                                <td>06/23/18</td>
+                                <td class="active">Active</td>
+                                <td></td>
+                            </tr>
+
+                            <tr>
+                                <td><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                                <td>501135-501132-171119</td>
+                                <td>Syncing</td>
+                                <td>Allenberg Cotton Co</td>
+                                <td>Sale</td>
+                                <td>1000 Metric Tons</td>
+                                <td>87.5 c/lb</td>
+                                <td>06/23/18</td>
+                                <td class="pending">Pending</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </section>

@@ -123,6 +123,16 @@
     }
 }
 
+.dashboard__middle {
+    padding: 0.5rem 4rem;
+    background-color: #E9EBED;
+    border-top: 1px solid $gray-light;
+
+    img {
+        display: block;
+    }
+}
+
 .dashboard__bottom {
     background-color: $white;
     flex: 1;
@@ -133,6 +143,7 @@
 .dashboard__tabs-controls {
     display: flex;
     justify-content: space-between;
+    margin-bottom: -($dashboard-tabs-height);
     transform: translateY(-100%);
 
     .buttons {
@@ -144,7 +155,9 @@
 
 .dashboard__tabs-button {
     position: relative;
-    padding: 0.75rem 1rem 0.75rem 2.6rem;
+    height: $dashboard-tabs-height;
+    // padding: 0.75rem 1rem 0.75rem 2.6rem;
+    padding: 0 1rem 0 2.6rem;
     font-size: rem-calc(12);
     text-transform: uppercase;
     color: $primary-ultralight;
