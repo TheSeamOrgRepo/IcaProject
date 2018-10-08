@@ -108,7 +108,15 @@
 }
 
 .dashboard__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 5rem 4rem;
+
+    h1,
+    h2 {
+        margin: 0;
+    }
 
     h1 {
         @include r-font-size(rem-calc(40), rem-calc(50));

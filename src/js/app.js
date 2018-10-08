@@ -233,16 +233,19 @@ require('../css/app.scss');
             $dom: {
                 dashboard: document.querySelector('.dashboard'),
                 dropdownBtns: document.querySelectorAll('.btn--dropdown'),
+                tabs: {
+                    triggers: document.querySelectorAll('[data-tab-trigger]'),
+                    items: document.querySelectorAll('[data-tab-item]')
+                },
+                tables: {
+                    dots: document.querySelectorAll('.actions__dots')
+                },
                 sidebar: {
                     currentPanel: 1,
                     panels: document.querySelectorAll('.contract-new__sidebar-panel'),
                     prev: document.querySelector('[data-prev-sidebar-panel]'),
                     next: document.querySelector('[data-next-sidebar-panel]')
                 },
-                tabs: {
-                    triggers: document.querySelectorAll('[data-tab-trigger]'),
-                    items: document.querySelectorAll('[data-tab-item]')
-                }
             },
 
             init: function() {
@@ -253,6 +256,9 @@ require('../css/app.scss');
 
                 // Tabs
                 if ( self.$dom.tabs.triggers.length ) self.tabs();
+
+                // Tables
+                if ( self.$dom.tables.dots.length ) self.tables();
 
                 // Sidebar Panels
                 if ( self.$dom.sidebar.panels.length ) self.sidebarPanels();
@@ -294,6 +300,24 @@ require('../css/app.scss');
                         $tabItems.forEach(function(el) {
                             el.classList.add('is-active');
                         });
+                    });
+                });
+            },
+
+            tables: function() {
+                var self = this;
+
+                self.$dom.tables.dots.forEach(function(el) {
+                    el.addEventListener('click', function(e) {
+                        if ( ! this.classList.contains('is-active') ) {
+                            // Remove current active states
+                            self.$dom.tables.dots.forEach(function(el) {
+                                el.classList.remove('is-active');
+                            });
+                        }
+
+                        // Set active state
+                        this.classList.toggle('is-active');
                     });
                 });
             },
