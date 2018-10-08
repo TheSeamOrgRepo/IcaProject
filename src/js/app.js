@@ -290,7 +290,7 @@ require('../css/app.scss');
 
                         // Show the clicked tab
                         var tab = el.getAttribute('data-tab-trigger');
-                        document.querySelectorAll(`[data-tab-item="${tab}"]`).classList.add('is-active');
+                        document.querySelector(`[data-tab-item="${tab}"]`).classList.add('is-active');
                     });
                 });
             },

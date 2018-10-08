@@ -1,0 +1,58 @@
+table {
+    width: 100%;
+    text-align: left;
+    color: $primary-light;
+    letter-spacing: 0.5px;
+    font-size: rem-calc(13);
+
+    tr {
+        border-bottom: 1px solid $gray-ultralight;
+    }
+
+    thead {
+        tr {
+            border-bottom-color: $gray-light;
+        }
+    }
+
+    th,
+    td {
+        padding: 1rem;
+
+        &.active {
+            color: $green;
+        }
+
+        &.pending {
+            color: $yellow-dark;
+        }
+
+        &.closed {
+            color: $red;
+        }
+    }
+
+    th {
+        font-weight: $font-weight-bold;
+    }
+
+    .form-field {
+        margin: 0;
+    }
+}
+
+.table--dashboard {
+    th,
+    td {
+        &:first-of-type {
+            padding-right: 0;
+            padding-left: 0;
+            width: 25px;
+        }
+
+        &:last-of-type {
+            text-align: right;
+            padding-right: 0;
+        }
+    }
+}

@@ -219,3 +219,11 @@
         height: 14px;
     }
 }
+
+.dashboard__tabs-item {
+    display: none;
+
+    &.is-active {
+        display: block;
+    }
+}
