@@ -70,6 +70,33 @@ const CONFIG = {
         "removeComments": false
       }
     }),
+    new HtmlWebpackPlugin({
+      template: './src/companies.html',
+      filename: './companies.html',
+      minify: {
+        "collapseWhitespace": false,
+        "minifyCSS": false,
+        "removeComments": false
+      }
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/shipments.html',
+      filename: './shipments.html',
+      minify: {
+        "collapseWhitespace": false,
+        "minifyCSS": false,
+        "removeComments": false
+      }
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/documents.html',
+      filename: './documents.html',
+      minify: {
+        "collapseWhitespace": false,
+        "minifyCSS": false,
+        "removeComments": false
+      }
+    }),
     new HtmlReplaceWebpackPlugin([{
         pattern: '<script type="text/javascript" src="../build/app.js"></script>',
         replacement: ''
