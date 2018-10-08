@@ -288,9 +288,12 @@ require('../css/app.scss');
                             el.classList.remove('is-active');
                         });
 
-                        // Show the clicked tab
+                        // Show all clicked tabs
                         var tab = el.getAttribute('data-tab-trigger');
-                        document.querySelector(`[data-tab-item="${tab}"]`).classList.add('is-active');
+                        var $tabItems = document.querySelectorAll(`[data-tab-item="${tab}"]`);
+                        $tabItems.forEach(function(el) {
+                            el.classList.add('is-active');
+                        });
                     });
                 });
             },
