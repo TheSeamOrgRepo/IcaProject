@@ -240,6 +240,10 @@ require('../css/app.scss');
                 tables: {
                     dots: document.querySelectorAll('.actions__dots')
                 },
+                modals: {
+                    triggers: document.querySelectorAll('[data-modal]'),
+                    items: document.querySelectorAll('.modal')
+                },
                 sidebar: {
                     currentPanel: 1,
                     panels: document.querySelectorAll('.contract-new__sidebar-panel'),
@@ -255,10 +259,13 @@ require('../css/app.scss');
                 if ( self.$dom.dropdownBtns.length ) self.dropdownButtons();
 
                 // Tabs
-                if ( self.$dom.tabs.triggers.length ) self.tabs();
+                if ( self.$dom.tabs.items.length ) self.tabs();
 
                 // Tables
                 if ( self.$dom.tables.dots.length ) self.tables();
+
+                // Modals
+                if ( self.$dom.modals.items.length ) self.modals();
 
                 // Sidebar Panels
                 if ( self.$dom.sidebar.panels.length ) self.sidebarPanels();
@@ -309,6 +316,9 @@ require('../css/app.scss');
 
                 self.$dom.tables.dots.forEach(function(el) {
                     el.addEventListener('click', function(e) {
+                        e.preventDefault();
+
+                        // Check if current active dots
                         if ( ! this.classList.contains('is-active') ) {
                             // Remove current active states
                             self.$dom.tables.dots.forEach(function(el) {
@@ -319,6 +329,75 @@ require('../css/app.scss');
                         // Set active state
                         this.classList.toggle('is-active');
                     });
+                });
+            },
+
+            // modals: function() {
+            //     var self = this;
+
+            //     self.$dom.modals.triggers.forEach(function(el) {
+            //         el.addEventListener('click', function(e) {
+            //             e.preventDefault();
+
+            //             // Hide all modal items
+            //             self.$dom.modals.items.forEach(function(el) {
+            //                 el.classList.remove('is-active');
+            //             });
+
+            //             // Show clicked modal
+            //             var modal = el.getAttribute('data-modal-trigger');
+            //             document.querySelector(`[data-modal-item="${modal}"]`).classList.add('is-active');
+            //         });
+            //     });
+            // },
+
+            modals: function() {
+                var self = this;
+
+                function closeModals() {
+                    console.log('close modals');
+                    // Hide all modal items
+                    self.$dom.modals.items.forEach(function(el) {
+                        el.classList.remove('is-active');
+                    });
+                }
+
+                // Handle opening modals
+                self.$dom.modals.triggers.forEach(function(el) {
+                    el.addEventListener('click', function(e) {
+                        e.preventDefault();
+
+                        // Hide all modal items
+                        closeModals();
+
+                        // Show clicked modal
+                        var modal = el.getAttribute('data-modal');
+                        document.getElementById(`modal-${modal}`).classList.add('is-active');
+                    });
+                });
+
+                // Handle modal close buttons
+                document.querySelectorAll('[data-modal-close]').forEach(function(el) {
+                    el.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        closeModals();
+                    });
+                });
+
+                // Handle closing modal by clicking outside
+                self.$dom.modals.items.forEach(function(el) {
+                    el.addEventListener('click', function(e) {
+                        if ( e.target.classList.contains('modal') ) {
+                            closeModals();
+                        }
+                    });
+                });
+
+                // Handle closing modal with "esc" key
+                document.body.addEventListener('keyup', function(e) {
+                    if (e.keyCode === 27) {
+                        closeModals();
+                    }
                 });
             },
 
