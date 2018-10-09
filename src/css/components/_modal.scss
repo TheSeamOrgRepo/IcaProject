@@ -75,16 +75,17 @@
 .modal__content {
     overflow: scroll;
     overflow: auto;
-    max-width: 100%;
+    max-width: 95%;
+    max-width: 95vw;
     max-height: 95%;
     max-height: 95vh;
     padding: 3rem;
     background-color: $white;
     border-radius: $modal-border-radius;
     box-shadow: 0 8px 16px 0 rgba(black, 0.15),
-                0 7px 33px 0 rgba(black, 0.10);
+                0 7px 33px 0 rgba(black, 0.1);
     transition: 0.15s ease-in-out;
-    transform: translateY(20px);
+    transform: translateY(40px);
     z-index: 1;
     will-change: transform;
 
