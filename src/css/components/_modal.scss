@@ -8,6 +8,7 @@
     visibility: hidden;
     transition: 0.15s ease-in-out;
     z-index: 9999;
+    will-change: opacity, visibility;
 
     &.is-active {
         opacity: 1;
@@ -81,6 +82,7 @@
     transform: translate(-50%, -40%);
     transition: 0.15s ease-in-out;
     z-index: 1;
+    will-change: transform;
 }
 
 .modal__header {
@@ -136,9 +138,7 @@
             }
 
             &:before {
-                // content: '';
                 display: block;
-
             }
 
             &.type {
