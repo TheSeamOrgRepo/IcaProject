@@ -355,7 +355,6 @@ require('../css/app.scss');
                 var self = this;
 
                 function closeModals() {
-                    console.log('close modals');
                     // Hide all modal items
                     self.$dom.modals.items.forEach(function(el) {
                         el.classList.remove('is-active');
