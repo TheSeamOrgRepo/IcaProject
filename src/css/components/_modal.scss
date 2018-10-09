@@ -84,8 +84,12 @@
 }
 
 .modal__header {
-    font-weight: $font-weight-normal;
-    @include r-font-size(rem-calc(28), rem-calc(36));
+    &,
+    h1 {
+        font-weight: $font-weight-normal;
+        @include r-font-size(rem-calc(28), rem-calc(36));
+        letter-spacing: -1px;
+    }
 }
 
 .modal--contract-complete {
@@ -224,5 +228,39 @@
     .modal__preview {
         padding: 3rem;
         background-color: $gray-ultralight;
+    }
+}
+
+.modal--new-document {
+    .modal__header {
+        margin-bottom: 1.5rem;
+    }
+
+    .modal__dropzone {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 325px;
+        max-width: 100%;
+        margin: 1.5rem 0;
+        padding: 2rem;
+        border: 2px dashed $gray-ultralight;
+        border-radius: $modal-border-radius;
+    }
+
+    .modal__dropzone-text {
+        margin-top: 1rem;
+        font-size: rem-calc(14);
+
+        a {
+            margin-top: 0.5rem;
+            text-decoration: underline;
+            color: $primary;
+        }
+    }
+
+    .modal__actions {
+        text-align: center;
     }
 }

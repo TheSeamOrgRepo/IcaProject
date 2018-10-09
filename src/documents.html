@@ -161,7 +161,7 @@
                     </div>
 
                     <div class="right">
-                        <a href="#" class="btn btn--green">New Document</a>
+                        <button class="btn btn--green" data-modal="new-document">New Document</button>
                     </div>
                 </div>
 
@@ -322,11 +322,61 @@
             </div>
         </section>
 
+        <div id="modal-new-document" class="modal modal--new-document">
+            <div class="modal__content">
+                    <button class="modal__close" data-modal-close><span class="hide-vis">Close</span></button>
+
+                    <h1 class="modal__header">Upload Files</h1>
+
+                    <ul class="modal__files progress-list">
+                        <li class="progress-list__item progress-list__item--finished">
+                            <div class="progress-list__icon"></div>
+                            <div class="progress-list__name">Document-Name-1.pdf</div>
+                            <button class="progress-list__action progress-list__action--trash">
+                                <span class="hide-vis">Delete</span>
+                            </button>
+                        </li>
+
+                        <li class="progress-list__item progress-list__item--loading">
+                            <div class="progress-list__icon"></div>
+                            <div class="progress-list__name">Document-Name-2.pdf</div>
+                            <button class="progress-list__action progress-list__action--cancel">
+                                <span class="hide-vis">Cancel</span>
+                            </button>
+                        </li>
+
+                        <li class="progress-list__item">
+                            <div class="progress-list__icon"></div>
+                            <div class="progress-list__name">Document-Name-3.pdf</div>
+                            <button class="progress-list__action progress-list__action--cancel">
+                                <span class="hide-vis">Cancel</span>
+                            </button>
+                        </li>
+
+                        <li class="progress-list__item">
+                            <div class="progress-list__icon"></div>
+                            <div class="progress-list__name">Document-Name-4.pdf</div>
+                            <button class="progress-list__action progress-list__action--cancel">
+                                <span class="hide-vis">Cancel</span>
+                            </button>
+                        </li>
+                    </ul>
+
+                    <div class="modal__dropzone">
+                        <img src="/images/icon-upload.svg" alt="Upload File">
+                        <div class="modal__dropzone-text">Drag drop or <a href="#">browse</a>.</div>
+                    </div>
+
+                    <div class="modal__actions">
+                        <button class="btn btn--green" data-modal-close>Save</button>
+                    </div>
+                </div>
+            </div>
 
         <div id="modal-preview-pdf" class="modal modal--preview-pdf">
             <div class="modal__content">
                 <div class="modal__header">
-                    <button class="modal__close" data-modal-close><span class="hide-vis">close</span></button>
+                    <button class="modal__close" data-modal-close><span class="hide-vis">Close</span></button>
 
                     <div class="content">
                         <div class="left">
@@ -352,7 +402,7 @@
         <div id="modal-preview-json" class="modal modal--preview-json">
             <div class="modal__content">
                 <div class="modal__header">
-                    <button class="modal__close" data-modal-close><span class="hide-vis">close</span></button>
+                    <button class="modal__close" data-modal-close><span class="hide-vis">Close</span></button>
 
                     <div class="content">
                         <div class="left">
