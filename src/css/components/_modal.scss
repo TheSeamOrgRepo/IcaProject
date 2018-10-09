@@ -264,3 +264,22 @@
         text-align: center;
     }
 }
+
+.modal--submit-contract {
+    .modal__content {
+        padding: 3rem 5rem;
+    }
+
+    .modal__header,
+    .modal__actions {
+        text-align: center;
+    }
+
+    .modal__header {
+        margin-bottom: 1.5rem;
+    }
+
+    .modal__actions {
+        margin-top: 1.5rem;
+    }
+}
