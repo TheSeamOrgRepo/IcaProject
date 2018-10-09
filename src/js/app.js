@@ -1,6 +1,8 @@
 // Styles
 require('../css/app.scss');
 
+import Select from './select.js';
+
 (function(global) {
     var theseam = {
         // Initialize everything
@@ -244,6 +246,7 @@ require('../css/app.scss');
                     triggers: document.querySelectorAll('[data-modal]'),
                     items: document.querySelectorAll('.modal')
                 },
+                selects: document.querySelectorAll('select'),
                 sidebar: {
                     currentPanel: 1,
                     panels: document.querySelectorAll('.contract-new__sidebar-panel'),
@@ -266,6 +269,10 @@ require('../css/app.scss');
 
                 // Modals
                 if ( self.$dom.modals.items.length ) self.modals();
+
+                // Selects
+                if ( self.$dom.selects.length ) self.selects();
+                // this.selects();
 
                 // Sidebar Panels
                 if ( self.$dom.sidebar.panels.length ) self.sidebarPanels();
@@ -332,25 +339,6 @@ require('../css/app.scss');
                 });
             },
 
-            // modals: function() {
-            //     var self = this;
-
-            //     self.$dom.modals.triggers.forEach(function(el) {
-            //         el.addEventListener('click', function(e) {
-            //             e.preventDefault();
-
-            //             // Hide all modal items
-            //             self.$dom.modals.items.forEach(function(el) {
-            //                 el.classList.remove('is-active');
-            //             });
-
-            //             // Show clicked modal
-            //             var modal = el.getAttribute('data-modal-trigger');
-            //             document.querySelector(`[data-modal-item="${modal}"]`).classList.add('is-active');
-            //         });
-            //     });
-            // },
-
             modals: function() {
                 var self = this;
 
@@ -397,6 +385,17 @@ require('../css/app.scss');
                     if (e.keyCode === 27) {
                         closeModals();
                     }
+                });
+            },
+
+            selects: function() {
+                var self = this;
+
+                // Init select elements
+                self.$dom.selects.forEach(function(el) {
+                    var select = new Select({
+                        el: el
+                    });
                 });
             },
 

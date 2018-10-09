@@ -185,10 +185,9 @@
                         <p class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 
                         <div class="form-field form-field--contract form-field--select">
-                            <label for="placeholder-select" class="form-field__label">Counter Party</label>
+                            <label for="counter-party" class="form-field__label">Counter Party</label>
                             <div class="select">
-                                <select id="placeholder-select" class="form-field__select">
-                                    <option value="" disabled selected></option>
+                                <select id="counter-party" class="form-field__select" data-start-empty="true">
                                     <option value="option-1">Option One</option>
                                     <option value="option-2">Option Two</option>
                                     <option value="option-3">Option Three</option>
@@ -197,10 +196,9 @@
                         </div>
 
                         <div class="form-field form-field--contract form-field--select">
-                            <label for="placeholder-select" class="form-field__label">Contract Type</label>
+                            <label for="contract-type" class="form-field__label">Contract Type</label>
                             <div class="select">
-                                <select id="placeholder-select" class="form-field__select">
-                                    <option value="" disabled selected></option>
+                                <select id="contract-type" class="form-field__select" data-start-empty="true">
                                     <option value="option-1">Option One</option>
                                     <option value="option-2">Option Two</option>
                                     <option value="option-3">Option Three</option>
@@ -310,8 +308,7 @@
                             <button class="form-field__action">+ Add Clause Item</button>
                             <label for="general-clauses" class="form-field__label">General Clauses</label>
                             <div class="select">
-                                <select id="general-clauses" class="form-field__select">
-                                    <option value="" disabled selected></option>
+                                <select id="general-clauses" class="form-field__select" data-start-empty="true">
                                     <option value="option-1">Option One</option>
                                     <option value="option-2">Option Two</option>
                                     <option value="option-3">Option Three</option>
@@ -323,8 +320,7 @@
                             <button class="form-field__action">+ Add Clause Item</button>
                             <label for="arbitration-clauses" class="form-field__label">Arbitration Clauses</label>
                             <div class="select">
-                                <select id="arbitration-clauses" class="form-field__select">
-                                    <option value="" disabled selected></option>
+                                <select id="arbitration-clauses" class="form-field__select" data-start-empty="true">
                                     <option value="option-1">Option One</option>
                                     <option value="option-2">Option Two</option>
                                     <option value="option-3">Option Three</option>
@@ -346,8 +342,7 @@
                     <div class="contract-new__pre-fill">
                         <div class="form-field form-field--contract form-field--select">
                             <div class="select">
-                                <select id="placeholder-select" class="form-field__select" onchange="document.querySelector('.contract-new__pre-fill').remove()">
-                                    <option value="" selected disabled>Choose Pre-Fill Content</option>
+                                <select id="placeholder-select" class="form-field__select" data-placeholder="Choose Pre-Fill Content" onchange="document.querySelector('.contract-new__pre-fill').remove()">
                                     <option value="option-1">21st Century Textiles</option>
                                     <option value="option-2">AXEM Fibers</option>
                                     <option value="option-3">Cargill, Inc.</option>
