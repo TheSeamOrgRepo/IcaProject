@@ -1,13 +1,13 @@
 /* global Tether */
-import Tether from './tether.min.js';
+import Tether from './tether.js';
 
 const {
-    extend,
-    addClass,
-    removeClass,
-    hasClass,
-    getBounds,
-    Evented
+  extend,
+  addClass,
+  removeClass,
+  hasClass,
+  getBounds,
+  Evented
 } = Tether.Utils;
 
 const ENTER = 13;
