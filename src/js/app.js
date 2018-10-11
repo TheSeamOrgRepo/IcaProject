@@ -2,6 +2,7 @@
 require('../css/app.scss');
 
 import Select from './select.js';
+import flatpickr from './flatpickr.js';
 
 (function(global) {
     var theseam = {
@@ -247,6 +248,7 @@ import Select from './select.js';
                     items: document.querySelectorAll('.modal')
                 },
                 selects: document.querySelectorAll('select'),
+                dates: document.querySelectorAll('.form-field__date'),
                 sidebar: {
                     currentPanel: 1,
                     panels: document.querySelectorAll('.contract-new__sidebar-panel'),
@@ -272,7 +274,9 @@ import Select from './select.js';
 
                 // Selects
                 if ( self.$dom.selects.length ) self.selects();
-                // this.selects();
+
+                // Dates
+                if ( self.$dom.dates.length ) self.dates();
 
                 // Sidebar Panels
                 if ( self.$dom.sidebar.panels.length ) self.sidebarPanels();
@@ -396,6 +400,16 @@ import Select from './select.js';
                     var select = new Select({
                         el: el
                     });
+                });
+            },
+
+            dates: function() {
+                flatpickr('.form-field__date', {
+                    mode: 'range',
+                    altInput: true,
+                    altFormat: 'm/d/Y',
+                    dateFormat: 'Y-m-d',
+                    rangeSeparator: ' - ',
                 });
             },
 
