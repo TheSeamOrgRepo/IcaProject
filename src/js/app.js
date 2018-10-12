@@ -404,12 +404,17 @@ import flatpickr from './flatpickr.js';
             },
 
             dates: function() {
-                flatpickr('.form-field__date', {
+                flatpickr('.form-field__date--single', {
+                    altInput: true,
+                    altFormat: 'm/d/Y',
+                    dateFormat: 'Y-m-d',
+                });
+
+                flatpickr('.form-field__date--range', {
                     mode: 'range',
                     altInput: true,
                     altFormat: 'm/d/Y',
                     dateFormat: 'Y-m-d',
-                    rangeSeparator: ' - ',
                 });
             },
 

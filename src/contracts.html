@@ -167,15 +167,102 @@
                 </div>
 
                 <div class="dashboard__middle">
-                    <img src="/images/placeholder-filters-left.svg" alt="">
-                    <img src="/images/placeholder-filters-right.svg" alt="">
+                    <div class="dashboard__filters">
+                        <div class="dashboard__filter-group">
+                            <img src="/images/icon-filter-status.svg" class="dashboard__filter-group__icon" alt="" aria-hidden="true">
+                            <span class="dashboard__filter-group__label">Status:</span>
+                            <div class="dashboard__filter-group__select">
+                                <div class="form-field form-field--dashboard form-field--select">
+                                    <div class="select">
+                                        <select id="contract-type" class="form-field__select">
+                                            <option value="option-1">All</option>
+                                            <option value="option-2">Active</option>
+                                            <option value="option-3">Pending</option>
+                                            <option value="option-4">Closed</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard__filter-group">
+                            <img src="/images/icon-filter-type.svg" class="dashboard__filter-group__icon" alt="" aria-hidden="true">
+                            <span class="dashboard__filter-group__label">Type:</span>
+                            <div class="dashboard__filter-group__select">
+                                <div class="form-field form-field--dashboard form-field--select">
+                                    <div class="select">
+                                        <select id="contract-type" class="form-field__select">
+                                            <option value="option-1">All</option>
+                                            <option value="option-2">Sale</option>
+                                            <option value="option-3">Purchase</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard__filter-group">
+                            <img src="/images/icon-filter-calendar.svg" class="dashboard__filter-group__icon" alt="" aria-hidden="true">
+                            <span class="dashboard__filter-group__label">Date Range:</span>
+                            <div class="dashboard__filter-group__select">
+                                <div class="form-field form-field--dashboard form-field--select">
+                                    <div class="select">
+                                        <select id="contract-type" class="form-field__select">
+                                            <option value="option-1">Last 7 days</option>
+                                            <option value="option-2">Last 30 days</option>
+                                            <option value="option-3">Last 3 months</option>
+                                            <option value="option-4">Last 6 months</option>
+                                            <option value="option-5">Last year</option>
+                                            <option value="custom">Custom</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-field form-field--dashboard form-field--date" hidden>
+                                    <div class="date">
+                                        <input type="text" class="form-field__date form-field__date--range">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="dashboard__filter-group">
+                            <img src="/images/icon-filter-filter.svg" class="dashboard__filter-group__icon" alt="" aria-hidden="true">
+                            <span class="dashboard__filter-group__label">Filter by:</span>
+                            <div class="dashboard__filter-group__select">
+                                <div class="form-field form-field--dashboard form-field--select">
+                                    <div class="select">
+                                        <select id="contract-type" class="form-field__select">
+                                            <option value="option-0">None</option>
+                                            <option value="option-1">Reference Number</option>
+                                            <option value="option-2">Blockchain Status</option>
+                                            <option value="option-3">Counterparty</option>
+                                            <option value="option-4">Type</option>
+                                            <option value="option-5">Quantity</option>
+                                            <option value="option-6">Price</option>
+                                            <option value="option-7">Shipment Date</option>
+                                            <option value="option-8">Status</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="dashboard__pagination">
+                        <div class="dashboard__pagination-text">1-10 of 21</div>
+                        <div class="dashboard__pagination-buttons">
+                            <button class="prev" disabled><div class="hide-vis">Previous</div></button>
+                            <button class="next"><div class="hide-vis">Next</div></button>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="dashboard__bottom">
                     <table class="table table--dashboard table--contracts">
                         <thead>
                             <tr>
-                                <th><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></th>
+                                <th><div class="form-field form-field--dashboard form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></th>
                                 <th>Reference Number</th>
                                 <th>Blockchain Status</th>
                                 <th>Counterparty</th>
@@ -190,7 +277,7 @@
 
                         <tbody>
                             <tr>
-                                <td><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                                <td><div class="form-field form-field--dashboard form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
                                 <td>501135-501132-171119</td>
                                 <td>Syncing</td>
                                 <td>Allenberg Cotton Co</td>
@@ -221,7 +308,7 @@
                             </tr>
 
                             <tr>
-                                <td><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                                <td><div class="form-field form-field--dashboard form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
                                 <td>501135-501132-171119</td>
                                 <td>Up to date</td>
                                 <td>Allenberg Cotton Co</td>
@@ -252,7 +339,7 @@
                             </tr>
 
                             <tr>
-                                <td><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                                <td><div class="form-field form-field--dashboard form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
                                 <td>501135-501132-171119</td>
                                 <td>Syncing</td>
                                 <td>Allenberg Cotton Co</td>
@@ -283,7 +370,7 @@
                             </tr>
 
                             <tr>
-                                <td><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                                <td><div class="form-field form-field--dashboard form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
                                 <td>501135-501132-171119</td>
                                 <td>Syncing</td>
                                 <td>Allenberg Cotton Co</td>

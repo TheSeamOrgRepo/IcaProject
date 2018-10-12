@@ -107,7 +107,6 @@
         transform: translateX($nav-size-small - 1px);
     }
 
-
     .contracts__content,
     .companies__content,
     .shipments__content,
@@ -126,7 +125,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 5rem 4rem;
+    padding: 5rem 2rem;
+
+    @include bp(min, rem-calc(1150)) {
+        padding-right: 4rem;
+        padding-left: 4rem;
+    }
 
     h1,
     h2 {
@@ -151,20 +155,114 @@
     flex-shrink: 0;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 4rem;
+    padding: 0.5rem 2rem;
     background-color: $gray-ultralight;
     border-top: 1px solid $gray-light;
 
-    img {
+    @include bp(min, rem-calc(1150)) {
+        padding-right: 4rem;
+        padding-left: 4rem;
+    }
+}
+
+.dashboard__filters,
+.dashboard__pagination {
+    display: flex;
+    align-items: center;
+}
+
+.dashboard__filters {
+    flex-wrap: wrap;
+}
+
+.dashboard__filter-group {
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+    margin: 0 -0.25rem;
+
+    @include bp(min, rem-calc(1150)) {
+        padding-right: 2rem;
+    }
+
+    > * {
+        padding: 0 0.25rem;
+    }
+}
+
+.dashboard__filter-group__select {
+    .form-field {
+        margin: 0;
+    }
+}
+
+.dashboard__filter-group__label,
+.dashboard__pagination-text {
+    font-size: rem-calc(13);
+    color: $primary-light;
+    white-space: nowrap;
+}
+
+.dashboard__pagination-buttons {
+    display: flex;
+    margin-left: 0.75rem;
+
+    .prev,
+    .next {
+        $size: 30px;
         display: block;
+        position: relative;
+        width: $size;
+        height: $size;
+        padding: 0;
+        border: 1px solid $gray-light;
+        background-color: $white;
+        border-radius: 3px;
+        transition: 0.15s ease-in-out;
+
+        &:active,
+        &:focus,
+        &:hover {
+            background-color: $gray-ultralight;
+        }
+
+        &[disabled] {
+            opacity: 0.5;
+            background-color: $white;
+            cursor: not-allowed !important;
+        }
+
+        &:before {
+            content: svg-url('<svg width="7" height="12" xmlns="http://www.w3.org/2000/svg"><path d="M1 0l5 6-5 6" fill-rule="nonzero" stroke="#{$primary-ultralight}" fill="none"/></svg>');
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 7px;
+            height: 12px;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    .prev {
+        margin-right: 0.25rem;
+
+        &:before {
+            transform: translate(-50%, -50%)
+                       rotate(180deg);
+        }
     }
 }
 
 .dashboard__bottom {
     background-color: $white;
     flex: 1;
-    padding: 0 4rem 1rem;
+    padding: 0 2rem 1rem;
     border-top: 1px solid $gray-light;
+
+    @include bp(min, rem-calc(1150)) {
+        padding-right: 4rem;
+        padding-left: 4rem;
+    }
 }
 
 .dashboard__tabs-controls {

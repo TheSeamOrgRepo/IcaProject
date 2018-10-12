@@ -93,7 +93,7 @@
         display: block;
         width: 100%;
         height: $form-height;
-        padding: 0 0.75rem;
+        padding: 0 ((0.75rem * 2) + rem-calc(10)) 0 0.75rem;
         font-family: $font;
         font-size: rem-calc(14);
         color: $primary;
