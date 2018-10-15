@@ -293,14 +293,14 @@ import flatpickr from './flatpickr.js';
 
                     document.addEventListener('click', function(e) {
                         // Dropdown isn't active
-                        if (!el.classList.contains('is-active')) return;
+                        if ( ! el.classList.contains('is-active') ) return;
 
                         // Clicking inside dropdown
                         var dropdown = el.querySelector('.dropdown');
-                        if (e.target === dropdown || dropdown.contains(e.target)) return;
+                        if ( e.target === dropdown || dropdown.contains(e.target) ) return;
 
                         // Clicking target
-                        if (e.target === el.target || el.contains(e.target)) return;
+                        if ( e.target === el.target || el.contains(e.target) ) return;
 
                         // Close the dropdown
                         el.classList.remove('is-active');
@@ -354,6 +354,21 @@ import flatpickr from './flatpickr.js';
 
                         // Set active state
                         this.classList.toggle('is-active');
+                    });
+
+                    document.addEventListener('click', function(e) {
+                        // Dropdown isn't active
+                        if ( ! el.classList.contains('is-active') ) return;
+
+                        // Clicking inside dropdown
+                        var dropdown = el.nextElementSibling;
+                        if ( e.target === dropdown || dropdown.contains(e.target) ) return;
+
+                        // Clicking target
+                        if ( e.target === el.target || el.contains(e.target) ) return;
+
+                        // Close the dropdown
+                        el.classList.remove('is-active');
                     });
                 });
             },
