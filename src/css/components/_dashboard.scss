@@ -155,7 +155,7 @@
     flex-shrink: 0;
     align-items: center;
     justify-content: space-between;
-    padding: 0.5rem 2rem;
+    padding: 0.25rem 2rem;
     background-color: $gray-ultralight;
     border-top: 1px solid $gray-light;
 
@@ -173,13 +173,20 @@
 
 .dashboard__filters {
     flex-wrap: wrap;
+    padding: 0 0.5rem 0 0;
+
+    .contracts__content & {
+        .form-field__input {
+            width: 240px;
+        }
+    }
 }
 
 .dashboard__filter-group {
     display: flex;
     align-items: center;
-    padding-right: 1rem;
     margin: 0 -0.25rem;
+    padding: 0.25rem 1rem 0.25rem 0;
 
     @include bp(min, rem-calc(1150)) {
         padding-right: 2rem;
@@ -190,7 +197,7 @@
     }
 }
 
-.dashboard__filter-group__select {
+.dashboard__filter-group__input {
     .form-field {
         margin: 0;
     }
@@ -203,6 +210,9 @@
     white-space: nowrap;
 }
 
+.dashboard__pagination {
+    padding: 0.5rem 0 0.5rem 0.5rem;
+}
 .dashboard__pagination-buttons {
     display: flex;
     margin-left: 0.75rem;
