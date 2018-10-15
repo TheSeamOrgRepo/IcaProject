@@ -139,29 +139,15 @@ table {
                     0 11px 33px 0 rgba(black, 0.06);
         opacity: 0;
         visibility: hidden;
-        transform: translateY(-5px);
+        transform: translateY(5px);
         transition: 0.15s ease-in-out;
         z-index: 1;
 
+        @extend %rounded-dropdown-arrow;
+
         &:before,
         &:after {
-            content: '';
-            position: absolute;
-            top: -6px;
             right: 12px;
-            width: 10px;
-            height: 10px;
-            border-radius: 3px 0 0 0;
-            background-color:$gray-light;
-            transform: rotate(45deg);
-            z-index: 0;
-        }
-
-        &:after {
-            border-radius: 2px 0 0 0;
-            background-color: $white;
-            transform: rotate(45deg) translate(1px, 1px);
-            z-index: 1;
         }
 
         button {

@@ -7,10 +7,23 @@
 
 .select-element {
     position: absolute;
-    display: none;
+    margin-top: 0.5rem + rem-calc(5);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.15s ease-in-out;
+
+    @extend %rounded-dropdown-arrow;
+
+    &:before,
+    &:after {
+        left: 12px;
+        top: -5px;
+    }
 
     &.select-open {
-        display: block;
+        margin-top: 0.5rem;
+        opacity: 1;
+        visibility: visible;
     }
 }
 
@@ -23,7 +36,7 @@
             overflow: auto;
             max-width: 18rem;
             max-height: 18rem;
-            margin-top: 0.25rem;
+            // margin-top: 0.25rem;
             font-family: inherit;
             color: inherit;
             background-color: $white;
@@ -62,6 +75,7 @@
                 transition: 0.15s ease-in-out;
                 -webkit-tap-highlight-color: transparent;
                 -webkit-touch-callout: none;
+                z-index: 2;
 
                 &.select-option-disabled {
                     color: $gray-light;

@@ -164,6 +164,7 @@ button {
 // Dropdown button
 .btn--dropdown {
     position: relative;
+    outline: none;
 
     &:after {
         content: '';
@@ -180,20 +181,31 @@ button {
     }
 
     &.is-active {
-        outline: none;
-
         .dropdown {
-            display: block;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
     }
 
     .dropdown {
-        display: none;
         position: absolute;
         left: -1px;
         top: 100%;
-        padding-top: 0.25rem;
+        margin-top: 0.75rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(5px);
+        transition: 0.15s ease-in-out;
         z-index: 1;
+
+        @extend %rounded-dropdown-arrow;
+
+        &:before,
+        &:after {
+            top: -5px;
+            left: 12px;
+        }
     }
 
     ul {
@@ -205,6 +217,11 @@ button {
         box-shadow: 0 6px 16px 0 rgba(black, 0.06),
                     0 4px 8px 0 rgba(black, 0.08),
                     0 2px 4px 0 rgba(black, 0.10);
+
+        li {
+            position: relative;
+            z-index: 2;
+        }
 
         a {
             white-space: nowrap;

@@ -171,7 +171,7 @@
                         <div class="dashboard__filter-group">
                             <img src="/images/icon-filter-status.svg" class="dashboard__filter-group__icon" alt="" aria-hidden="true">
                             <span class="dashboard__filter-group__label">Status:</span>
-                            <div class="dashboard__filter-group__select">
+                            <div class="dashboard__filter-group__input">
                                 <div class="form-field form-field--dashboard form-field--select">
                                     <div class="select">
                                         <select id="contract-type" class="form-field__select">
@@ -188,7 +188,7 @@
                         <div class="dashboard__filter-group">
                             <img src="/images/icon-filter-type.svg" class="dashboard__filter-group__icon" alt="" aria-hidden="true">
                             <span class="dashboard__filter-group__label">Type:</span>
-                            <div class="dashboard__filter-group__select">
+                            <div class="dashboard__filter-group__input">
                                 <div class="form-field form-field--dashboard form-field--select">
                                     <div class="select">
                                         <select id="contract-type" class="form-field__select">
@@ -204,7 +204,7 @@
                         <div class="dashboard__filter-group">
                             <img src="/images/icon-filter-calendar.svg" class="dashboard__filter-group__icon" alt="" aria-hidden="true">
                             <span class="dashboard__filter-group__label">Date Range:</span>
-                            <div class="dashboard__filter-group__select">
+                            <div class="dashboard__filter-group__input">
                                 <div class="form-field form-field--dashboard form-field--select">
                                     <div class="select">
                                         <select id="contract-type" class="form-field__select">
@@ -229,21 +229,9 @@
                         <div class="dashboard__filter-group">
                             <img src="/images/icon-filter-filter.svg" class="dashboard__filter-group__icon" alt="" aria-hidden="true">
                             <span class="dashboard__filter-group__label">Filter by:</span>
-                            <div class="dashboard__filter-group__select">
-                                <div class="form-field form-field--dashboard form-field--select">
-                                    <div class="select">
-                                        <select id="contract-type" class="form-field__select">
-                                            <option value="option-0">None</option>
-                                            <option value="option-1">Reference Number</option>
-                                            <option value="option-2">Blockchain Status</option>
-                                            <option value="option-3">Counterparty</option>
-                                            <option value="option-4">Type</option>
-                                            <option value="option-5">Quantity</option>
-                                            <option value="option-6">Price</option>
-                                            <option value="option-7">Shipment Date</option>
-                                            <option value="option-8">Status</option>
-                                        </select>
-                                    </div>
+                            <div class="dashboard__filter-group__input">
+                                <div class="form-field">
+                                    <input type="text" placeholder="Reference #, Counterparty, etc." class="form-field__input">
                                 </div>
                             </div>
                         </div>
