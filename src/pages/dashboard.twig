@@ -1,0 +1,246 @@
+{% extends '../partials/base/_layout.twig' %}
+
+{% block content %}
+
+{% include '../partials/dashboard/main-nav.twig' %}
+
+<section class="dashboard__top-bar">
+    {% include '../partials/dashboard/top-bar.twig' %}
+</section>
+
+<section class="dashboard__content">
+    <div class="dashboard__top">
+        <div class="left">
+            <h1>Welcome back, Jason</h1>
+            <h2>Check out your recent activity.</h2>
+        </div>
+    </div>
+
+    <div class="dashboard__bottom">
+        <div class="dashboard__tabs-controls">
+            <div class="tabs">
+                <button class="dashboard__tabs-button dashboard__tabs-button--contracts is-active" data-tab-trigger="contracts">Contracts</button>
+                <button class="dashboard__tabs-button dashboard__tabs-button--shipments" data-tab-trigger="shipments">Shipments</button>
+                <button class="dashboard__tabs-button dashboard__tabs-button--documents" data-tab-trigger="documents">Documents</button>
+            </div>
+
+            <div class="buttons">
+                <div class="dashboard__tabs-item is-active" data-tab-item="contracts">
+                    <a href="/contracts.html" class="btn btn--gray">See All Contracts</a>
+                    <a href="/contract-new.html" class="btn btn--green">New Contract</a>
+                </div>
+
+                <div class="dashboard__tabs-item" data-tab-item="shipments">
+                    <a href="/shipments.html" class="btn btn--gray">See All Shipments</a>
+                    <a href="#" class="btn btn--green">New Shipment</a>
+                </div>
+
+                <div class="dashboard__tabs-item" data-tab-item="documents">
+                    <a href="/documents.html" class="btn btn--gray">See All Documents</a>
+                    <a href="/document-new.html" class="btn btn--green">New Document</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="dashboard__tabs-content">
+            <div class="dashboard__tabs-item dashboard__tabs-item--contracts is-active" data-tab-item="contracts">
+                <table class="table table--dashboard table--contracts">
+                    <thead>
+                        <tr>
+                            <th><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></th>
+                            <th>Reference Number</th>
+                            <th>Blockchain Status</th>
+                            <th>Counterparty</th>
+                            <th>Type</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Shipment Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                            <td>501135-501132-171119</td>
+                            <td>Syncing</td>
+                            <td>Allenberg Cotton Co</td>
+                            <td>Sale</td>
+                            <td>1000 Metric Tons</td>
+                            <td>87.5 c/lb</td>
+                            <td>06/23/18</td>
+                            <td class="active">Active</td>
+                        </tr>
+
+                        <tr>
+                            <td><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                            <td>501135-501132-171119</td>
+                            <td>Up to date</td>
+                            <td>Allenberg Cotton Co</td>
+                            <td>Sale</td>
+                            <td>1000 Metric Tons</td>
+                            <td>87.5 c/lb</td>
+                            <td>06/23/18</td>
+                            <td class="closed">Closed</td>
+                        </tr>
+
+                        <tr>
+                            <td><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                            <td>501135-501132-171119</td>
+                            <td>Syncing</td>
+                            <td>Allenberg Cotton Co</td>
+                            <td>Purchase</td>
+                            <td>1000 Metric Tons</td>
+                            <td>87.5 c/lb</td>
+                            <td>06/23/18</td>
+                            <td class="active">Active</td>
+                        </tr>
+
+                        <tr>
+                            <td><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                            <td>501135-501132-171119</td>
+                            <td>Syncing</td>
+                            <td>Allenberg Cotton Co</td>
+                            <td>Sale</td>
+                            <td>1000 Metric Tons</td>
+                            <td>87.5 c/lb</td>
+                            <td>06/23/18</td>
+                            <td class="pending">Pending</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="dashboard__tabs-item dashboard__tabs-item--shipments" data-tab-item="shipments">
+                <table class="table table--dashboard table--shipments">
+                    <thead>
+                        <tr>
+                            <th><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></th>
+                            <th>Shipment</th>
+                            <th>Contract</th>
+                            <th>Origin</th>
+                            <th>Destination</th>
+                            <th>Carrier</th>
+                            <th>Creator</th>
+                            <th>Owner</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                            <td>123456</td>
+                            <td>501135-501132-171119</td>
+                            <td>Memphis, TN</td>
+                            <td>Laredo, TX</td>
+                            <td>Southeaster Freight</td>
+                            <td>Test User</td>
+                            <td>Allendberg Cotton Co</td>
+                            <td>06/23/18</td>
+                        </tr>
+
+                        <tr>
+                            <td><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                            <td>123456</td>
+                            <td>501135-501132-171119</td>
+                            <td>Memphis, TN</td>
+                            <td>Laredo, TX</td>
+                            <td>Southeaster Freight</td>
+                            <td>Test User</td>
+                            <td>Allendberg Cotton Co</td>
+                            <td>06/23/18</td>
+                        </tr>
+
+                        <tr>
+                            <td><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                            <td>123456</td>
+                            <td>501135-501132-171119</td>
+                            <td>Memphis, TN</td>
+                            <td>Laredo, TX</td>
+                            <td>Southeaster Freight</td>
+                            <td>Test User</td>
+                            <td>Allendberg Cotton Co</td>
+                            <td>06/23/18</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="dashboard__tabs-item dashboard__tabs-item--documents" data-tab-item="documents">
+                <table class="table table--dashboard table--documents">
+                    <thead>
+                        <tr>
+                            <th><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></th>
+                            <th>File</th>
+                            <th>Folder</th>
+                            <th>Author</th>
+                            <th>Owner</th>
+                            <th>Date</th>
+                            <th>Size</th>
+                            <th>Security Status</th>
+                            <th>Sharing</th>
+                            <th>Fingerprint</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                            <td>501135-501132-171119.pdf</td>
+                            <td>Contract 501135-501132-171119</td>
+                            <td>Mark Berry</td>
+                            <td>Allenberg Cotton Co</td>
+                            <td>06/23/18 5:55 PM</td>
+                            <td>50 KB</td>
+                            <td>Encrypted</td>
+                            <td></td>
+                            <td>QdgrRshGS44sFSh6782Sfs</td>
+                        </tr>
+
+                        <tr>
+                            <td><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                            <td>501135-501132-171119.json</td>
+                            <td>Contract 501135-501132-171119</td>
+                            <td>Mark Berry</td>
+                            <td>Allenberg Cotton Co</td>
+                            <td>06/23/18 5:55 PM</td>
+                            <td>876 Bytes</td>
+                            <td>Encrypted</td>
+                            <td></td>
+                            <td>QdgrRshGS44sFSh6782Sfs</td>
+                        </tr>
+
+                        <tr>
+                            <td><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                            <td>501135-501132-171119.pdf</td>
+                            <td>Contract 501135-501132-171119</td>
+                            <td>Mark Berry</td>
+                            <td>Allenberg Cotton Co</td>
+                            <td>06/23/18 5:55 PM</td>
+                            <td>50 KB</td>
+                            <td>Encrypted</td>
+                            <td>Yes</td>
+                            <td>QdgrRshGS44sFSh6782Sfs</td>
+                        </tr>
+
+                        <tr>
+                            <td><div class="form-field form-field--contract form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                            <td>501135-501132-171119.json</td>
+                            <td>Contract 501135-501132-171119</td>
+                            <td>Mark Berry</td>
+                            <td>Allenberg Cotton Co</td>
+                            <td>06/23/18 5:55 PM</td>
+                            <td>600 Bytes</td>
+                            <td>Encrypted</td>
+                            <td>Yes</td>
+                            <td>QdgrRshGS44sFSh6782Sfs</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

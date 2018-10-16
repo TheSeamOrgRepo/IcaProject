@@ -1,0 +1,74 @@
+{% extends '../partials/base/_layout.twig' %}
+
+{% block content %}
+
+{% include '../partials/dashboard/main-nav.twig' %}
+
+<section class="dashboard__top-bar">
+    {% include '../partials/dashboard/top-bar.twig' %}
+</section>
+
+<section class="dashboard__content">
+    <div class="companies__content">
+        <div class="dashboard__top">
+            <div class="left">
+                <h1>Companies</h1>
+            </div>
+
+            <div class="right">
+                <a href="#" class="btn btn--green">New Company</a>
+            </div>
+        </div>
+
+        <div class="dashboard__middle">
+            {% include '../partials/dashboard/table-filters.twig' %}
+            {% include '../partials/dashboard/table-pagination.twig' %}
+        </div>
+
+        <div class="dashboard__bottom">
+            <table class="table table--companies">
+                <thead>
+                    <tr>
+                        <th><div class="form-field form-field--dashboard form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"><span></span></label></div></th>
+                        <th>Name</th>
+                        <th>Role</th>
+                        <th>Country</th>
+                        <th>Contracts</th>
+                        <th><div class="hide-vis">Actions</div></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td><div class="form-field form-field--dashboard form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"><span></span></label></div></td>
+                        <td>21st Century Textiles Ltd</td>
+                        <td>Related Company</td>
+                        <td>Tanzania</td>
+                        <td>3</td>
+                        <td>{% include '../partials/misc/table-actions.twig' %}</td>
+                    </tr>
+
+                    <tr>
+                        <td><div class="form-field form-field--dashboard form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"><span></span></label></div></td>
+                        <td>Allenberg Cotton Co</td>
+                        <td>Related Company</td>
+                        <td>United States of America</td>
+                        <td>2</td>
+                        <td>{% include '../partials/misc/table-actions.twig' %}</td>
+                    </tr>
+
+                    <tr>
+                        <td><div class="form-field form-field--dashboard form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"><span></span></label></div></td>
+                        <td>FCStone</td>
+                        <td>Affiliate Industry Firm</td>
+                        <td>United States of America</td>
+                        <td>0</td>
+                        <td>{% include '../partials/misc/table-actions.twig' %}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

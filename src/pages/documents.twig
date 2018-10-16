@@ -1,0 +1,114 @@
+{% extends '../partials/base/_layout.twig' %}
+
+{% block content %}
+
+{% include '../partials/dashboard/main-nav.twig' %}
+
+<section class="dashboard__top-bar">
+    {% include '../partials/dashboard/top-bar.twig' %}
+</section>
+
+<section class="dashboard__content">
+    <div class="documents__content">
+        <div class="dashboard__top">
+            <div class="left">
+                <h1>Documents</h1>
+            </div>
+
+            <div class="right">
+                <button class="btn btn--green" data-modal="new-document">New Document</button>
+            </div>
+        </div>
+
+        <div class="dashboard__middle">
+            {% include '../partials/dashboard/table-filters.twig' %}
+            {% include '../partials/dashboard/table-pagination.twig' %}
+        </div>
+
+        <div class="dashboard__bottom">
+            <table class="table table--documents">
+                <thead>
+                    <tr>
+                        <th><div class="form-field form-field--dashboard form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></th>
+                        <th>File</th>
+                        <th>Folder</th>
+                        <th>Author</th>
+                        <th>Owner</th>
+                        <th>Date</th>
+                        <th>Size</th>
+                        <th>Security Status</th>
+                        <th>Sharing</th>
+                        <th>Fingerprint</th>
+                        <th><div class="hide-vis">Actions</div></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td><div class="form-field form-field--dashboard form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                        <td>501135-501132-171119.pdf</td>
+                        <td>Contract 501135-501132-171119</td>
+                        <td>Mark Berry</td>
+                        <td>Allenberg Cotton Co</td>
+                        <td>06/23/18 5:55 PM</td>
+                        <td>50 KB</td>
+                        <td>Encrypted</td>
+                        <td></td>
+                        <td>QdgrRshGS44sFSh6782Sfs</td>
+                        <td>{% include '../partials/misc/table-actions.twig' %}</td>
+                    </tr>
+
+                    <tr>
+                        <td><div class="form-field form-field--dashboard form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                        <td>501135-501132-171119.json</td>
+                        <td>Contract 501135-501132-171119</td>
+                        <td>Mark Berry</td>
+                        <td>Allenberg Cotton Co</td>
+                        <td>06/23/18 5:55 PM</td>
+                        <td>876 Bytes</td>
+                        <td>Encrypted</td>
+                        <td></td>
+                        <td>QdgrRshGS44sFSh6782Sfs</td>
+                        <td>{% include '../partials/misc/table-actions.twig' %}</td>
+                    </tr>
+
+                    <tr>
+                        <td><div class="form-field form-field--dashboard form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                        <td>501135-501132-171119.pdf</td>
+                        <td>Contract 501135-501132-171119</td>
+                        <td>Mark Berry</td>
+                        <td>Allenberg Cotton Co</td>
+                        <td>06/23/18 5:55 PM</td>
+                        <td>50 KB</td>
+                        <td>Encrypted</td>
+                        <td>Yes</td>
+                        <td>QdgrRshGS44sFSh6782Sfs</td>
+                        <td>{% include '../partials/misc/table-actions.twig' %}</td>
+                    </tr>
+
+                    <tr>
+                        <td><div class="form-field form-field--dashboard form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                        <td>501135-501132-171119.json</td>
+                        <td>Contract 501135-501132-171119</td>
+                        <td>Mark Berry</td>
+                        <td>Allenberg Cotton Co</td>
+                        <td>06/23/18 5:55 PM</td>
+                        <td>600 Bytes</td>
+                        <td>Encrypted</td>
+                        <td>Yes</td>
+                        <td>QdgrRshGS44sFSh6782Sfs</td>
+                        <td>{% include '../partials/misc/table-actions.twig' %}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+{% include '../partials/modal/modal-new-document.twig' %}
+
+{% include '../partials/modal/modal-preview-pdf.twig' %}
+
+{% include '../partials/modal/modal-preview-json.twig' %}
+
+{% endblock %}

@@ -1,0 +1,27 @@
+// Base
+// ------------------------
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    background-color: $gray-ultralight-1;
+}
+
+body {
+	font: 100%/1.5 $font;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	color: $primary;
+    min-width: $min-width;
+    overflow: hidden;
+}
+
+main {
+    display: block;
+}

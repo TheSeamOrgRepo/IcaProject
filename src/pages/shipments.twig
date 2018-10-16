@@ -1,0 +1,94 @@
+{% extends '../partials/base/_layout.twig' %}
+
+{% block content %}
+
+{% include '../partials/dashboard/main-nav.twig' %}
+
+<section class="dashboard__top-bar">
+    {% include '../partials/dashboard/top-bar.twig' %}
+</section>
+
+<section class="dashboard__content">
+    <div class="shipments__content">
+        <div class="dashboard__top">
+            <div class="left">
+                <h1>Shipments</h1>
+            </div>
+
+            <div class="right">
+                <a href="#" class="btn btn--green">New Shipment</a>
+            </div>
+        </div>
+
+        <div class="dashboard__middle">
+            {% include '../partials/dashboard/table-filters.twig' %}
+            {% include '../partials/dashboard/table-pagination.twig' %}
+        </div>
+
+        <div class="dashboard__bottom">
+            <table class="table table--shipments">
+                <thead>
+                    <tr>
+                        <th><div class="form-field form-field--dashboard form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></th>
+                        <th>Shipment</th>
+                        <th>Contract</th>
+                        <th>Origin</th>
+                        <th>Destination</th>
+                        <th>Carrier</th>
+                        <th>Creator</th>
+                        <th>Owner</th>
+                        <th>Date</th>
+                        <th><div class="hide-vis">Actions</div></th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td><div class="form-field form-field--dashboard form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                        <td>123456</td>
+                        <td>501135-501132-171119</td>
+                        <td>Memphis, TN</td>
+                        <td>Laredo, TX</td>
+                        <td>Southeaster Freight</td>
+                        <td>Test User</td>
+                        <td>Allendberg Cotton Co</td>
+                        <td>06/23/18</td>
+                        <td>{% include '../partials/misc/table-actions.twig' %}</td>
+                    </tr>
+
+                    <tr>
+                        <td><div class="form-field form-field--dashboard form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                        <td>123456</td>
+                        <td>501135-501132-171119</td>
+                        <td>Memphis, TN</td>
+                        <td>Laredo, TX</td>
+                        <td>Southeaster Freight</td>
+                        <td>Test User</td>
+                        <td>Allendberg Cotton Co</td>
+                        <td>06/23/18</td>
+                        <td>{% include '../partials/misc/table-actions.twig' %}</td>
+                    </tr>
+
+                    <tr>
+                        <td><div class="form-field form-field--dashboard form-field--checkbox"><label class="form-field__checkbox"><input type="checkbox" value="val1"> <span></span></label></div></td>
+                        <td>123456</td>
+                        <td>501135-501132-171119</td>
+                        <td>Memphis, TN</td>
+                        <td>Laredo, TX</td>
+                        <td>Southeaster Freight</td>
+                        <td>Test User</td>
+                        <td>Allendberg Cotton Co</td>
+                        <td>06/23/18</td>
+                        <td>{% include '../partials/misc/table-actions.twig' %}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+{% include '../partials/modal/modal-preview-pdf.twig' %}
+
+{% include '../partials/modal/modal-preview-json.twig' %}
+
+{% endblock %}

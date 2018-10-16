@@ -1,0 +1,57 @@
+{% extends '../partials/base/_layout.twig' %}
+
+{% block content %}
+
+{% include '../partials/dashboard/main-nav.twig' %}
+
+<section class="dashboard__top-bar">
+    {% include '../partials/dashboard/contract-top-bar.twig' %}
+</section>
+
+<section class="dashboard__content">
+    <div class="contract-new__content">
+        <div class="contract-new__sidebar">
+            <div class="contract-new__sidebar-intro">
+                <img src="/images/logo-placeholder.svg" alt="Logo Placeholder">
+                <h1>New Contract</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                <button class="btn btn--green btn--dropdown">
+                    Start Contract
+
+                    <div class="dropdown">
+                        <ul>
+                            <li><a href="/contract-prefill.html">Start from scratch</a></li>
+                            <li><a href="/contract-prefill.html">Load pre-fill content</a></li>
+                        </ul>
+                    </div>
+                </button>
+
+                <div class="form-field form-field--contract form-field--select">
+                    <label for="view-in-progress" class="form-field__label">View In Progress</label>
+                    <div class="select">
+                        <select id="view-in-progress" class="form-field__select" data-placeholder="Choose an unfinished contract">
+                            <option value="option-1">Option One</option>
+                            <option value="option-2">Option Two</option>
+                            <option value="option-3">Option Three</option>
+                        </select>
+                    </div>
+                </div>
+
+                <p><a href="#" class="small">See all past contracts</a></p>
+            </div>
+
+            <div class="contract-new__sidebar-nav">
+                <button class="prev" data-prev-sidebar-panel>Previous</button>
+                <button class="next" data-next-sidebar-panel>Next</button>
+            </div>
+        </div>
+
+        <div class="contract-new__preview is-placeholder">
+            <div class="placeholder">
+                <div>Contract Builder</div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

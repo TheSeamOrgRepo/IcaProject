@@ -1,6 +1,3 @@
-// Styles
-require('../css/app.scss');
-
 import Select from './select.js';
 import flatpickr from './flatpickr.js';
 
@@ -290,6 +287,21 @@ import flatpickr from './flatpickr.js';
                         // e.preventDefault();
                         this.classList.toggle('is-active');
                     });
+
+                    document.addEventListener('click', function(e) {
+                        // Dropdown isn't active
+                        if ( ! el.classList.contains('is-active') ) return;
+
+                        // Clicking inside dropdown
+                        var dropdown = el.querySelector('.dropdown');
+                        if ( e.target === dropdown || dropdown.contains(e.target) ) return;
+
+                        // Clicking target
+                        if ( e.target === el.target || el.contains(e.target) ) return;
+
+                        // Close the dropdown
+                        el.classList.remove('is-active');
+                    });
                 });
             },
 
@@ -339,6 +351,21 @@ import flatpickr from './flatpickr.js';
 
                         // Set active state
                         this.classList.toggle('is-active');
+                    });
+
+                    document.addEventListener('click', function(e) {
+                        // Dropdown isn't active
+                        if ( ! el.classList.contains('is-active') ) return;
+
+                        // Clicking inside dropdown
+                        var dropdown = el.nextElementSibling;
+                        if ( e.target === dropdown || dropdown.contains(e.target) ) return;
+
+                        // Clicking target
+                        if ( e.target === el.target || el.contains(e.target) ) return;
+
+                        // Close the dropdown
+                        el.classList.remove('is-active');
                     });
                 });
             },
@@ -404,12 +431,17 @@ import flatpickr from './flatpickr.js';
             },
 
             dates: function() {
-                flatpickr('.form-field__date', {
+                flatpickr('.form-field__date--single', {
+                    altInput: true,
+                    altFormat: 'm/d/Y',
+                    dateFormat: 'Y-m-d',
+                });
+
+                flatpickr('.form-field__date--range', {
                     mode: 'range',
                     altInput: true,
                     altFormat: 'm/d/Y',
                     dateFormat: 'Y-m-d',
-                    rangeSeparator: ' - ',
                 });
             },
 

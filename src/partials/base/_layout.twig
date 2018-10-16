@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% include '../base/head.twig' %}
+
+    <body>
+        <!-- Content -->
+        <main role="main" class="{{ (isLogin) ? 'login' : 'dashboard' }}">
+            {% block content %}
+            {% endblock %}
+        </main>
+
+        <!-- JavaScript -->
+        <script src="/js/app.min.js"></script>
+    </body>
+</html>

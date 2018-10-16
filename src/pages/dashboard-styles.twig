@@ -1,0 +1,149 @@
+{% extends '../partials/base/_layout.twig' %}
+
+{% block content %}
+
+{% include '../partials/dashboard/main-nav.twig' %}
+
+<section class="dashboard__top-bar">
+    <div class="dashboard__header">
+        <h1 class="dashboard__header-heading">
+            Dashboard
+        </h1>
+    </div>
+</section>
+
+<section class="dashboard__content">
+    <div class="contract-new__sidebar">
+        <div class="contract-new__sidebar-panel" data-sidebar-panel="1">
+            <h2>1. Parties & Type</h2>
+            <p class="small">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+            <!-- Text -->
+            <h2>Normal</h2>
+            <div class="form-field">
+                <a href="#" class="form-field__action">+ Add Clause Item</a>
+                <label for="placeholder-1" class="form-field__label">Label</label>
+                <input type="text" id="placeholder-1" placeholder="Placeholder Text" class="form-field__input">
+                <div class="form-field__help">This is helper text.</div>
+            </div>
+
+            <div class="form-field form-field--error">
+                <label for="placeholder-2" class="form-field__label">Label</label>
+                <input type="text" id="placeholder-2" placeholder="Placeholder Text 2" class="form-field__input">
+                <div class="form-field__help">This is an error message. It would replace helper text.</div>
+            </div>
+
+            <div class="form-field">
+                <input type="text" placeholder="Placeholder Text" class="form-field__input">
+            </div>
+
+            <!-- Date -->
+            <h2>Date</h2>
+            <div class="form-field form-field--date">
+                <label for="placeholder-date" class="form-field__label required">Date</label>
+                <div class="date">
+                    <input type="text" id="placeholder-date" class="form-field__date form-field__date--single">
+                </div>
+            </div>
+
+            <div class="form-field form-field--date form-field--error">
+                <div class="date">
+                    <input type="text" class="form-field__date form-field__date--range">
+                </div>
+                <div class="form-field__help">Please select a date range.</div>
+            </div>
+
+            <!-- Select -->
+            <h2>Select</h2>
+            <div class="form-field form-field--select">
+                <label for="placeholder-select" class="form-field__label">Select</label>
+                <div class="select">
+                    <select id="placeholder-select" class="form-field__select">
+                        <option value="option-1">Option One</option>
+                        <option value="option-2">Option Two</option>
+                        <option value="option-3">Option Three</option>
+                    </select>
+                </div>
+                <div class="form-field__help">Choose an option from the dropdown.</div>
+            </div>
+
+            <div class="form-field form-field--select form-field--error">
+                <div class="select">
+                    <select id="placeholder-select" class="form-field__select">
+                        <option value="option-1">Option One</option>
+                        <option value="option-2">Option Two</option>
+                        <option value="option-3">Option Three</option>
+                    </select>
+                </div>
+                <div class="form-field__help">This is an error message. It would replace helper text.</div>
+            </div>
+
+            <!-- Textarea -->
+            <h2>Textarea</h2>
+            <div class="form-field form-field--textarea">
+                <label for="placeholder-textarea" class="form-field__label">Textarea</label>
+                <textarea id="placeholder-textarea" placeholder="Placeholder Text" class="form-field__textarea"></textarea>
+            </div>
+
+            <div class="form-field form-field--textarea form-field--error">
+                <textarea placeholder="Placeholder Text" class="form-field__textarea"></textarea>
+                <div class="form-field__help">This is an error message. It would replace helper text.</div>
+            </div>
+
+            <!-- Checkbox -->
+            <h2>Checkbox</h2>
+            <div class="form-field form-field--checkbox">
+                <label class="form-field__label">Checkboxes</label>
+                <label class="form-field__checkbox"><input type="checkbox" value="val1"> <span>Normal</span></label>
+                <label class="form-field__checkbox"><input type="checkbox" value="val2" checked> <span>Checked</span></label>
+                <label class="form-field__checkbox"><input type="checkbox" value="val3" disabled> <span>Disabled</span></label>
+            </div>
+
+            <!-- Checkbox -->
+            <h2>Radio</h2>
+            <div class="form-field form-field--radio">
+                <label class="form-field__label">Radio Buttons</label>
+                <label class="form-field__radio"><input type="radio" name="placeholder-radio" value="val1"> <span>Normal</span></label>
+                <label class="form-field__radio"><input type="radio" name="placeholder-radio" value="val2" checked> <span>Checked</span></label>
+                <label class="form-field__radio"><input type="radio" name="placeholder-radio" value="val3" disabled> <span>Disabled</span></label>
+            </div>
+
+            <!-- Fieldset -->
+            <h2>Fieldset</h2>
+            <div class="form-fieldset form-fieldset--contract">
+                <div class="form-fieldset__heading">Fieldset Heading</div>
+
+                <div class="form-fieldset__fields">
+                    <div class="form-field">
+                        <label for="contracted-units" class="form-field__label required">Contracted Units</label>
+                        <input type="number" id="contracted-units" class="form-field__input">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="quantity-type" class="form-field__label required">Quantity Type</label>
+                        <input type="text" id="quantity-type" class="form-field__input">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="variation-percent" class="form-field__label required">Variation Percent</label>
+                        <input type="number" id="variation-percent" class="form-field__input">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <h2>Buttons</h2>
+            <p><button class="btn">.btn</button></p>
+            <p><button class="btn btn--green">.btn--green</button></p>
+            <p><button class="btn btn--disabled">.btn--disabled</button></p>
+            <p><button class="btn" disabled>.btn[disabled]</button></p>
+        </div>
+
+        <div class="contract-new__sidebar-nav">
+            <button class="prev" data-prev-sidebar-panel>Previous</button>
+            <button class="next" data-next-sidebar-panel>Next</button>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

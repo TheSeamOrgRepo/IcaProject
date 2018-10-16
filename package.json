@@ -1,39 +1,54 @@
 {
-  "name": "html5_boilerplate",
-  "version": "2.0.0",
+  "name": "theseam-ica",
+  "version": "1.0.0",
   "description": "",
-  "main": "./src/index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack-dev-server --open --inline",
-    "dev": "npm run start",
-    "build": "rm -rf build && cross-env NODE_ENV=production webpack --progress --hide-modules && npm run deploy",
-    "deploy": "surge ./build theseam-ica.surge.sh"
+    "autoprefix:css": "postcss --use autoprefixer -r build/css/*.css",
+    "browsersync": "browser-sync start --server \"build\" --files \"build/**/*\"",
+    "build": "npm-run-all clean setup --parallel build:*",
+    "build:css": "npm-run-all compile:css autoprefix:css",
+    "build:img": "rm -rf \"build/images/*\" && cp -a \"src/images/.\" \"build/images/\"",
+    "build:js": "npm-run-all --parallel build:js:*",
+    "build:js:app": "browserify src/js/app.js -t babelify --outfile build/js/app.min.js",
+    "build:twig": "node scripts/twig-build.js",
+    "clean": "rm -rf \"build\"",
+    "compile:css": "node-sass --source-map true --output-style compressed src/scss/app.scss build/css/app.css",
+    "dev": "npm-run-all build --parallel watch:*",
+    "setup": "mkdir \"build\" && mkdir \"build/css\" && mkdir \"build/js\" && mkdir \"build/images\"",
+    "watch:browsersync": "npm run browsersync",
+    "watch:css": "chokidar \"src/scss\" --command \"npm run build:css\"",
+    "watch:img": "chokidar \"src/images\" --command \"npm run build:img\"",
+    "watch:js": "npm-run-all --parallel watch:js:*",
+    "watch:js:app": "chokidar \"src/js/*.js\" --command \"npm run build:js:app\"",
+    "watch:twig": "chokidar \"src/pages\" \"src/partials\" \"src/data\" --command \"npm run build:twig\""
   },
-  "keywords": [],
-  "author": "Dugnist Alexey",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheSeamOrgRepo/IcaProject.git"
+  },
+  "author": "Kyle Brumm <kjbrumm@gmail.com> (http://kylebrumm.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheSeamOrgRepo/IcaProject/issues"
+  },
+  "homepage": "https://github.com/TheSeamOrgRepo/IcaProject#readme",
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.42",
-    "@babel/preset-env": "^7.0.0-beta.42",
-    "babel-loader": "^8.0.0-beta.2",
-    "babel-minify-webpack-plugin": "^0.2.0",
-    "babel-preset-env": "^2.0.0-beta.2",
-    "browserify": "^14.4.0",
-    "copy-webpack-plugin": "^4.0.1",
-    "cross-env": "^3.1.4",
-    "css-loader": "^0.26.1",
-    "extract-text-webpack-plugin": "^2.1.2",
-    "file-loader": "^0.10.0",
-    "html-replace-webpack-plugin": "^2.2.6",
-    "html-webpack-plugin": "^2.30.1",
-    "imagemin-webpack-plugin": "^1.5.0-beta.0",
-    "mini-css-extract-plugin": "^0.4.2",
-    "node-sass": "^4.9.3",
-    "optimize-css-assets-webpack-plugin": "^3.0.0",
-    "sass-loader": "^7.1.0",
-    "style-loader": "^0.13.1",
-    "webpack": "^2.7.0",
-    "webpack-dev-server": "^2.3.0"
+    "@babel/core": "^7.1.2",
+    "@babel/preset-env": "^7.1.0",
+    "autoprefixer": "latest",
+    "babelify": "^10.0.0",
+    "browserify": "^16.2.3",
+    "chokidar-cli": "^1.2.1",
+    "glob": "^7.1.3",
+    "js-beautify": "^1.8.7",
+    "node-sass": "^4.9.4",
+    "npm-run-all": "^4.1.3",
+    "postcss-cli": "^6.0.0",
+    "twig": "^1.12.0"
   },
-  "dependencies": {}
+  "browserslist": [
+    "last 2 versions",
+    "> 1%",
+    "ie > 8"
+  ]
 }
