@@ -180,32 +180,30 @@ button {
         box-shadow: 0 0 6px 0 rgba($blue, 0.5);
     }
 
-    &.is-active {
-        .dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-    }
+    // &.is-active {
+    //     + .dropdown {
+    //         opacity: 1;
+    //         visibility: visible;
+    //     }
+    // }
+}
 
-    .dropdown {
-        position: absolute;
-        left: -1px;
-        top: 100%;
-        margin-top: 0.75rem;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(5px);
-        transition: 0.15s ease-in-out;
-        z-index: 1;
+.btn--dropdown__dropdown {
+    position: relative;
+    // left: -1px;
+    // top: 100%;
+    margin-top: 0.5rem;
+    // opacity: 0;
+    // visibility: hidden;
+    transition: 0.15s ease-in-out;
+    // z-index: 1;
 
-        @include rounded-dropdown-arrow;
+    @include rounded-dropdown-arrow;
 
-        &:before,
-        &:after {
-            top: -5px;
-            left: 12px;
-        }
+    &:before,
+    &:after {
+        top: -5px;
+        left: 12px;
     }
 
     ul {

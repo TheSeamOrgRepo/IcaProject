@@ -1,3 +1,4 @@
+import Drop from './drop.js';
 import Select from './select.js';
 import flatpickr from './flatpickr.js';
 
@@ -283,25 +284,37 @@ import flatpickr from './flatpickr.js';
                 var self = this;
 
                 self.$dom.dropdownBtns.forEach(function(el) {
-                    el.addEventListener('click', function(e) {
-                        // e.preventDefault();
-                        this.classList.toggle('is-active');
+                    var drop = new Drop({
+                        target: el,
+                        content: el.nextElementSibling,
+                        position: 'bottom left',
+                        openOn: 'click',
+                        blurDelay: 0,
+                        constrainToWindow: true,
+                        constrainToScrollParent: false
                     });
+                    // drop.open();
+                    // drop.close();
 
-                    document.addEventListener('click', function(e) {
-                        // Dropdown isn't active
-                        if ( ! el.classList.contains('is-active') ) return;
+                    // el.addEventListener('click', function(e) {
+                    //     // e.preventDefault();
+                    //     this.classList.toggle('is-active');
+                    // });
 
-                        // Clicking inside dropdown
-                        var dropdown = el.querySelector('.dropdown');
-                        if ( e.target === dropdown || dropdown.contains(e.target) ) return;
+                    // document.addEventListener('click', function(e) {
+                    //     // Dropdown isn't active
+                    //     if ( ! el.classList.contains('is-active') ) return;
 
-                        // Clicking target
-                        if ( e.target === el.target || el.contains(e.target) ) return;
+                    //     // Clicking inside dropdown
+                    //     var dropdown = el.querySelector('.dropdown');
+                    //     if ( e.target === dropdown || dropdown.contains(e.target) ) return;
 
-                        // Close the dropdown
-                        el.classList.remove('is-active');
-                    });
+                    //     // Clicking target
+                    //     if ( e.target === el.target || el.contains(e.target) ) return;
+
+                    //     // Close the dropdown
+                    //     el.classList.remove('is-active');
+                    // });
                 });
             },
 
@@ -338,35 +351,47 @@ import flatpickr from './flatpickr.js';
                 var self = this;
 
                 self.$dom.tables.dots.forEach(function(el) {
-                    el.addEventListener('click', function(e) {
-                        e.preventDefault();
-
-                        // Check if current active dots
-                        if ( ! this.classList.contains('is-active') ) {
-                            // Remove current active states
-                            self.$dom.tables.dots.forEach(function(el) {
-                                el.classList.remove('is-active');
-                            });
-                        }
-
-                        // Set active state
-                        this.classList.toggle('is-active');
+                    var drop = new Drop({
+                        target: el,
+                        content: el.nextElementSibling,
+                        position: 'bottom right',
+                        openOn: 'click',
+                        blurDelay: 0,
+                        constrainToWindow: true,
+                        constrainToScrollParent: false
                     });
+                    // drop.open();
+                    // drop.close();
 
-                    document.addEventListener('click', function(e) {
-                        // Dropdown isn't active
-                        if ( ! el.classList.contains('is-active') ) return;
+                    // el.addEventListener('click', function(e) {
+                    //     e.preventDefault();
 
-                        // Clicking inside dropdown
-                        var dropdown = el.nextElementSibling;
-                        if ( e.target === dropdown || dropdown.contains(e.target) ) return;
+                    //     // Check if current active dots
+                    //     if ( ! this.classList.contains('is-active') ) {
+                    //         // Remove current active states
+                    //         self.$dom.tables.dots.forEach(function(el) {
+                    //             el.classList.remove('is-active');
+                    //         });
+                    //     }
 
-                        // Clicking target
-                        if ( e.target === el.target || el.contains(e.target) ) return;
+                    //     // Set active state
+                    //     this.classList.toggle('is-active');
+                    // });
 
-                        // Close the dropdown
-                        el.classList.remove('is-active');
-                    });
+                    // document.addEventListener('click', function(e) {
+                    //     // Dropdown isn't active
+                    //     if ( ! el.classList.contains('is-active') ) return;
+
+                    //     // Clicking inside dropdown
+                    //     var dropdown = el.nextElementSibling;
+                    //     if ( e.target === dropdown || dropdown.contains(e.target) ) return;
+
+                    //     // Clicking target
+                    //     if ( e.target === el.target || el.contains(e.target) ) return;
+
+                    //     // Close the dropdown
+                    //     el.classList.remove('is-active');
+                    // });
                 });
             },
 
