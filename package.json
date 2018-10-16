@@ -5,7 +5,7 @@
   "scripts": {
     "autoprefix:css": "postcss --use autoprefixer -r build/css/*.css",
     "browsersync": "browser-sync start --server \"build\" --files \"build/**/*\"",
-    "build": "npm-run-all clean setup --parallel build:*",
+    "build": "npm-run-all clean setup --parallel build:* && npm run deploy",
     "build:css": "npm-run-all compile:css autoprefix:css",
     "build:img": "rm -rf \"build/images/*\" && cp -a \"src/images/.\" \"build/images/\"",
     "build:js": "npm-run-all --parallel build:js:*",
@@ -13,6 +13,7 @@
     "build:twig": "node scripts/twig-build.js",
     "clean": "rm -rf \"build\"",
     "compile:css": "node-sass --source-map true --output-style compressed src/scss/app.scss build/css/app.css",
+    "deploy": "surge ./build theseam-ica.surge.sh",
     "dev": "npm-run-all build --parallel watch:*",
     "setup": "mkdir \"build\" && mkdir \"build/css\" && mkdir \"build/js\" && mkdir \"build/images\"",
     "watch:browsersync": "npm run browsersync",
