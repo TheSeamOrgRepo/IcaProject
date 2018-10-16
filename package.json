@@ -14,7 +14,7 @@
     "clean": "rm -rf \"build\"",
     "compile:css": "node-sass --source-map true --output-style compressed src/scss/app.scss build/css/app.css",
     "deploy": "surge ./build theseam-ica.surge.sh",
-    "dev": "npm-run-all build --parallel watch:*",
+    "dev": "npm-run-all --parallel watch:*",
     "setup": "mkdir \"build\" && mkdir \"build/css\" && mkdir \"build/js\" && mkdir \"build/images\"",
     "watch:browsersync": "npm run browsersync",
     "watch:css": "chokidar \"src/scss\" --command \"npm run build:css\"",
