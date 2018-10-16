@@ -143,7 +143,7 @@ table {
         transition: 0.15s ease-in-out;
         z-index: 1;
 
-        @extend %rounded-dropdown-arrow;
+        @include rounded-dropdown-arrow;
 
         &:before,
         &:after {

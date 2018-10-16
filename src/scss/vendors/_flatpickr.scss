@@ -95,7 +95,7 @@
 // }
 
 .flatpickr-calendar {
-    @extend %rounded-dropdown-arrow;
+    @include rounded-dropdown-arrow;
 
     &:before,
     &:after {

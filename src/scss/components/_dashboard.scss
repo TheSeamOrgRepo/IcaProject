@@ -119,6 +119,14 @@
         width: 100%;
         height: 100%;
     }
+
+    .contract-new__content,
+    .contracts__content,
+    .companies__content,
+    .shipments__content,
+    .documents__content {
+        max-height: calc(100vh - #{$nav-size-small});
+    }
 }
 
 .dashboard__top {

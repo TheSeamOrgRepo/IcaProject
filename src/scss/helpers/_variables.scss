@@ -277,26 +277,3 @@ $modal-border-radius: 4px;
     color: $gray;
     font-size: rem-calc(12);
 }
-
-%rounded-dropdown-arrow {
-    &:before,
-    &:after {
-        content: '';
-        position: absolute;
-        top: -6px;
-        width: 10px;
-        height: 10px;
-        border-radius: 3px 0 0 0;
-        background-color:$gray-light;
-        transform: rotate(45deg);
-        pointer-events: none;
-        z-index: 0;
-    }
-
-    &:after {
-        border-radius: 2px 0 0 0;
-        background-color: $white;
-        transform: rotate(45deg) translate(1px, 1px);
-        z-index: 1;
-    }
-}
