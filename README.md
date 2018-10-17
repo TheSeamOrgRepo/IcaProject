@@ -3,12 +3,17 @@
 
 ## Features
 
+- [Twig](http://twig.sensiolabs.org/) - Create pages/templates/partials
+- [Sass(SCSS)](http://sass-lang.com/) - Preprocess CSS
+    - [Node-sass](https://github.com/sass/node-sass) - Compile and minify Sass
+    - [PostCSS Plugins](https://github.com/postcss/postcss)
+        - [Autoprefixer](https://github.com/postcss/autoprefixer) - Vendor prefix CSS
+        - [Pixrem](https://github.com/robwierzbowski/node-pixrem) - Generate pixel fallbacks for rem units
+        - [Flexibility](https://github.com/7rulnik/postcss-flexibility) - Flexbox polyfills
+- [SVG Symbols](https://github.com/svgstore/svgstore-cli) - Combine SVG files into symbols
+    - [SVGO](https://github.com/svg/svgo) - Cleanup and minify SVG files
+- [Babel](https://babeljs.io/) - Bundle and minify JavaScript
 - [Browsersync](https://www.browsersync.io/) - Synchronised browser testing
-- [Sass(SCSS)](http://sass-lang.com/) - CSS preprocessing
-    - [Node-sass](https://github.com/sass/node-sass) - Compiling and minifying Sass
-    - [Autoprefixer](https://github.com/postcss/autoprefixer) - Vendor prefixing CSS
-- [Babel](https://babeljs.io/) - Bundling and minifying JavaScript
-- [Twig](http://twig.sensiolabs.org/) - Creating pages/templates/partials
 
 
 ## Getting Started

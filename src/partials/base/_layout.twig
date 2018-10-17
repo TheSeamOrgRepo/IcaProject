@@ -3,6 +3,10 @@
     {% include '../base/head.twig' %}
 
     <body>
+        <div class="svg-defs">
+            {% include '../../assets/svg-defs.svg' %}
+        </div>
+
         <!-- Content -->
         <main role="main" class="{{ (isLogin) ? 'login' : 'dashboard' }}">
             {% block content %}

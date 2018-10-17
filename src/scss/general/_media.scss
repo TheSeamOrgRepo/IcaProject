@@ -1,6 +1,22 @@
 // Media
 // ------------------------
-img {
+.svg-defs {
+    display: none;
+}
+
+img,
+.icon {
     max-width: 100%;
+}
+
+img {
     border: none;
+}
+
+.icon {
+    display: inline-block;
+}
+
+.icon-companies {
+    stroke: #0000ff;
 }
