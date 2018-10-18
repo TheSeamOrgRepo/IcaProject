@@ -359,7 +359,7 @@ class Select extends Evented {
     let dropWidth = this.content.offsetWidth;
 
     if (dropWidth > targetWidth) {
-      this.target.style.width = `${dropWidth + 12}px`;
+      this.target.style.width = `${dropWidth + 16}px`;
     }
   }
 

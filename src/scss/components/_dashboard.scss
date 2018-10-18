@@ -245,6 +245,15 @@
     }
 }
 
+.dashboard__filter-group__icon {
+    font-size: 26px;
+    color: $secondary;
+
+    &.icon-filter-type {
+        font-size: 30px;
+    }
+}
+
 .dashboard__filter-group__label,
 .dashboard__pagination-text {
     font-size: rem-calc(13);
