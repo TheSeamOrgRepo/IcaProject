@@ -87,6 +87,39 @@
     &:focus,
     &:hover {
         color: currentColor;
+
+        .icon-top-bar-notifications,
+        .icon-top-bar-templates {
+            stroke: $gray;
+        }
+
+        .icon-top-bar-notifications-active {
+            stroke: $gray;
+            color: $red;
+        }
+
+        .icon-top-bar-help {
+            color: $gray;
+        }
+    }
+
+    .icon {
+        font-size: 26px;
+        transition: 0.15s ease-in-out;
+    }
+
+    .icon-top-bar-notifications,
+    .icon-top-bar-templates {
+        stroke: $gray-light;
+    }
+
+    .icon-top-bar-notifications-active {
+        stroke: $gray-light;
+        color: $red;
+    }
+
+    .icon-top-bar-help {
+        color: $gray-light;
     }
 }
 
