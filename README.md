@@ -12,7 +12,7 @@
         - [Flexibility](https://github.com/7rulnik/postcss-flexibility) - Flexbox polyfills
 - [SVG Symbols](https://github.com/svgstore/svgstore-cli) - Combine SVG files into symbols
     - [SVGO](https://github.com/svg/svgo) - Cleanup and minify SVG files
-- [Babel](https://babeljs.io/) - Bundle and minify JavaScript
+- [Browserify/Babelify](http://browserify.org/) - JavaScript bundling
 - [Browsersync](https://www.browsersync.io/) - Synchronised browser testing
 
 
