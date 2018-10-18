@@ -354,6 +354,13 @@ class Select extends Evented {
         attachment: 'together'
       }]
     }, this.options.tetherOptions));
+
+    let targetWidth = this.target.offsetWidth;
+    let dropWidth = this.content.offsetWidth;
+
+    if (dropWidth > targetWidth) {
+      this.target.style.width = `${dropWidth + 12}px`;
+    }
   }
 
   renderTarget() {

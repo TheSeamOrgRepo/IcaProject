@@ -293,28 +293,6 @@ import flatpickr from './flatpickr.js';
                         constrainToWindow: true,
                         constrainToScrollParent: false
                     });
-                    // drop.open();
-                    // drop.close();
-
-                    // el.addEventListener('click', function(e) {
-                    //     // e.preventDefault();
-                    //     this.classList.toggle('is-active');
-                    // });
-
-                    // document.addEventListener('click', function(e) {
-                    //     // Dropdown isn't active
-                    //     if ( ! el.classList.contains('is-active') ) return;
-
-                    //     // Clicking inside dropdown
-                    //     var dropdown = el.querySelector('.dropdown');
-                    //     if ( e.target === dropdown || dropdown.contains(e.target) ) return;
-
-                    //     // Clicking target
-                    //     if ( e.target === el.target || el.contains(e.target) ) return;
-
-                    //     // Close the dropdown
-                    //     el.classList.remove('is-active');
-                    // });
                 });
             },
 
@@ -360,38 +338,6 @@ import flatpickr from './flatpickr.js';
                         constrainToWindow: true,
                         constrainToScrollParent: false
                     });
-                    // drop.open();
-                    // drop.close();
-
-                    // el.addEventListener('click', function(e) {
-                    //     e.preventDefault();
-
-                    //     // Check if current active dots
-                    //     if ( ! this.classList.contains('is-active') ) {
-                    //         // Remove current active states
-                    //         self.$dom.tables.dots.forEach(function(el) {
-                    //             el.classList.remove('is-active');
-                    //         });
-                    //     }
-
-                    //     // Set active state
-                    //     this.classList.toggle('is-active');
-                    // });
-
-                    // document.addEventListener('click', function(e) {
-                    //     // Dropdown isn't active
-                    //     if ( ! el.classList.contains('is-active') ) return;
-
-                    //     // Clicking inside dropdown
-                    //     var dropdown = el.nextElementSibling;
-                    //     if ( e.target === dropdown || dropdown.contains(e.target) ) return;
-
-                    //     // Clicking target
-                    //     if ( e.target === el.target || el.contains(e.target) ) return;
-
-                    //     // Close the dropdown
-                    //     el.classList.remove('is-active');
-                    // });
                 });
             },
 
@@ -452,6 +398,20 @@ import flatpickr from './flatpickr.js';
                     var select = new Select({
                         el: el
                     });
+                });
+
+                // Focus with label
+                var $label = document.querySelectorAll('label');
+                $label.forEach(function(el) {
+                    var id = el.getAttribute('for');
+                    if ( id ) {
+                        var target = document.getElementById(id).nextElementSibling;
+                        if ( target.classList.contains('select-target') ) {
+                            el.addEventListener('click', function() {
+                                target.focus();
+                            });
+                        }
+                    }
                 });
             },
 

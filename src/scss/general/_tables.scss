@@ -59,6 +59,10 @@ table {
     .actions {
         position: relative;
         text-align: right;
+
+        .actions__dropdown {
+            display: none;
+        }
     }
 
     $dot-size: 4px;

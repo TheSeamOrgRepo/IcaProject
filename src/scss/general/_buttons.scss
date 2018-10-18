@@ -180,6 +180,10 @@ button {
         box-shadow: 0 0 6px 0 rgba($blue, 0.5);
     }
 
+    + .btn--dropdown__dropdown {
+        display: none;
+    }
+
     // &.is-active {
     //     + .dropdown {
     //         opacity: 1;
