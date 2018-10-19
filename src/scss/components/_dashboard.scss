@@ -88,18 +88,18 @@
     &:hover {
         color: currentColor;
 
-        .icon-top-bar-notifications,
-        .icon-top-bar-templates {
-            stroke: $gray;
+        .icon-notifications,
+        .icon-templates {
+            color: $primary-ultralight;
         }
 
-        .icon-top-bar-notifications-active {
-            stroke: $gray;
+        .icon-notifications-active {
+            stroke: $primary-ultralight;
             color: $red;
         }
 
-        .icon-top-bar-help {
-            color: $gray;
+        .icon-help {
+            color: $primary-ultralight;
         }
     }
 
@@ -108,17 +108,17 @@
         transition: 0.15s ease-in-out;
     }
 
-    .icon-top-bar-notifications,
-    .icon-top-bar-templates {
-        stroke: $gray-light;
+    .icon-notifications,
+    .icon-templates {
+        color: $gray-light;
     }
 
-    .icon-top-bar-notifications-active {
+    .icon-notifications-active {
         stroke: $gray-light;
         color: $red;
     }
 
-    .icon-top-bar-help {
+    .icon-help {
         color: $gray-light;
     }
 }
@@ -249,7 +249,7 @@
     font-size: 26px;
     color: $secondary;
 
-    &.icon-filter-type {
+    &.icon-type {
         font-size: 30px;
     }
 }

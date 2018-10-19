@@ -405,8 +405,13 @@ import flatpickr from './flatpickr.js';
                 $label.forEach(function(el) {
                     var id = el.getAttribute('for');
                     if ( id ) {
-                        var target = document.getElementById(id).nextElementSibling;
-                        if ( target.classList.contains('select-target') ) {
+                        var targetParent = document.getElementById(id);
+
+                        if ( targetParent && targetParent.length ) {
+                            var target = targetParent.nextElementSibling;
+                        }
+
+                        if ( target && target.classList.contains('select-target') ) {
                             el.addEventListener('click', function() {
                                 target.focus();
                             });

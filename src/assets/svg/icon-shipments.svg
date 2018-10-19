@@ -4,7 +4,7 @@
     <title>icon-nav-shipments</title>
     <desc>Created with Sketch.</desc>
     <g id="nav-shipments" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group" transform="translate(1.000000, 1.000000)" fill-rule="nonzero" stroke="#272727" stroke-width="2">
+        <g id="Group" transform="translate(1.000000, 1.000000)" fill-rule="nonzero" stroke="currentColor" stroke-width="2">
             <polyline id="Path" points="3.93768311 15.9375 0 15.9375 0 0 0 0 22.3125 0 22.3125 15.9375 10.7681885 15.9375"></polyline>
             <rect id="Rectangle-Copy-18" x="22.3125" y="4.25" width="7.4375" height="4.25"></rect>
             <polyline id="Path" points="24.4883423 15.9375 22.3125 15.9375 22.3125 8.5 22.3125 8.5 29.75 8.5 34 10.625 34 15.9375 31.0062714 15.9375"></polyline>

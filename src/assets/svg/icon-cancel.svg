@@ -4,7 +4,7 @@
     <title>icon-top-bar-cancel</title>
     <desc>Created with Sketch.</desc>
     <g id="top-bar-cancel" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group-2" transform="translate(1.000000, 1.000000)" fill-rule="nonzero" stroke="#272727" stroke-width="2">
+        <g id="Group-2" transform="translate(1.000000, 1.000000)" fill-rule="nonzero" stroke="currentColor" stroke-width="2">
             <rect id="Rectangle-22" x="0" y="0" width="25" height="25"></rect>
             <g id="Group" transform="translate(5.500000, 5.500000)" stroke-linecap="square">
                 <path d="M0.636038969,0.720023344 L13.363961,13.4479454" id="Line-5"></path>
