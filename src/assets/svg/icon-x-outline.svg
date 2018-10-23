@@ -4,7 +4,7 @@
     <title>icon-x-outline</title>
     <desc>Created with Sketch.</desc>
     <g id="x-outline" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Group" fill-rule="nonzero" stroke="#272727" stroke-width="2">
+        <g id="Group" fill-rule="nonzero" stroke="currentColor" stroke-width="2">
             <circle id="Oval-6" cx="15" cy="15" r="14"></circle>
             <path d="M19.5961941,10.4038059 L10.4038059,19.5961941" id="Line-6" stroke-linecap="square"></path>
             <path d="M19.5961941,10.4038059 L10.4038059,19.5961941" id="Line-6" stroke-linecap="square" transform="translate(15.000000, 15.000000) scale(-1, 1) translate(-15.000000, -15.000000) "></path>

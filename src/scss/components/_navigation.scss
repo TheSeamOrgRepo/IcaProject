@@ -43,8 +43,8 @@
         }
 
         .navigation li a .nav-item {
-          opacity: 0;
-          visibility: hidden;
+            opacity: 0;
+            visibility: hidden;
         }
 
         .account-drawer li a .nav-item {
@@ -94,26 +94,12 @@
                 .icon {
                     transform: scaleY(-1);
                 }
-
-                // .line {
-                //     &:nth-child(1) {
-                //         transform: translateY(15px) scaleY(-1);
-                //     }
-
-                //     &:nth-child(3) {
-                //         transform: translateY(-15px) scaleY(-1);
-                //     }
-                // }
             }
         }
 
         &:hover {
             .hamburger {
                 color: $gray-ultralight-1;
-
-                // .line {
-                //     background-color: $gray-ultralight-1;
-                // }
             }
         }
     }
@@ -135,24 +121,6 @@
             transition: all 0.15s ease-in-out,
                         transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
-
-        // .line {
-        //     width: 28px;
-        //     height: 2px;
-        //     background-color: $primary-ultralight;
-        //     display: block;
-        //     margin: 5px 0;
-        //     transition: all 0.15s ease-in-out,
-        //                 transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
-
-        //     &:nth-child(2) {
-        //         width: 20px;
-        //     }
-
-        //     &:nth-child(3) {
-        //         width: 12px;
-        //     }
-        // }
     }
 
     .logo-wrapper {
@@ -293,18 +261,8 @@
 
             &:hover {
                 color: $gray-ultralight-1;
-
-                // img {
-                //     opacity: 1;
-                // }
             }
         }
-
-        // img {
-        //     opacity: 0.25;
-        //     margin-right: 18px;
-        //     transition: opacity 0.75s cubic-bezier(0.165, 0.84, 0.44, 1);
-        // }
 
         .icon {
             margin-right: 18px;
@@ -321,7 +279,7 @@
             font-size: 22px;
         }
 
-        .icon-switch-users {
+        .icon-switch-user {
             font-size: 26px;
         }
 

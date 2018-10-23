@@ -4,6 +4,6 @@
     <title>icon-archive-solid</title>
     <desc>Created with Sketch.</desc>
     <g id="archive-solid" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <path d="M2,8 L29,8 L29,26 L2,26 L2,8 Z M10,13 L10,17 L21,17 L21,13 L10,13 Z M0,0 L31,0 L31,6 L0,6 L0,0 Z" id="Combined-Shape" fill="#272727" fill-rule="nonzero"></path>
+        <path d="M2,8 L29,8 L29,26 L2,26 L2,8 Z M10,13 L10,17 L21,17 L21,13 L10,13 Z M0,0 L31,0 L31,6 L0,6 L0,0 Z" id="Combined-Shape" fill="currentColor" fill-rule="nonzero"></path>
     </g>
 </svg>

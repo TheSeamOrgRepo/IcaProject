@@ -4,6 +4,6 @@
     <title>icon-check</title>
     <desc>Created with Sketch.</desc>
     <g id="check" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <polyline id="Path-10-Copy-2" stroke="#272727" stroke-width="2" fill-rule="nonzero" points="1 10.8237905 9.12735094 19.1 27 0.9"></polyline>
+        <polyline id="Path-10-Copy-2" stroke="currentColor" stroke-width="2" fill-rule="nonzero" points="1 10.8237905 9.12735094 19.1 27 0.9"></polyline>
     </g>
 </svg>

@@ -130,13 +130,21 @@ button {
         padding-left: $icon-size + 10px;
     }
 
-    img {
+    img,
+    .icon {
         position: absolute;
         top: 50%;
         left: 0;
         max-width: $icon-size;
         max-height: $icon-size;
         transform: translateY(-50%);
+    }
+
+    &.uport {
+        .icon {
+            color: $purple;
+            font-size: $icon-size;
+        }
     }
 }
 

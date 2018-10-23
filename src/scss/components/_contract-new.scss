@@ -37,6 +37,7 @@
     li {
         display: flex;
         align-items: stretch;
+        cursor: not-allowed;
         border-left: 1px solid $gray-ultralight;
     }
 }
@@ -103,6 +104,7 @@
     &.is-disabled {
         cursor: not-allowed !important;
         opacity: 0.25;
+        pointer-events: none !important;
     }
 
     &:active,
@@ -116,6 +118,7 @@
         white-space: nowrap;
         color: $primary-ultralight;
         font-size: rem-calc(10);
+        line-height: 1;
         transition: 0.15s ease-in-out;
     }
 }

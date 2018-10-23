@@ -4,7 +4,11 @@
 
 <section class="login__left">
     <a href="#" class="login__back" data-trigger="main">
-        <img src="assets/images/icon-arrow-back.svg" alt="Back">
+        <svg class="icon icon-arrow-left" aria-hidden="true">
+            <use xlink:href="#icon-arrow-left"></use>
+        </svg>
+
+        <span class="hide-vis">Back</span>
     </a>
 
     <div class="login__centerer">
@@ -26,7 +30,10 @@
                                 <input type="email" placeholder="email@example.com" class="form-field__input">
 
                                 <button class="btn form-field__button" data-trigger="email">
-                                    <svg width="13" height="10" xmlns="http://www.w3.org/2000/svg"><path d="M7.92 0L6.626 1.285l2.808 2.808H0v1.814h9.434L6.626 8.715 7.92 10l4.99-5z" fill="none" fill-rule="nonzero"/></svg>
+                                    <svg class="icon icon-arrow-right" aria-hidden="true">
+                                        <use xlink:href="#icon-arrow-right"></use>
+                                    </svg>
+                                    <span class="hide-vis">Submit</span>
                                 </button>
                             </div>
 
@@ -44,7 +51,10 @@
 
                             <button class="btn btn--full btn--white btn--icon uport" data-trigger="uport">
                                 <span>
-                                    <img src="assets/images/icon-uport.svg">
+                                    <svg class="icon icon-uport" aria-hidden="true">
+                                        <use xlink:href="#icon-uport"></use>
+                                    </svg>
+
                                     Login with Uport
                                 </span>
                             </button>
@@ -60,7 +70,10 @@
                         <div class="action__column">
                             <div class="action__email">
                                 <div class="action__heading">
-                                    <img src="assets/images/icon-account.svg">
+                                    <svg class="icon icon-profile" aria-hidden="true">
+                                        <use xlink:href="#icon-profile"></use>
+                                    </svg>
+
                                     <span class="email">email@example.com</span>
                                 </div>
 
@@ -72,8 +85,14 @@
                             <div class="form-field form-field--login form-field--password form-field--error">
                                 <input type="password" placeholder="password" class="form-field__input">
 
-                                <button class="btn form-field__icon" data-toggle-password>
-                                    <svg width="25" height="16" xmlns="http://www.w3.org/2000/svg"><path d="M1.117 7.337C3.246 3.019 7.624.227 12.5.227c4.876 0 9.254 2.792 11.383 7.11L24.21 8l-.327.663c-2.129 4.318-6.507 7.11-11.383 7.11-4.876 0-9.254-2.792-11.383-7.11L.79 8l.327-.663zM2.462 8c1.833 3.718 5.64 6.274 10.038 6.274 4.398 0 8.205-2.556 10.038-6.274-1.833-3.718-5.64-6.274-10.038-6.274C8.102 1.726 4.295 4.282 2.462 8zM12.5 12.182a4.182 4.182 0 1 1 0-8.364 4.182 4.182 0 0 1 0 8.364zm0-2.509a1.673 1.673 0 1 0 0-3.346 1.673 1.673 0 0 0 0 3.346z" fill="none" fill-rule="nonzero"/></svg>
+                                <button class="btn form-field__icon is-show" data-toggle-password>
+                                    <svg class="icon icon-password-show" aria-hidden="true">
+                                        <use xlink:href="#icon-password-show"></use>
+                                    </svg>
+
+                                    <svg class="icon icon-password-hide" aria-hidden="true">
+                                        <use xlink:href="#icon-password-hide"></use>
+                                    </svg>
                                 </button>
 
                                 <div class="form-field__message">
@@ -105,7 +124,10 @@
                             <div class="action__heading">Scan QR code with uPort Mobile App</div>
 
                             <div class="qr-code">
-                                <img src="assets/images/icon-uport.svg" alt="uPort Icon" aria-hidde="true">
+                                <svg class="icon icon-uport" aria-hidden="true">
+                                    <use xlink:href="#icon-uport"></use>
+                                </svg>
+
                                 <img src="assets/images/qr-code.svg" alt="uPort QR Code">
                             </div>
                         </div>
@@ -171,12 +193,16 @@
                 <p>
                     <a href="#" class="login__intro-link">
                         Apply Now
-                        <svg width="13" height="10" xmlns="http://www.w3.org/2000/svg"><path d="M7.92 0L6.626 1.285l2.808 2.808H0v1.814h9.434L6.626 8.715 7.92 10l4.99-5z" fill="none" fill-rule="nonzero"/></svg>
+                        <svg class="icon icon-arrow-right" aria-hidden="true">
+                            <use xlink:href="#icon-arrow-right"></use>
+                        </svg>
                     </a>
 
                     <a href="#" class="login__intro-link">
                         Invite a Partner
-                        <svg width="13" height="10" xmlns="http://www.w3.org/2000/svg"><path d="M7.92 0L6.626 1.285l2.808 2.808H0v1.814h9.434L6.626 8.715 7.92 10l4.99-5z" fill="none" fill-rule="nonzero"/></svg>
+                        <svg class="icon icon-arrow-right" aria-hidden="true">
+                            <use xlink:href="#icon-arrow-right"></use>
+                        </svg>
                     </a>
                 </p>
             </div>

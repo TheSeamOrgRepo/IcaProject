@@ -4,7 +4,7 @@
     <title>icon-x</title>
     <desc>Created with Sketch.</desc>
     <g id="x" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="square">
-        <g id="Group" transform="translate(1.000000, 1.000000)" fill-rule="nonzero" stroke="#272727" stroke-width="2">
+        <g id="Group" transform="translate(1.000000, 1.000000)" fill-rule="nonzero" stroke="currentColor" stroke-width="2">
             <path d="M17.2731493,0.72685066 L0.72685066,17.2731493" id="Line-6"></path>
             <path d="M17.2731493,0.72685066 L0.72685066,17.2731493" id="Line-6" transform="translate(9.000000, 9.000000) scale(-1, 1) translate(-9.000000, -9.000000) "></path>
         </g>

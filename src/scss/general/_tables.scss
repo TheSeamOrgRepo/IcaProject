@@ -181,21 +181,10 @@ table {
         &:focus,
         &:hover {
             color: $green;
-
-            // svg {
-            //     g,
-            //     path {
-            //         stroke: $green;
-            //     }
-            // }
         }
 
         &.delete {
             color: $red-dark;
-
-            // &:hover {
-            //     color: $red-light;
-            // }
         }
     }
 
@@ -203,8 +192,21 @@ table {
         position: absolute;
         top: 50%;
         left: 2rem;
-        margin-right: 0.5rem;
+        // margin-right: 0.5rem;
         transform: translate(-50%, -50%);
+    }
+
+    .icon-eye {
+        font-size: 21px;
+    }
+
+    .icon-document-pdf,
+    .icon-document-json,
+    .icon-curved-arrow-outline,
+    .icon-download,
+    .icon-related,
+    .icon-trash {
+        font-size: 20px;
     }
 
     .divider {
