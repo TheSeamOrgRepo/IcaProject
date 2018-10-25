@@ -7,6 +7,10 @@ table {
 
     tr {
         border-bottom: 1px solid $gray-ultralight;
+
+        &:last-of-type {
+            border-bottom-color: $gray-light;
+        }
     }
 
     thead {

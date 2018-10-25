@@ -330,7 +330,7 @@
 .dashboard__bottom {
     background-color: $white;
     flex: 1;
-    padding: 0 2rem 1rem;
+    padding: 0 2rem rem-calc(75);
     border-top: 1px solid $gray-light;
 
     @include bp(min, rem-calc(1150)) {
