@@ -15,6 +15,14 @@ table {
         }
     }
 
+    tbody {
+        tr {
+            &:hover {
+                background-color: $gray-ultralight-1;
+            }
+        }
+    }
+
     th,
     td {
         padding: 1rem;
@@ -38,6 +46,22 @@ table {
 }
 
 .table {
+    tr {
+        &.is-active {
+            + .content {
+                display: block;
+            }
+        }
+
+        &.content {
+            display: none;
+
+            &:hover {
+                background-color: transparent;
+            }
+        }
+    }
+
     th,
     td {
         &:first-of-type {
@@ -47,13 +71,34 @@ table {
         }
 
         &:last-of-type {
-            // text-align: right;
             padding-right: 0.5rem;
         }
     }
 
     .form-field {
         margin: 0;
+    }
+
+    .expand-row {
+        position: relative;
+        padding: 0;
+        color: $blue;
+        font-size: rem-calc(13);
+        text-align: left;
+        background: none;
+        border: none;
+
+        &:after {
+            content: '';
+            position: relative;
+            top: -1px;
+            display: inline-block;
+            margin-left: 0.25rem;
+            pointer-events: none;
+            border: 5px solid transparent;
+            border-bottom-width: 0;
+            border-top-color: $gray-light;
+        }
     }
 
     .actions {
