@@ -253,6 +253,10 @@ import flatpickr from './flatpickr.js';
                     prev: document.querySelector('[data-prev-sidebar-panel]'),
                     next: document.querySelector('[data-next-sidebar-panel]')
                 },
+                notificationPanel: {
+                    trigger: document.querySelector('[data-toggle-notification-panel]'),
+                    panel: document.querySelector('.notification-panel')
+                }
             },
 
             init: function() {
@@ -278,6 +282,9 @@ import flatpickr from './flatpickr.js';
 
                 // Sidebar Panels
                 if ( self.$dom.sidebar.panels.length ) self.sidebarPanels();
+
+                // Notification Panel
+                if ( self.$dom.notificationPanel.trigger ) self.notificationPanel();
             },
 
             dropdownButtons: function() {
@@ -490,6 +497,25 @@ import flatpickr from './flatpickr.js';
                     // Update current panel
                     self.$dom.sidebar.currentPanel++;
                 });
+            },
+
+            notificationPanel: function() {
+                var self = this;
+
+                var trigger = self.$dom.notificationPanel.trigger;
+                var drop = new Drop({
+                    target: trigger,
+                    content: trigger.nextElementSibling,
+                    position: 'bottom right',
+                    openOn: 'click',
+                    blurDelay: 0,
+                    constrainToWindow: true,
+                    constrainToScrollParent: false
+                });
+
+                // self.$dom.notificationPanel.trigger.addEventListener('click', function() {
+                //     self.$dom.notificationPanel.panel.classList.toggle('is-active');
+                // });
             },
 
             unfocusAll: function() {

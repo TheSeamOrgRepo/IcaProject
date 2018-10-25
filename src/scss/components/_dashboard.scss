@@ -59,10 +59,18 @@
 }
 
 .dashboard__header-right {
-    li {
+    > li {
         display: flex;
         align-items: stretch;
         border-left: 1px solid $gray-ultralight;
+
+        &.notifications {
+            position: relative;
+        }
+    }
+
+    .notification-panel {
+        display: none;
     }
 }
 

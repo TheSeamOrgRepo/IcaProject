@@ -147,10 +147,6 @@ $grid-gutter: 1rem;
 $grid-container-prefix: 'row';
 $grid-item-prefix: 'col';
 
-// Navigation
-$nav-size-large: 215px;
-$nav-size-small: 75px;
-
 // Breakpoint map
 $breakpoints: (
     xxs: (
@@ -267,6 +263,10 @@ $chevron-right: "&#x3009;";
 $close: "&#x2715;";
 $quote-left: "\201c";
 $quote-right: "\201d";
+
+// Navigation
+$nav-size-large: 215px;
+$nav-size-small: 75px;
 
 // Forms
 $form-height: 35px;
