@@ -21,7 +21,10 @@
         </div>
 
         <div class="dashboard__middle">
-            {% include '../partials/dashboard/table-filters.twig' %}
+            {% include '../partials/dashboard/table-filters.twig' with {
+                'filters': ['type', 'date-range', 'filter']
+            } %}
+
             {% include '../partials/dashboard/table-pagination.twig' %}
         </div>
 
