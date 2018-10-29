@@ -1,0 +1,19 @@
+{% extends '../partials/base/_layout.twig' %}
+
+{% block content %}
+
+{% include '../partials/dashboard/main-nav.twig' %}
+
+<section class="dashboard__top-bar">
+    {% include '../partials/dashboard/top-bar.twig' %}
+</section>
+
+<section class="dashboard__content">
+    <ng-select placeholder="Select Company"></ng-select>
+</section>
+
+{% include '../partials/modal/modal-preview-pdf.twig' %}
+
+{% include '../partials/modal/modal-preview-json.twig' %}
+
+{% endblock %}

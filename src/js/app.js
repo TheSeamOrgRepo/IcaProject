@@ -1,6 +1,7 @@
 import Drop from './drop.js';
 import Select from './select.js';
 import flatpickr from './flatpickr.js';
+import './ng-select.js'
 
 (function(global) {
     var theseam = {
@@ -16,6 +17,7 @@ import flatpickr from './flatpickr.js';
             if ( main.classList.contains('dashboard') ) {
                 self.navigation.init();
                 self.dashboard.init();
+                self.ngSelect.init();
             }
         },
 
@@ -542,6 +544,38 @@ import flatpickr from './flatpickr.js';
                 //         easing: 'easeInOutCubic'
                 //     }
                 // );
+            }
+        },
+
+        // ng-select
+        ngSelect: {
+            init: function() {
+                const ngSelectElem = document.querySelector('ng-select')
+                if (ngSelectElem) {
+                    ngSelectElem.items = [
+                        "Company 1",
+                        "Company 2",
+                        "Company 3",
+                        "Company 4",
+                        "Company 5",
+                        "Company 6",
+                        "Company 7",
+                        "Company 8",
+                        "Company 9",
+                        "Company 10",
+                        "Company 11",
+                        "Company 12",
+                        "Company 13",
+                        "Company 14"
+                    ]
+                    ngSelectElem.clearable = true
+                    ngSelectElem.searchable = true
+                    console.log('ngSelectElement', ngSelectElem)
+                }
+
+                // Create 1ng-select` element from js
+                // const ngSelectElem = document.createElement('ng-select')
+                // document.body.appendChild(ngSelectElem)
             }
         }
     }
