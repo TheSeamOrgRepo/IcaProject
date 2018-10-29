@@ -482,6 +482,7 @@ import flatpickr from './flatpickr.js';
                     // Return if on last panel
                     if ( current >= panelCount ) {
                         document.querySelector('.modal--contract-complete').classList.add('is-active');
+                        self.scrollToTop();
                         return;
                     }
 
