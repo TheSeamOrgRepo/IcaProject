@@ -1,4 +1,15 @@
 <div class="dashboard__filters">
+    <div class="dashboard__filter-group">
+        <svg class="icon icon-status dashboard__filter-group__icon" aria-hidden="true">
+            <use xlink:href="#icon-status"></use>
+        </svg>
+
+        <label for="status" class="dashboard__filter-group__label">Status:</label>
+        <div class="dashboard__filter-group__input">
+            <ng-select placeholder="Select Company"></ng-select>
+        </div>
+    </div>
+
     {% if 'status' in filters %}
         <div class="dashboard__filter-group">
             <svg class="icon icon-status dashboard__filter-group__icon" aria-hidden="true">
