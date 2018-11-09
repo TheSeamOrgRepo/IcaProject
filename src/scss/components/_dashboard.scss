@@ -177,6 +177,16 @@
     .shipments__content,
     .documents__content {
         max-height: calc(100vh - #{$nav-size-small});
+
+        .dashboard__top {
+            padding-top: rem-calc(50);
+            padding-bottom: rem-calc(30);
+
+            @include bp(min, rem-calc(1150)) {
+                padding-top: rem-calc(70);
+                padding-bottom: rem-calc(50);
+            }
+        }
     }
 }
 
